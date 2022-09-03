@@ -1,5 +1,6 @@
 site_name: MkDocs Basic theme
 theme:
-    name: basictheme
+    name: w3csstheme
+    custom_dir: files/
 
-repo_url: https://github.com/d0ugal/mkdocs-basic-theme
+repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

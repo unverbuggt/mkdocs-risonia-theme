@@ -1,21 +1,21 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.1'
+VERSION = '0.1'
 
 
 setup(
-    name="mkdocs-basic-theme",
+    name="mkdocs-w3css-theme",
     version=VERSION,
-    url='https://github.com/mkdocs/mkdocs-basic-theme',
+    url='https://github.com/unverbuggt/mkdocs-w3css-theme',
     license='BSD',
-    description='Minimal theme for MkDocs',
-    author='Dougal Matthews',
-    author_email='dougal@dougalmatthews.com.com',
+    description='w3css theme for MkDocs',
+    author='René Rüthlein',
+    author_email='unverbuggt@xn--rthlein-n2a.de',
     packages=find_packages(),
     include_package_data=True,
     entry_points={
         'mkdocs.themes': [
-            'basictheme = basic_theme',
+            'w3csstheme = w3css_theme',
         ]
     },
     zip_safe=False

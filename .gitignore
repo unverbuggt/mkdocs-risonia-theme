@@ -1,4 +1,4 @@
 *.pyc
 dist/
-mkdocs_basic_theme.egg-info/
+mkdocs_w3css_theme.egg-info/
 site/

@@ -2,5 +2,6 @@ site_name: MkDocs Basic theme
 theme:
     name: w3csstheme
     custom_dir: files/
+    logo: img/logo.svg
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

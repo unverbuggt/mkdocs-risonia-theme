@@ -86,22 +86,22 @@
 <div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ logo | url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
+    <img src="{{ config.theme.logo | url }}" class="logo-open-menu" onclick="w3_open()">
     {%- else %}
-    <svg class="svg-icon w3-margin-right w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <svg class="logo-open-menu w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
-    <span>{% if page.title %}{{ page.title }}{% endif %}</span>
+    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
   </p>
 </div>
 
 <header class="w3-container w3-theme w3-large">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ logo | url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
+    <img src="{{ config.theme.logo | url }}" class="logo-open-menu" onclick="w3_open()">
     {%- else %}
-    <svg class="svg-icon w3-margin-right w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <svg class="logo-open-menu w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
-    <span>{% if page.title %}{{ page.title }}{% endif %}</span>
+    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
   </p>
 </header>
 

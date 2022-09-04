@@ -53,10 +53,11 @@ table th:first-child,table td:first-child{
   .footer a{color:#fff !important}
 }
 
-.svg-icon {
+.logo-open-menu {
   display: inline-flex;
-  height:1em;
-  width:1em;
-  top: .125em;
+  height: 2em;
+  width: 2em;
+  bottom: .125em;
   position: relative;
+  vertical-align: middle;
 }

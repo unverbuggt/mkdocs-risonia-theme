@@ -37,7 +37,7 @@
 {%- block styles %}
   <link rel="stylesheet" href="{{ 'css/w3.css'|url }}">
   {%- if config.theme.color %}
-  <link rel="stylesheet" href="{{ ('css/w3-theme-'+config.theme.color+'.css')|url }}">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-' + config.theme.color + '.css')|url }}">
   {%- else %}
   <link rel="stylesheet" href="{{ 'css/w3-theme-orange.css'|url }}">
   {%- endif %}
@@ -55,6 +55,9 @@
     <rect y="4" width="10" height="2"/>
     <rect y="8" width="10" height="2"/>
   </symbol>
+  <symbol id="drop-down" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 3h6l-3 6z"/>
+  </symbol>
 </svg>
 
 {%- if nav|length>1 %}
@@ -65,7 +68,7 @@
   {%- if nav_item.children %}
   <div>
     {%- set accid.hidden = true %}{%- for nav_item in nav_item.children %}{%- if nav_item.active%}{%- set accid.hidden = false %}{%- endif %}{%- endfor %}
-    <a class="w3-bar-item w3-button{% if not accid.hidden%} w3-theme-l4{% endif %}" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }} +</a>
+    <a class="w3-bar-item w3-button{% if not accid.hidden%} w3-theme-l4{% endif %}" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon" style="height: 1em; width: 1em;""><use xlink:href="#drop-down" /></svg></a>
     <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden%} w3-hide{% endif %}" style="margin-left: 8px;">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
       <a class="w3-bar-item w3-button{% if nav_item.active%} w3-theme-l2{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
@@ -86,9 +89,9 @@
 <div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="logo-open-menu" onclick="w3_open()">
+    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
     {%- else %}
-    <svg class="logo-open-menu w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <svg class="svg-icon w3-hide-large no-print" style="height: 2em; width: 2em;" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
   </p>
@@ -97,9 +100,9 @@
 <header class="w3-container w3-theme w3-large">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="logo-open-menu" onclick="w3_open()">
+    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
     {%- else %}
-    <svg class="logo-open-menu w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <svg class="svg-icon w3-hide-large no-print" style="height: 2em; width: 2em;" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
   </p>

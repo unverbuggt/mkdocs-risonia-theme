@@ -49,6 +49,14 @@
 
 <body class="w3-theme-l5">
 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="open-menu" viewBox="0 0 10 10" fill="currentColor">
+    <rect y="0" width="10" height="2"/>
+    <rect y="4" width="10" height="2"/>
+    <rect y="8" width="10" height="2"/>
+  </symbol>
+</svg>
+
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card w3-theme-l4" style="z-index:3;width:250px;" id="mySidebar">
   <a class="w3-bar-item w3-button w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()">X</a>
@@ -76,13 +84,25 @@
 <div class="w3-main" style="margin-left:250px;">
 
 <div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
-  <p><img src="{{ 'img/logo.svg'|url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
-  <span>{% if page.title %}{{ page.title }}{% endif %}</span></p>
+  <p>
+    {%- if config.theme.logo %}
+    <img src="{{ logo | url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
+    {%- else %}
+    <svg class="svg-icon w3-margin-right w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    {%- endif %}
+    <span>{% if page.title %}{{ page.title }}{% endif %}</span>
+  </p>
 </div>
 
 <header class="w3-container w3-theme w3-large">
-  <p><img src="{{ 'img/logo.svg'|url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
-  <span>{% if page.title %}{{ page.title }}{% endif %}</span></p>
+  <p>
+    {%- if config.theme.logo %}
+    <img src="{{ logo | url }}" class="w3-round w3-margin-right" style="height: 2em; background-color:#ffebcc;" onclick="w3_open()">
+    {%- else %}
+    <svg class="svg-icon w3-margin-right w3-hide-large no-print" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    {%- endif %}
+    <span>{% if page.title %}{{ page.title }}{% endif %}</span>
+  </p>
 </header>
 
 <div class="w3-container" style="padding: 32px;">

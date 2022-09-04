@@ -52,3 +52,11 @@ table th:first-child,table td:first-child{
 @media (prefers-color-scheme: dark) {
   .footer a{color:#fff !important}
 }
+
+.svg-icon {
+  display: inline-flex;
+  height:1em;
+  width:1em;
+  top: .125em;
+  position: relative;
+}

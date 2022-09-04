@@ -2,3 +2,4 @@
 dist/
 mkdocs_w3css_theme.egg-info/
 site/
+build/

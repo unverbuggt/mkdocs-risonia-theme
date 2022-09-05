@@ -13,9 +13,9 @@ function w3_close() {
 window.onscroll = function() {myFunction()};
 function myFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("myTop").classList.add("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myTop").classList.add("w3-card-4"); //, "w3-animate-opacity"
   } else {
-    document.getElementById("myTop").classList.remove("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myTop").classList.remove("w3-card-4"); //, "w3-animate-opacity"
   }
 }
 

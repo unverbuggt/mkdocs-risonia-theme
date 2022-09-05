@@ -59,3 +59,11 @@ table th:first-child,table td:first-child{
   position: relative;
   vertical-align: middle;
 }
+.svg-1em {
+  height: 1em;
+  width: 1em;
+}
+.svg-2em {
+  height: 2em;
+  width: 2em;
+}

@@ -5,7 +5,7 @@
    version="1.1"
    viewBox="0 0 10 10"
    id="svg12"
-   sodipodi:docname="drop-down.svg"
+   sodipodi:docname="close.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -47,8 +47,13 @@
     </rdf:RDF>
   </metadata>
   <path
-     style="fill:currentColor;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="M 2,1 H 8 L 5,9 Z"
-     id="path1543"
-     sodipodi:nodetypes="cccc" />
+     style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0.71,0.71 9.29,9.29"
+     id="path935"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 9.29,0.71000005 0.70999998,9.29"
+     id="path935-7"
+     sodipodi:nodetypes="cc" />
 </svg>

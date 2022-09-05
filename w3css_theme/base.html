@@ -56,19 +56,73 @@
     <rect y="8" width="10" height="2"/>
   </symbol>
   <symbol id="drop-down" viewBox="0 0 10 10" fill="currentColor">
-    <path d="m2 3h6l-3 6z"/>
+    <path d="m2 1h6l-3 8z"/>
   </symbol>
+  <symbol id="to-top" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 9h6l-3-8z" />
+  </symbol>
+  <symbol id="close-menu" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m0.71 0.71 8.58 8.58" stroke-width="2"/>
+    <path d="m9.29 0.71-8.58 8.58" stroke-width="2"/>
+  </symbol>
+  <symbol id="toc" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="m2.75 1.25h6.75"/>
+    <path d="m0.5 1.25h1.5"/>
+    <path d="m5 6.13h4.5"/>
+    <path d="m2.75 6.13h1.5"/>
+    <path d="m2.75 3.87h6.75"/>
+    <path d="m0.5 3.87h1.5"/>
+    <path d="m2.75 8.75h6.75"/>
+    <path d="m0.5 8.75h1.5"/>
+  </symbol>
+{%- if 'i18n' in config.plugins %}
+  <symbol id="i18n" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <circle cx="5" cy="5" r="4.75" stroke-width=".5"/>
+    <g stroke-width=".5">
+      <path d="m0 5h10"/>
+      <path d="m1.6 1.6c3.3929 3.4 6.8 0 6.8 0"/>
+      <path d="m1.6 8.4c3.3929-3.4 6.8 0 6.8 0"/>
+      <path d="m5 0.23s5.5 4.7702 0 9.54"/>
+      <path d="m5 0.23s-5.5 4.7702 0 9.54"/>
+      <path d="m5 0.23v9.54"/>
+    </g>
+  </symbol>
+{%- endif %}
 </svg>
+
+<div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
+  <p>
+    {%- if config.theme.logo %}
+    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
+    {%- else %}
+    <svg class="w3-hide-large no-print svg-icon svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    {%- endif %}
+    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
+    <svg class="svg-icon svg-1em w3-hide"><use xlink:href="#to-top" /></svg><!-- todo: just unhide if we aren't on top of the page... -->
+    </span>
+  </p>
+</div>
+
+<header class="w3-container w3-theme w3-large">
+  <p>
+    {%- if config.theme.logo %}
+    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
+    {%- else %}
+    <svg class="w3-hide-large no-print svg-icon svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    {%- endif %}
+    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
+  </p>
+</header>
 
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card w3-theme-l4" style="z-index:3;width:250px;" id="mySidebar">
-  <a class="w3-bar-item w3-button w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()">X</a>
+  <a class="w3-bar-item w3-button w3-theme-l1 w3-hide-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></a>
 {%- set accid = namespace(value=1, hidden=true) %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
   <div>
     {%- set accid.hidden = true %}{%- for nav_item in nav_item.children %}{%- if nav_item.active%}{%- set accid.hidden = false %}{%- endif %}{%- endfor %}
-    <a class="w3-bar-item w3-button{% if not accid.hidden%} w3-theme-l4{% endif %}" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon" style="height: 1em; width: 1em;""><use xlink:href="#drop-down" /></svg></a>
+    <a class="w3-bar-item w3-button{% if not accid.hidden%} w3-theme-l4{% endif %}" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
     <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden%} w3-hide{% endif %}" style="margin-left: 8px;">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
       <a class="w3-bar-item w3-button{% if nav_item.active%} w3-theme-l2{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
@@ -84,40 +138,35 @@
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 {%- endif %}
 
-<div class="w3-main" style="margin-left:250px;">
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-card w3-theme-l4 w3-large" style="z-index:3;width:250px;right:0;" id="myTocbar">
+  {%- if page.toc|length>=1 %}
+  {%- for toc_item in page.toc %}
+  <a href="{{ toc_item.url }}" class="w3-bar-item w3-button w3-theme-l4">{{ toc_item.title }}</a>
+    {%- for toc_item in toc_item.children %}
+    <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l4">{{ toc_item.title }}</a>
+      {%- for toc_item in toc_item.children %}
+      <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l4">&nbsp;&nbsp;{{ toc_item.title }}</a>
+      {%- endfor %}
+    {%- endfor %}
+  {%- endfor %}
+  {%- endif %}
+</nav>
 
-<div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
-  <p>
-    {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
-    {%- else %}
-    <svg class="svg-icon w3-hide-large no-print" style="height: 2em; width: 2em;" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
-    {%- endif %}
-    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
-  </p>
-</div>
-
-<header class="w3-container w3-theme w3-large">
-  <p>
-    {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
-    {%- else %}
-    <svg class="svg-icon w3-hide-large no-print" style="height: 2em; width: 2em;" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
-    {%- endif %}
-    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
-  </p>
-</header>
+<div class="w3-main" style="margin-left:250px; margin-right:250px;">
 
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
   {%- if page.toc|length>=1 %}
-    <div class="w3-dropdown-hover">
-      <button class="w3-button w3-theme-l2">#</button>
+    <div class="w3-dropdown-hover w3-hide-large">
+      <button class="w3-button w3-theme-l2"><svg class="svg-icon svg-1em"><use xlink:href="#toc" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
       {%- for toc_item in page.toc %}
         <a href="{{ toc_item.url }}" class="w3-bar-item w3-button w3-theme-l2">{{ toc_item.title }}</a>
         {%- for toc_item in toc_item.children %}
         <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l2">{{ toc_item.title }}</a>
+          {%- for toc_item in toc_item.children %}
+          <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l2">&nbsp;&nbsp;{{ toc_item.title }}</a>
+          {%- endfor %}
         {%- endfor %}
       {%- endfor %}
       </div>
@@ -125,7 +174,7 @@
   {%- endif %}
   {%- if 'i18n' in config.plugins %}
     <div class="w3-dropdown-hover">
-      <button class="w3-button w3-theme-l2">A</button>
+      <button class="w3-button w3-theme-l2"><svg class="svg-icon svg-1em"><use xlink:href="#i18n" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
       {%- for lang, display in config.plugins.i18n.config.languages.items() %}
         {%- if lang == i18n_page_locale %}
@@ -159,6 +208,8 @@
 </footer>
 
 </div>
+
+
 
 <script src="{{ 'js/theme.js'|url }}"></script>
 {%- if config.theme.serviceworker %}

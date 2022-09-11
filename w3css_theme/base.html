@@ -98,7 +98,7 @@
     <svg class="w3-hide-large no-print svg-icon svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
-    <svg class="svg-icon svg-1em w3-hide"><use xlink:href="#to-top" /></svg><!-- todo: just unhide if we aren't on top of the page... -->
+    <button class="w3-button w3-padding-small w3-hide" onclick="topFunction()" id="myToTop"><svg class="svg-icon svg-1em"><use xlink:href="#to-top" /></svg></button> 
     </span>
   </p>
 </div>
@@ -116,21 +116,41 @@
 
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card w3-theme-l4" style="z-index:3;width:250px;" id="mySidebar">
-  <a class="w3-bar-item w3-button w3-theme-l1 w3-hide-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></a>
-{%- set accid = namespace(value=1, hidden=true) %}
+  <a class="w3-bar-item w3-button w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></a>
+{%- set accid = namespace(value=1, hidden=true, hasindex=false, indexhref='') %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
   <div>
-    {%- set accid.hidden = true %}{%- for nav_item in nav_item.children %}{%- if nav_item.active%}{%- set accid.hidden = false %}{%- endif %}{%- endfor %}
-    <a class="w3-bar-item w3-button{% if not accid.hidden%} w3-theme-l4{% endif %}" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+    {%- set accid.hidden = true %}
+    {%- set accid.hasindex = false %}
+    {%- for nav_item in nav_item.children %}
+      {%- if nav_item.active%}
+        {%- set accid.hidden = false %}
+      {%- endif %}
+      {%- if nav_item.title == 'Index' %}
+        {%- set accid.hasindex = true %}
+        {%- set accid.indexhref = nav_item.url|url %}
+        {%- if nav_item.active %}
+          {%- set accid.hidden = false %}
+        {%- endif %}
+      {%- endif %}
+    {%- endfor %}
+
+    {%- if accid.hasindex %}
+    <a class="w3-bar-item w3-button{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ accid.indexhref }}">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+    {%- else %}
+    <a class="w3-bar-item w3-button w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+    {%- endif %}
     <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden%} w3-hide{% endif %}" style="margin-left: 8px;">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
-      <a class="w3-bar-item w3-button{% if nav_item.active%} w3-theme-l2{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+      {%- if nav_item.title != 'Index' %}
+      <a class="w3-bar-item w3-button{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+      {%- endif %}
     {%- endfor %}
     </div>
   </div>
   {%- else %}
-  <a class="w3-bar-item w3-button{% if nav_item.active%} w3-theme-l2{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+  <a class="w3-bar-item w3-button{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
   {%- endif %}
 {%- endfor %}
 </nav>
@@ -138,25 +158,31 @@
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 {%- endif %}
 
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-card w3-theme-l4 w3-large" style="z-index:3;width:250px;right:0;" id="myTocbar">
-  {%- if page.toc|length>=1 %}
+{%- set toc_check = namespace(children = false) %}
+{%- for toc_item in page.toc %}
+  {%- for toc_item in toc_item.children %}
+    {%- set toc_check.children = true %}
+  {%- endfor %}
+{%- endfor %}
+{%- if toc_check.children %}
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-card w3-theme-l4" style="z-index:3;width:250px;right:0;" id="myTocbar">
   {%- for toc_item in page.toc %}
   <a href="{{ toc_item.url }}" class="w3-bar-item w3-button w3-theme-l4">{{ toc_item.title }}</a>
     {%- for toc_item in toc_item.children %}
     <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l4">{{ toc_item.title }}</a>
       {%- for toc_item in toc_item.children %}
-      <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l4">&nbsp;&nbsp;{{ toc_item.title }}</a>
+      <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l4" style="margin-left: 8px;">{{ toc_item.title }}</a>
       {%- endfor %}
     {%- endfor %}
   {%- endfor %}
-  {%- endif %}
 </nav>
+{%- endif %}
 
-<div class="w3-main" style="margin-left:250px; margin-right:250px;">
+<div class="w3-main" style="margin-left:250px;{% if toc_check.children %} margin-right:250px;{% endif %}">
 
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
-  {%- if page.toc|length>=1 %}
+  {%- if toc_check.children %}
     <div class="w3-dropdown-hover w3-hide-large">
       <button class="w3-button w3-theme-l2"><svg class="svg-icon svg-1em"><use xlink:href="#toc" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
@@ -165,7 +191,7 @@
         {%- for toc_item in toc_item.children %}
         <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l2">{{ toc_item.title }}</a>
           {%- for toc_item in toc_item.children %}
-          <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l2">&nbsp;&nbsp;{{ toc_item.title }}</a>
+          <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-theme-l2" style="margin-left: 8px;">{{ toc_item.title }}</a>
           {%- endfor %}
         {%- endfor %}
       {%- endfor %}

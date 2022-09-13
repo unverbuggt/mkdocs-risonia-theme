@@ -7,7 +7,7 @@ setup(
     name="mkdocs-w3css-theme",
     version=VERSION,
     url='https://github.com/unverbuggt/mkdocs-w3css-theme',
-    license='BSD',
+    license='MIT',
     description='w3css theme for MkDocs',
     author='René Rüthlein',
     author_email='unverbuggt@xn--rthlein-n2a.de',
@@ -16,6 +16,9 @@ setup(
     entry_points={
         'mkdocs.themes': [
             'w3csstheme = w3css_theme',
+        ],
+        'mkdocs.plugins': [
+            'color-theme = w3css_theme.plugins.color.plugin:W3cssColorTheme'
         ]
     },
     zip_safe=False

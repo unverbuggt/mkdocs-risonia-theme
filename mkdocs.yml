@@ -4,4 +4,9 @@ theme:
     custom_dir: files/
     logo: img/logo.svg
 
+plugins:
+    - color-theme:
+        color: '#332200'
+        center: true
+
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

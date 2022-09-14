@@ -12,15 +12,17 @@ function w3_close() {
 // Change style of top container on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("myTop").classList.add("w3-card-4"); //, "w3-animate-opacity"
+  /*if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("myTop").classList.add("w3-animate-opacity"); //, "w3-animate-opacity" w3-card-4
   } else {
-    document.getElementById("myTop").classList.remove("w3-card-4"); //, "w3-animate-opacity"
-  }
+    document.getElementById("myTop").classList.remove("w3-animate-opacity"); //, "w3-animate-opacity" w3-card-4
+  }*/
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     document.getElementById("myToTop").classList.remove("w3-hide");
+    document.getElementById("myToTop").classList.add("w3-animate-opacity");
   } else {
     document.getElementById("myToTop").classList.add("w3-hide");
+    document.getElementById("myToTop").classList.remove("w3-animate-opacity");
   }
 }
 

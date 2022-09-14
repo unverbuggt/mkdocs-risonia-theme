@@ -6,7 +6,7 @@ theme:
 
 plugins:
     - color-theme:
-        color: '#332200'
-        center: true
+        theme_color: '#332200'
+        center_lightness: true
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

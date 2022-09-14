@@ -28,6 +28,9 @@ table tbody tr:hover,table li:hover{
     background-color:{{ bgcolor_l3 }}
 }
 
+.footer a{color:{{ color_theme_l }} !important}
+
+
 @media (prefers-color-scheme: dark) {
   .w3-theme-l1 {color:{{ color_d1 }} !important; background-color:{{ bgcolor_d1 }} !important}
   .w3-theme-l2 {color:{{ color_d2 }} !important; background-color:{{ bgcolor_d2 }} !important}
@@ -58,4 +61,6 @@ table tbody tr:hover,table li:hover{
   table tbody tr:hover,table li:hover{
     background-color:{{ bgcolor_d3 }}
   }
+  
+  .footer a{color:{{ color_theme_d }} !important}
 }

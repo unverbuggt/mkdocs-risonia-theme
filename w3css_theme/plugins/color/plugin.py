@@ -23,34 +23,31 @@ class W3cssColorTheme(BasePlugin):
 
     config_scheme = (
         ('theme_color', config_options.Type(str, default='#efc050')),
-        ('center_lightness', config_options.Type(bool, default=False)),
         ('light_text_color', config_options.Type(str, default='#000')),
         ('dark_text_color', config_options.Type(str, default='#fff')),
     )
 
-    def isDark(self, value, prefdark):
+    def isDark(self, value, prefDark):
+        #got it from here: https://www.w3schools.com/lib/w3color.js
+        #respectively https://www.w3.org/TR/AERT#color-contrast
         rgb = hex_to_rgb(value)
-        hls = rgb_to_hls(rgb[0],rgb[1],rgb[2])
-        if hls[1] > 0.4 and hls[1] < 0.6:
-            if prefdark:
+        perceived_luminance = (((rgb[0] * 255 * 299) + (rgb[1] * 255 * 587) + (rgb[2] * 255 * 114)) / 1000)
+        if perceived_luminance > 96 and perceived_luminance < 160:
+            if prefDark:
                 return self.config['dark_text_color']
             else:
                 return self.config['light_text_color']
-        elif hls[1] < 0.5:
+        elif perceived_luminance < 128:
             return self.config['dark_text_color']
         else:
             return self.config['light_text_color']
     
     def on_post_build(self, config, **kwargs):
-    #def on_pre_build(self, config, **kwargs):
         theme = self.config['theme_color']
         themergb = hex_to_rgb(theme)
         themehls = rgb_to_hls(themergb[0],themergb[1],themergb[2])
         hue = themehls[0]
-        if self.config['center_lightness']:
-            light = 0.5
-        else:
-            light = themehls[1]
+        light = themehls[1]
         sat = themehls[2]
         
         data = {}

@@ -48,11 +48,6 @@ table th:first-child,table td:first-child{
   }
 }
 
-.footer a{color:#000 !important}
-@media (prefers-color-scheme: dark) {
-  .footer a{color:#fff !important}
-}
-
 .svg-icon {
   display: inline-flex;
   bottom: .125em;

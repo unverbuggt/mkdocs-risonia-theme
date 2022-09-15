@@ -144,7 +144,7 @@
     <div id="acc{{  accid.value }}" class="w3-animate-left {% if accid.hidden%} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
       {%- if nav_item.title != 'Index' %}
-      <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}">&nbsp;&nbsp;{{ nav_item.title }}</a>
+      <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 24px;">{{ nav_item.title }}</a>
       {%- endif %}
     {%- endfor %}
     </div>
@@ -171,7 +171,7 @@
     {%- for toc_item in toc_item.children %}
     <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2">{{ toc_item.title }}</a>
       {%- for toc_item in toc_item.children %}
-      <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2">&nbsp;&nbsp;{{ toc_item.title }}</a>
+      <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2" style="padding-left: 24px;">{{ toc_item.title }}</a>
       {%- endfor %}
     {%- endfor %}
   {%- endfor %}
@@ -191,7 +191,7 @@
         {%- for toc_item in toc_item.children %}
         <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2">{{ toc_item.title }}</a>
           {%- for toc_item in toc_item.children %}
-          <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2">&nbsp;&nbsp;{{ toc_item.title }}</a>
+          <a href="{{ toc_item.url }}" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l2" style="padding-left: 24px;">{{ toc_item.title }}</a>
           {%- endfor %}
         {%- endfor %}
       {%- endfor %}

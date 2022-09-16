@@ -2,6 +2,8 @@ import os
 
 from colorsys import rgb_to_hls
 from colorsys import hls_to_rgb
+import math
+
 from jinja2 import Template
 
 from pathlib import Path
@@ -14,10 +16,18 @@ CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
 
 def hex_to_rgb(value):
     h = value.lstrip('#')
-    return tuple(int(h[i:i+2], 16)/255.0 for i in (0, 2, 4))
+    if len(h) == 6:
+        return tuple(int(h[i:i+2], 16)/255.0 for i in (0, 2, 4))
+    else:
+        return tuple(int(h[i], 16)/15.0 for i in (0, 1, 2))
 
 def rgb_to_hex(value):
     return '#%02x%02x%02x' % (int(value[0]*255.0), int(value[1]*255.0), int(value[2]*255.0))
+
+def perceived_brightness(value):
+    #https://alienryderflex.com/hsp.html
+    rgb = hex_to_rgb(value)
+    return math.sqrt( (0.299 * rgb[0]*rgb[0]) + (0.587 * rgb[1] * rgb[1]) + (0.114 * rgb[2] * rgb[2]) )
 
 class W3cssColorTheme(BasePlugin):
 
@@ -27,21 +37,23 @@ class W3cssColorTheme(BasePlugin):
         ('dark_text_color', config_options.Type(str, default='#fff')),
     )
 
-    def isDark(self, value, prefDark):
-        #got it from here: https://www.w3schools.com/lib/w3color.js
-        #respectively https://www.w3.org/TR/AERT#color-contrast
-        rgb = hex_to_rgb(value)
-        perceived_luminance = (((rgb[0] * 255 * 299) + (rgb[1] * 255 * 587) + (rgb[2] * 255 * 114)) / 1000)
-        if perceived_luminance > 96 and perceived_luminance < 160:
+    def textContrast(self, value, prefDark):
+        pbg = perceived_brightness(value)
+        pl = perceived_brightness(self.config['light_text_color'])
+        pd = perceived_brightness(self.config['dark_text_color'])
+        diff_to_l = abs(pbg-pl)
+        diff_to_d = abs(pbg-pd)
+        diff_ld = abs(diff_to_l-diff_to_d)
+        if diff_ld < 0.2:
             if prefDark:
                 return self.config['dark_text_color']
             else:
                 return self.config['light_text_color']
-        elif perceived_luminance < 128:
+        elif diff_to_d > diff_to_l:
             return self.config['dark_text_color']
         else:
             return self.config['light_text_color']
-    
+
     def on_post_build(self, config, **kwargs):
         theme = self.config['theme_color']
         themergb = hex_to_rgb(theme)
@@ -63,18 +75,18 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_d4'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 3.6), sat))
         data['bgcolor_d5'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 4.5), sat))
         
-        data['color_l5'] = self.isDark(data['bgcolor_l5'],0)
-        data['color_l4'] = self.isDark(data['bgcolor_l4'],0)
-        data['color_l3'] = self.isDark(data['bgcolor_l3'],0)
-        data['color_l2'] = self.isDark(data['bgcolor_l2'],0)
-        data['color_l1'] = self.isDark(data['bgcolor_l1'],0)
-        data['color_theme_l'] = self.isDark(data['bgcolor_theme'],0)
-        data['color_theme_d'] = self.isDark(data['bgcolor_theme'],1)
-        data['color_d1'] = self.isDark(data['bgcolor_d1'],1)
-        data['color_d2'] = self.isDark(data['bgcolor_d2'],1)
-        data['color_d3'] = self.isDark(data['bgcolor_d3'],1)
-        data['color_d4'] = self.isDark(data['bgcolor_d4'],1)
-        data['color_d5'] = self.isDark(data['bgcolor_d5'],1)
+        data['color_l5'] = self.textContrast(data['bgcolor_l5'],0)
+        data['color_l4'] = self.textContrast(data['bgcolor_l4'],0)
+        data['color_l3'] = self.textContrast(data['bgcolor_l3'],0)
+        data['color_l2'] = self.textContrast(data['bgcolor_l2'],0)
+        data['color_l1'] = self.textContrast(data['bgcolor_l1'],0)
+        data['color_theme_l'] = self.textContrast(data['bgcolor_theme'],0)
+        data['color_theme_d'] = self.textContrast(data['bgcolor_theme'],1)
+        data['color_d1'] = self.textContrast(data['bgcolor_d1'],1)
+        data['color_d2'] = self.textContrast(data['bgcolor_d2'],1)
+        data['color_d3'] = self.textContrast(data['bgcolor_d3'],1)
+        data['color_d4'] = self.textContrast(data['bgcolor_d4'],1)
+        data['color_d5'] = self.textContrast(data['bgcolor_d5'],1)
         
         #shadow_rgb = hex_to_rgb(data['bgcolor_d5'])
         #data['shadow_l'] = str(int(shadow_rgb[0]*255.0))+','+str(int(shadow_rgb[1]*255.0))+','+str(int(shadow_rgb[2]*255.0))

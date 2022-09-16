@@ -23,13 +23,10 @@ pre {
 code {
   background-color:{{ bgcolor_l4 }};
 }
-a{color:{{ bgcolor_theme }} !important}
+a{color: inherit !important;}
 table tbody tr:hover,table li:hover{
     background-color:{{ bgcolor_l3 }}
 }
-
-.footer a{color:{{ color_theme_l }} !important}
-
 
 @media (prefers-color-scheme: dark) {
   .w3-theme-l1 {color:{{ color_d1 }} !important; background-color:{{ bgcolor_d1 }} !important}
@@ -57,10 +54,8 @@ table tbody tr:hover,table li:hover{
   code {
     background-color:{{ bgcolor_d4 }};
   }
-  a{color:{{ bgcolor_theme }} !important}
+  a{color: inherit !important;}
   table tbody tr:hover,table li:hover{
     background-color:{{ bgcolor_d3 }}
   }
-  
-  .footer a{color:{{ color_theme_d }} !important}
 }

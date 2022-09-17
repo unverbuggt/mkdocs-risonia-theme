@@ -20,9 +20,11 @@ function myFunction() {
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     document.getElementById("myToTop").classList.remove("w3-hide");
     document.getElementById("myToTop").classList.add("w3-animate-opacity");
+    document.getElementById("myThemeToggle").classList.add("w3-hide");
   } else {
     document.getElementById("myToTop").classList.add("w3-hide");
     document.getElementById("myToTop").classList.remove("w3-animate-opacity");
+    document.getElementById("myThemeToggle").classList.remove("w3-hide");
   }
 }
 

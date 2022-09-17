@@ -158,13 +158,14 @@
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 {%- endif %}
 
-{%- set toc_check = namespace(children = false) %}
+{%- set toc_check = namespace(anchors=0) %}
 {%- for toc_item in page.toc %}
+  {% set toc_check.anchors = toc_check.anchors + 1 %}
   {%- for toc_item in toc_item.children %}
-    {%- set toc_check.children = true %}
+    {% set toc_check.anchors = toc_check.anchors + 1 %}
   {%- endfor %}
 {%- endfor %}
-{%- if toc_check.children %}
+{%- if toc_check.anchors > 1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-theme-l2" style="z-index:3;width:250px;right:0;" id="myTocbar">
   {%- for toc_item in page.toc %}
   <a href="{{ toc_item.url }}" class="w3-bar-item w3-button w3-hover-theme w3-theme-l2">{{ toc_item.title }}</a>
@@ -178,11 +179,11 @@
 </nav>
 {%- endif %}
 
-<div class="w3-main" style="margin-left:250px;{% if toc_check.children %} margin-right:250px;{% endif %}">
+<div class="w3-main" style="margin-left:250px;{% if toc_check.anchors > 1 %} margin-right:250px;{% endif %}">
 
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
-  {%- if toc_check.children %}
+  {%- if toc_check.anchors > 1 %}
     <div class="w3-dropdown-hover w3-hide-large">
       <button class="w3-button w3-hover-theme w3-theme-l2 w3-hover-theme"><svg class="svg-icon svg-1em"><use xlink:href="#toc" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">

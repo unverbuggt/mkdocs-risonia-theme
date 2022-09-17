@@ -11,8 +11,81 @@ from pathlib import Path
 from mkdocs.config import config_options
 from mkdocs.plugins import BasePlugin
 
-PLUGIN_DIR = os.path.dirname(os.path.realpath(__file__))
-CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
+#PLUGIN_DIR = os.path.dirname(os.path.realpath(__file__))
+#CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
+
+TPL_LIGHT = \
+"""/* light theme */
+.w3-theme-l1 {color:{{ color_l1 }} !important; background-color:{{ bgcolor_l1 }} !important}
+.w3-theme-l2 {color:{{ color_l2 }} !important; background-color:{{ bgcolor_l2 }} !important}
+.w3-theme-l3 {color:{{ color_l3 }} !important; background-color:{{ bgcolor_l3 }} !important}
+.w3-theme-l4 {color:{{ color_l4 }} !important; background-color:{{ bgcolor_l4 }} !important}
+.w3-theme-l5 {color:{{ color_l5 }} !important; background-color:{{ bgcolor_l5 }} !important}
+
+.w3-theme {color:{{ color_theme_l }} !important; background-color:{{ bgcolor_theme }} !important}
+.w3-text-theme {color:{{ bgcolor_theme }} !important}
+.w3-border-theme {border-color:{{ bgcolor_theme }} !important}
+
+.w3-hover-theme:hover {color:{{ color_theme_l }} !important; background-color:{{ bgcolor_theme }} !important}
+.w3-hover-text-theme:hover {color:{{ bgcolor_theme }} !important}
+.w3-hover-border-theme:hover {border-color:{{ bgcolor_theme }} !important}
+
+pre {
+  color:{{ color_l4 }};
+  background-color:{{ bgcolor_l4 }};
+  border-left:4px solid {{ bgcolor_theme }};
+}
+code {
+  background-color:{{ bgcolor_l4 }};
+}
+
+a{color: inherit !important;}
+
+table tbody tr:hover,table li:hover{
+  background-color:{{ bgcolor_l3 }}
+}"""
+
+TPL_DARK = \
+"""/* dark theme */
+.w3-theme-l1 {color:{{ color_d1 }} !important; background-color:{{ bgcolor_d1 }} !important}
+.w3-theme-l2 {color:{{ color_d2 }} !important; background-color:{{ bgcolor_d2 }} !important}
+.w3-theme-l3 {color:{{ color_d3 }} !important; background-color:{{ bgcolor_d3 }} !important}
+.w3-theme-l4 {color:{{ color_d4 }} !important; background-color:{{ bgcolor_d4 }} !important}
+.w3-theme-l5 {color:{{ color_d5 }} !important; background-color:{{ bgcolor_d5 }} !important}
+
+.w3-theme {color:{{ color_theme_d }} !important; background-color:{{ bgcolor_theme }} !important}
+.w3-text-theme {color:{{ bgcolor_theme }} !important}
+.w3-border-theme {border-color:{{ bgcolor_theme }} !important}
+
+.w3-hover-theme:hover {color:{{ color_theme_d }} !important; background-color:{{ bgcolor_theme }} !important}
+.w3-hover-text-theme:hover {color:{{ bgcolor_theme }} !important}
+.w3-hover-border-theme:hover {border-color:{{ bgcolor_theme }} !important}
+
+pre {
+  color:{{ color_d4 }};
+  background-color:{{ bgcolor_d4 }};
+  border-left:4px solid {{ bgcolor_theme }};
+}
+
+code {
+  background-color:{{ bgcolor_d4 }};
+}
+
+a{color: inherit !important;}
+
+table tbody tr:hover,table li:hover{
+  background-color:{{ bgcolor_d3 }}
+}"""
+
+TPL = \
+"""/* default automatic */
+
+{{ tpl_light }}
+
+@media (prefers-color-scheme: dark) {
+{{ tpl_dark | indent(2, True) }}
+}"""
+
 
 def hex_to_rgb(value):
     h = value.lstrip('#')
@@ -37,7 +110,7 @@ class W3cssColorTheme(BasePlugin):
         ('dark_text_color', config_options.Type(str, default='#fff')),
     )
 
-    def textContrast(self, value, prefDark):
+    def text_contrast(self, value, prefDark):
         pbg = perceived_brightness(value)
         pl = perceived_brightness(self.config['light_text_color'])
         pd = perceived_brightness(self.config['dark_text_color'])
@@ -75,28 +148,45 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_d4'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 3.6), sat))
         data['bgcolor_d5'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 4.5), sat))
         
-        data['color_l5'] = self.textContrast(data['bgcolor_l5'],0)
-        data['color_l4'] = self.textContrast(data['bgcolor_l4'],0)
-        data['color_l3'] = self.textContrast(data['bgcolor_l3'],0)
-        data['color_l2'] = self.textContrast(data['bgcolor_l2'],0)
-        data['color_l1'] = self.textContrast(data['bgcolor_l1'],0)
-        data['color_theme_l'] = self.textContrast(data['bgcolor_theme'],0)
-        data['color_theme_d'] = self.textContrast(data['bgcolor_theme'],1)
-        data['color_d1'] = self.textContrast(data['bgcolor_d1'],1)
-        data['color_d2'] = self.textContrast(data['bgcolor_d2'],1)
-        data['color_d3'] = self.textContrast(data['bgcolor_d3'],1)
-        data['color_d4'] = self.textContrast(data['bgcolor_d4'],1)
-        data['color_d5'] = self.textContrast(data['bgcolor_d5'],1)
+        data['color_l5'] = self.text_contrast(data['bgcolor_l5'],0)
+        data['color_l4'] = self.text_contrast(data['bgcolor_l4'],0)
+        data['color_l3'] = self.text_contrast(data['bgcolor_l3'],0)
+        data['color_l2'] = self.text_contrast(data['bgcolor_l2'],0)
+        data['color_l1'] = self.text_contrast(data['bgcolor_l1'],0)
+        data['color_theme_l'] = self.text_contrast(data['bgcolor_theme'],0)
+        data['color_theme_d'] = self.text_contrast(data['bgcolor_theme'],1)
+        data['color_d1'] = self.text_contrast(data['bgcolor_d1'],1)
+        data['color_d2'] = self.text_contrast(data['bgcolor_d2'],1)
+        data['color_d3'] = self.text_contrast(data['bgcolor_d3'],1)
+        data['color_d4'] = self.text_contrast(data['bgcolor_d4'],1)
+        data['color_d5'] = self.text_contrast(data['bgcolor_d5'],1)
         
         #shadow_rgb = hex_to_rgb(data['bgcolor_d5'])
         #data['shadow_l'] = str(int(shadow_rgb[0]*255.0))+','+str(int(shadow_rgb[1]*255.0))+','+str(int(shadow_rgb[2]*255.0))
         #shadow_rgb = hex_to_rgb(data['bgcolor_l5'])
         #data['shadow_d'] = str(int(shadow_rgb[0]*255.0))+','+str(int(shadow_rgb[1]*255.0))+','+str(int(shadow_rgb[2]*255.0))
         
-        with open(CSS_TPL_PATH) as file_:
-            template = Template(file_.read())
-            
+        #with open(CSS_TPL_PATH) as file_:
+        #    template = Template(file_.read())
+
+        tpl_light = Template(TPL_LIGHT)
+        out_theme_light = tpl_light.render(data)
+        tpl_dark = Template(TPL_DARK)
+        out_theme_dark = tpl_dark.render(data)
+        
+        data = {}
+        data['tpl_light'] = out_theme_light
+        data['tpl_dark'] = out_theme_dark
+        tpl = Template(TPL)
+        out_theme = tpl.render(data)
+
         Path(config.data["site_dir"] + '/css/').mkdir(parents=True, exist_ok=True)
         w3_theme_css_path = Path(config.data["site_dir"] + '/css/w3-theme.css')
         with open(w3_theme_css_path, "w") as file:
-            file.write(template.render(data))
+            file.write(out_theme)
+        w3_theme_light_css_path = Path(config.data["site_dir"] + '/css/w3-theme-light.css')
+        with open(w3_theme_light_css_path, "w") as file:
+            file.write(out_theme_light)
+        w3_theme_dark_css_path = Path(config.data["site_dir"] + '/css/w3-theme-dark.css')
+        with open(w3_theme_dark_css_path, "w") as file:
+            file.write(out_theme_dark)

@@ -135,7 +135,7 @@
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-theme-l4" style="z-index:3;width:250px;" id="mySidebar">
   <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></a>
-{%- set accid = namespace(value=1, hidden=true, hasindex=false, indexhref='') %}
+{%- set accid = namespace(value=1, hidden=true, hasindex=false, indexhref='', hidden2=true, hasindex2=false, indexhref2='') %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
   <div>
@@ -148,8 +148,15 @@
       {%- if nav_item.title == 'Index' %}
         {%- set accid.hasindex = true %}
         {%- set accid.indexhref = nav_item.url|url %}
-        {%- if nav_item.active %}
+      {%- endif %}
+      {%- if nav_item.children %}
+        {%- if nav_item.active%}
           {%- set accid.hidden = false %}
+          {%- set accid.hidden2 = false %}
+        {%- endif %}
+        {%- if nav_item.title == 'Index' %}
+          {%- set accid.hasindex2 = true %}
+          {%- set accid.indexhref2 = nav_item.url|url %}
         {%- endif %}
       {%- endif %}
     {%- endfor %}
@@ -161,7 +168,20 @@
     {%- endif %}
     <div id="acc{{  accid.value }}" class="w3-animate-left {% if accid.hidden%} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
-      {%- if nav_item.title != 'Index' %}
+      {%- if nav_item.children %}
+      <div>
+        {%- if accid.hasindex2 %}
+        <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ accid.indexhref2 }}" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+        {%- else %}
+        <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+        {%- endif %}
+        <div id="acc{{  accid.value }}" class="w3-animate-left {% if accid.hidden%} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
+          {%- for nav_item in nav_item.children %}
+          <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 32px;">{{ nav_item.title }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- else %}
       <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 24px;">{{ nav_item.title }}</a>
       {%- endif %}
     {%- endfor %}

@@ -36,14 +36,27 @@
 
 {%- block styles %}
   <link rel="stylesheet" href="{{ 'css/w3.css'|url }}">
-  {%- if config.theme.color %}
-  <link rel="stylesheet" href="{{ ('css/w3-theme-' + config.theme.color + '.css')|url }}">
-  {%- else %}
   <link rel="stylesheet" href="{{ 'css/w3-theme.css'|url }}">
-  {%- endif %}
+  <link rel="stylesheet" href="{{ 'css/w3-theme-light.css'|url }}" media="none" id="light">
+  <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="dark">
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
 {%- endblock %}
-
+  <script>
+  function checkTheme() {
+    let theme = localStorage.getItem('theme');
+    if (theme) {
+      if (theme == 'light') {
+        document.getElementById('light').media = '';
+        document.getElementById('dark').media = 'none';
+      }
+      if (theme == 'dark') {
+        document.getElementById('light').media = 'none';
+        document.getElementById('dark').media = '';
+      }
+    }
+  }
+  checkTheme()
+  </script>
 {%- block extrahead %} {% endblock %}
 </head>
 
@@ -60,6 +73,10 @@
   </symbol>
   <symbol id="to-top" viewBox="0 0 10 10" fill="currentColor">
     <path d="m2 9h6l-3-8z" />
+  </symbol>
+  <symbol id="theme-toggle" viewBox="0 0 10 10">
+    <ellipse cx="5" cy="5" rx="4.35" ry="4.35" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M 5,0.5 A 4.5,4.5 0 0 1 9.5,5 4.5,4.5 0 0 1 5,9.5 V 5 Z" fill="currentColor"/>
   </symbol>
   <symbol id="close-menu" viewBox="0 0 10 10" fill="none" stroke="currentColor">
     <path d="m0.71 0.71 8.58 8.58" stroke-width="2"/>
@@ -98,7 +115,8 @@
     <svg class="w3-hide-large no-print svg-icon svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
-    <button class="w3-button w3-hover-theme w3-padding-small w3-hide" onclick="topFunction()" id="myToTop"><svg class="svg-icon svg-1em"><use xlink:href="#to-top" /></svg></button> 
+    <button class="w3-button w3-hover-theme w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-icon svg-1em"><use xlink:href="#to-top" /></svg></button>
+    <button class="w3-button w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme()"><svg class="svg-icon svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
     </span>
   </p>
 </div>

@@ -43,3 +43,28 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
+
+function toggleTheme() {
+  let theme = localStorage.getItem('theme');
+  let newtheme
+  if (theme) {
+    if (theme == 'light') {
+      newtheme = 'dark'
+    }
+    if (theme == 'dark') {
+      newtheme = 'light'
+    }
+  } else {
+    if (window.matchMedia) {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        newtheme = 'light'
+      } else {
+        newtheme = 'dark'
+      }
+    } else {
+      newtheme = 'dark'
+    }
+  }
+  localStorage.setItem('theme', newtheme)
+  checkTheme()
+}

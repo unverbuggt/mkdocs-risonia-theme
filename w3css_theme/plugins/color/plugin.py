@@ -15,8 +15,7 @@ from mkdocs.plugins import BasePlugin
 #CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
 
 TPL_THEME = \
-"""/* inspired by https://www.w3schools.com/w3css/w3css_color_generator.asp */
-.w3-theme-l5 {color:{{ color_l5 }} !important; background-color:{{ bgcolor_l5 }} !important}
+""".w3-theme-l5 {color:{{ color_l5 }} !important; background-color:{{ bgcolor_l5 }} !important}
 .w3-theme-l4 {color:{{ color_l4 }} !important; background-color:{{ bgcolor_l4 }} !important}
 .w3-theme-l3 {color:{{ color_l3 }} !important; background-color:{{ bgcolor_l3 }} !important}
 .w3-theme-l2 {color:{{ color_l2 }} !important; background-color:{{ bgcolor_l2 }} !important}
@@ -55,7 +54,7 @@ table tbody tr:hover,table li:hover{
 }"""
 
 TPL = \
-"""/* default automatic */
+"""/* inspired by https://www.w3schools.com/w3css/w3css_color_generator.asp */
 
 /* light theme */
 {{ tpl_light }}
@@ -83,6 +82,8 @@ def perceived_brightness(value):
 
 class W3cssColorTheme(BasePlugin):
 
+    themes_to_build = set()
+
     config_scheme = (
         ('theme_color', config_options.Type(str, default='#efc050')),
         ('light_text_color', config_options.Type(str, default='#000')),
@@ -96,7 +97,7 @@ class W3cssColorTheme(BasePlugin):
         diff_to_l = abs(pbg-pl)
         diff_to_d = abs(pbg-pd)
         diff_ld = abs(diff_to_l-diff_to_d)
-        if diff_ld < 0.5:
+        if diff_ld < 0.4: #if the contrast difference isnt't too big, allow to choose text color based on preference
             if pref_dark:
                 return self.config['dark_text_color']
             else:
@@ -106,9 +107,8 @@ class W3cssColorTheme(BasePlugin):
         else:
             return self.config['light_text_color']
 
-    def on_post_build(self, config, **kwargs):
-        theme = self.config['theme_color']
-        themergb = hex_to_rgb(theme)
+    def generate_theme(self, config, theme_color, name):
+        themergb = hex_to_rgb(theme_color)
         themehls = rgb_to_hls(themergb[0],themergb[1],themergb[2])
         hue = themehls[0]
         light = themehls[1]
@@ -177,12 +177,25 @@ class W3cssColorTheme(BasePlugin):
         out_theme = tpl.render(data)
 
         Path(config.data["site_dir"] + '/css/').mkdir(parents=True, exist_ok=True)
-        w3_theme_css_path = Path(config.data["site_dir"] + '/css/w3-theme.css')
+        w3_theme_css_path = Path(config.data["site_dir"] + '/css/w3-theme' + name + '.css')
         with open(w3_theme_css_path, "w") as file:
             file.write(out_theme)
-        w3_theme_light_css_path = Path(config.data["site_dir"] + '/css/w3-theme-light.css')
+        w3_theme_light_css_path = Path(config.data["site_dir"] + '/css/w3-theme' + name + '-light.css')
         with open(w3_theme_light_css_path, "w") as file:
             file.write(out_theme_light)
-        w3_theme_dark_css_path = Path(config.data["site_dir"] + '/css/w3-theme-dark.css')
+        w3_theme_dark_css_path = Path(config.data["site_dir"] + '/css/w3-theme' + name + '-dark.css')
         with open(w3_theme_dark_css_path, "w") as file:
             file.write(out_theme_dark)
+
+    def on_post_build(self, config, **kwargs):
+        theme = self.config['theme_color']
+        self.generate_theme(config, theme, '')
+        for color in self.themes_to_build:
+            self.generate_theme(config, color, '-'+color.lstrip('#'))
+
+    def on_page_context(self, context, page, config, nav):
+        if 'theme_color' in page.meta.keys():
+            theme_color = str(page.meta.get('theme_color'))
+            context['theme_color'] = theme_color.lstrip('#')
+            self.themes_to_build.add(theme_color)
+        return context

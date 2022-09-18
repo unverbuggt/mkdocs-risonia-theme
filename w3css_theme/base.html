@@ -36,9 +36,15 @@
 
 {%- block styles %}
   <link rel="stylesheet" href="{{ 'css/w3.css'|url }}">
+  {%- if theme_color %}
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+theme_color+'.css')|url }}">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+theme_color+'-light.css')|url }}" media="none" id="light">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+theme_color+'-dark.css')|url }}" media="none" id="dark">
+  {%- else %}
   <link rel="stylesheet" href="{{ 'css/w3-theme.css'|url }}">
   <link rel="stylesheet" href="{{ 'css/w3-theme-light.css'|url }}" media="none" id="light">
   <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="dark">
+  {%- endif %}
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
 {%- endblock %}
   <script>

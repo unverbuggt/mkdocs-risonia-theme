@@ -1,3 +1,5 @@
+theme_color: #FF9933
+
 ## TEST
 
 ### test1

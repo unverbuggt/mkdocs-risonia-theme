@@ -5,7 +5,28 @@ the features with minimal HTML and CSS.
 
 ## Adapting this theme
 
-If you want to use this theme as a base to create your own, it is best to
+If you *want to use this theme* as a base to create your own, it is best to
 download or fork the theme and start to modify it
 
-Make sure you read the MkDocs documentation regarding writing custom themes.
+Make sure you read the MkDocs **documentation** regarding writing custom themes.
+
+`Hallö Du!!-....` dsadsad safd fds fds fds fddasd sa
+
+
+```
+fdfgdsafdsa
+gfdsgfsd
+vfbdvfd
+
+
+
+gs
+dgf
+
+gsd
+
+fg
+gs
+fd
+gsd
+```

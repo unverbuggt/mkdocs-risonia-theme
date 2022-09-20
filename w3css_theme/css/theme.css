@@ -3,13 +3,20 @@
   font-weight: bold;
 }
 img{max-width:100%;height:auto}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 code {
   font-family:Consolas, Courier, monospace;
+  /*font-family: 'Roboto Mono';*/
   font-size:16px;
   word-wrap:break-word;
 }
 pre{
   font-family:Consolas, Courier, monospace;
+  /*font-family: 'Roboto Mono';*/
   font-size:16px;
   width:auto;
   padding:8px 12px;

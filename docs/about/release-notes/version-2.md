@@ -1,5 +1,6 @@
 ---
 title: Version 2 Release Notes
+theme_color: 808080
 ---
 # Testing Page
 

@@ -142,7 +142,7 @@
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-theme-l4" style="z-index:3;width:250px;" id="mySidebar">
   <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></a>
-{%- set accid = namespace(value=1, hidden=true, hasindex=false, indexhref='', indexactive=false, hidden2=true, hasindex2=false, indexhref2='', indexactive2=false) %}
+{%- set accid = namespace(value=1, hidden=true, hidden2=true) %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
   <div>
@@ -150,26 +150,16 @@
       {%- if nav_item.active%}
         {%- set accid.hidden = false %}
       {%- endif %}
-      {%- if nav_item.is_index %}
-        {%- set accid.hasindex = true %}
-        {%- set accid.indexhref = nav_item.url|url %}
-        {%- if nav_item.active %}{%- set accid.indexactive = true %}{%- endif %}
-      {%- endif %}
       {%- if nav_item.children %}
         {%- if nav_item.active%}
           {%- set accid.hidden = false %}
           {%- set accid.hidden2 = false %}
         {%- endif %}
-        {%- if nav_item.is_index %}
-          {%- set accid.hasindex2 = true %}
-          {%- set accid.indexhref2 = nav_item.url|url %}
-          {%- if nav_item.active %}{%- set accid.indexactive2 = true %}{%- endif %}
-        {%- endif %}
       {%- endif %}
     {%- endfor %}
 
-    {%- if accid.hasindex %}
-    <a class="w3-bar-item w3-button w3-hover-theme{% if accid.indexactive %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ accid.indexhref }}">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+    {%- if nav_item.children[0].is_index %}
+    <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
     {%- else %}
     <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
     {%- endif %}
@@ -178,8 +168,8 @@
       {%- if not nav_item.is_index %}
       {%- if nav_item.children %}
       <div>
-        {%- if accid.hasindex2 %}
-        <a class="w3-bar-item w3-button w3-hover-theme{% if accid.indexactive2 %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ accid.indexhref2 }}" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
+        {%- if nav_item.children[0].is_index %}
+        <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
         {%- else %}
         <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
         {%- endif %}

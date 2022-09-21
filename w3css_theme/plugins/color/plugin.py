@@ -97,7 +97,7 @@ class W3cssColorTheme(BasePlugin):
         diff_to_l = abs(pbg-pl)
         diff_to_d = abs(pbg-pd)
         diff_ld = abs(diff_to_l-diff_to_d)
-        if diff_ld < 0.4: #if the contrast difference isnt't too big, allow to choose text color based on preference
+        if diff_ld < 0.2: #if the contrast difference isnt't too big, allow to choose text color based on preference
             if pref_dark:
                 return self.config['dark_text_color']
             else:
@@ -115,11 +115,11 @@ class W3cssColorTheme(BasePlugin):
         sat = themehls[2]
         
         data = {}
-        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 4.7), sat))
-        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 4), sat))
-        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 3), sat))
-        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 2), sat))
-        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 1), sat))
+        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 4.5), sat))
+        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 3.6), sat))
+        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 2.7), sat))
+        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 1.8), sat))
+        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 0.9), sat))
         data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue, light, sat))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 0.5), sat))
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 1), sat))
@@ -149,11 +149,11 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 1), sat))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hue, light + ((1.0-light) / 5.0 * 0.5), sat))
         data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue, light, sat))
-        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 1), sat))
-        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 2), sat))
-        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 3), sat))
-        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 4), sat))
-        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 4.7), sat))
+        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 0.9), sat))
+        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 1.8), sat))
+        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 2.7), sat))
+        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 3.6), sat))
+        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hue, light - (light / 5.0 * 4.5), sat))
         
         data['color_l5'] = self.text_contrast(data['bgcolor_l5'],1)
         data['color_l4'] = self.text_contrast(data['bgcolor_l4'],1)
@@ -196,6 +196,7 @@ class W3cssColorTheme(BasePlugin):
     def on_page_context(self, context, page, config, nav):
         if 'theme_color' in page.meta.keys():
             theme_color = str(page.meta.get('theme_color'))
-            context['theme_color'] = theme_color.lstrip('#')
-            self.themes_to_build.add(theme_color)
+            if theme_color is not None:
+                context['theme_color'] = theme_color.lstrip('#')
+                self.themes_to_build.add(theme_color)
         return context

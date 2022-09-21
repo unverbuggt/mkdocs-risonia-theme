@@ -6,6 +6,6 @@ theme:
 
 plugins:
     - color-theme:
-        theme_color: '#ff0000'
+        theme_color: 'FF6633'
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

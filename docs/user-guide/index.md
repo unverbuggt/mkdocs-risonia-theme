@@ -1,4 +1,4 @@
-theme_color: #FF9933
+theme_color: ff9933
 
 ## TEST
 

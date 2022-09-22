@@ -1,50 +1,17 @@
-/* roboto-regular - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* roboto-condensed-regular - latin */
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-condensed-v25-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-condensed-v25-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* roboto-mono-regular - latin */
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/roboto-mono-v22-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-mono-v22-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
 body{
-  /*font-family: Helvetica, Arial, sans-serif;*/
-  font-family: 'Roboto';
+  font-family: Tahoma, Verdana, sans-serif;
 }
 h1, h2, h3, h4, h5, h6, .headings {
-  /*font-family: Helvetica, Arial, sans-serif;*/
-  font-family: 'Roboto Condensed';
+  font-family: Tahoma, Verdana, sans-serif;
 }
 
 code {
-  /*font-family:Consolas, Courier, monospace;*/
-  font-family: 'Roboto Mono';
+  font-family:Consolas, Courier, monospace;
   font-size:16px;
   word-wrap:break-word;
 }
 pre{
-  /*font-family:Consolas, Courier, monospace;*/
-  font-family: 'Roboto Mono';
+  font-family:Consolas, Courier, monospace;
   font-size:16px;
   width:auto;
   padding:8px 12px;

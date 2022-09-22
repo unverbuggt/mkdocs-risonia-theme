@@ -146,15 +146,19 @@
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
   <div>
+    {%- set accid.hidden = true %}
+    {%- set accid.hidden2 = true %}
     {%- for nav_item in nav_item.children %}
-      {%- if nav_item.active%}
+      {%- if nav_item.active %}
         {%- set accid.hidden = false %}
       {%- endif %}
       {%- if nav_item.children %}
-        {%- if nav_item.active%}
-          {%- set accid.hidden = false %}
-          {%- set accid.hidden2 = false %}
-        {%- endif %}
+        {%- for nav_item in nav_item.children %}
+          {%- if nav_item.active %}
+            {%- set accid.hidden = false %}
+            {%- set accid.hidden2 = false %}
+          {%- endif %}
+        {%- endfor %}
       {%- endif %}
     {%- endfor %}
 
@@ -166,22 +170,22 @@
     <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
     {%- for nav_item in nav_item.children %}
       {%- if not nav_item.is_index %}
-      {%- if nav_item.children %}
+        {%- if nav_item.children %}
       <div>
-        {%- if nav_item.children[0].is_index %}
+          {%- if nav_item.children[0].is_index %}
         <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
-        {%- else %}
+          {%- else %}
         <a class="w3-bar-item w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)" style="padding-left: 24px;">{{ nav_item.title }}<svg class="svg-icon svg-1em"><use xlink:href="#drop-down" /></svg></a>
-        {%- endif %}
+          {%- endif %}
         <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden2 %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
           {%- for nav_item in nav_item.children %}
           <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 32px;">{{ nav_item.title }}</a>
           {%- endfor %}
         </div>
       </div>
-      {%- else %}
+        {%- else %}
       <a class="w3-bar-item w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 24px;">{{ nav_item.title }}</a>
-      {%- endif %}
+        {%- endif %}
       {%- endif %}
     {%- endfor %}
     </div>

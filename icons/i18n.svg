@@ -5,7 +5,7 @@
    version="1.1"
    viewBox="0 0 10 10"
    id="svg20"
-   sodipodi:docname="i18n.svg"
+   sodipodi:docname="i18n_2.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,42 +24,52 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="19.023542"
-     inkscape:cx="18.897638"
-     inkscape:cy="18.897638"
+     inkscape:cx="18.950204"
+     inkscape:cy="18.897637"
      inkscape:window-width="2560"
      inkscape:window-height="1361"
      inkscape:window-x="2091"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg20" />
-  <circle
+     inkscape:current-layer="g16" />
+  <ellipse
      cx="5"
-     cy="5"
-     r="4.75"
+     cy="4.9999995"
      stroke-width="0.5"
      id="circle2"
-     style="fill:none;stroke:currentColor" />
+     style="fill:none;stroke:currentColor;stroke-width:0.731708;stroke-miterlimit:4;stroke-dasharray:none"
+     rx="4.6341467"
+     ry="4.6341462" />
   <g
      stroke-width="0.5"
      id="g16"
-     style="fill:none;stroke:currentColor">
+     style="fill:none;stroke:currentColor;stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none"
+     transform="matrix(1,0,0,0.9894615,0,0.05268747)">
     <path
-       d="M 0,5 H 10"
-       id="path4" />
+       d="m 0.5,5 9,5.1e-6"
+       id="path4"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:nodetypes="cc" />
     <path
        d="m 1.6,1.6 c 3.3929,3.4 6.8,0 6.8,0"
-       id="path6" />
+       id="path6"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        d="m 1.6,8.4 c 3.3929,-3.4 6.8,0 6.8,0"
-       id="path8" />
+       id="path8"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        d="m 5,0.23 c 0,0 5.5,4.7702 0,9.54"
-       id="path10" />
+       id="path10"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        d="m 5,0.23 c 0,0 -5.5,4.7702 0,9.54"
-       id="path12" />
+       id="path12"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
-       d="M 5,0.23 V 9.77"
-       id="path14" />
+       d="M 5,0.45207674 V 9.5479334"
+       id="path14"
+       style="stroke-width:0.75;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>

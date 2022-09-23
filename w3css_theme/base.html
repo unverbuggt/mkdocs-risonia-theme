@@ -101,15 +101,21 @@
   </symbol>
 {%- if 'i18n' in config.plugins %}
   <symbol id="i18n" viewBox="0 0 10 10" fill="none" stroke="currentColor">
-    <circle cx="5" cy="5" r="4.75" stroke-width=".5"/>
-    <g stroke-width=".5">
-      <path d="m0 5h10"/>
-      <path d="m1.6 1.6c3.3929 3.4 6.8 0 6.8 0"/>
-      <path d="m1.6 8.4c3.3929-3.4 6.8 0 6.8 0"/>
-      <path d="m5 0.23s5.5 4.7702 0 9.54"/>
-      <path d="m5 0.23s-5.5 4.7702 0 9.54"/>
-      <path d="m5 0.23v9.54"/>
+    <ellipse cx="5" cy="5" rx="4.63" ry="4.63" fill="none" stroke-width=".732"/>
+    <g transform="matrix(1 0 0 .989 0 .0527)" fill="none" stroke-width=".75">
+      <path d="m0.5 5 9 5.1e-6"/>
+      <path d="m1.6 1.6c3.39 3.4 6.8 0 6.8 0"/>
+      <path d="m1.6 8.4c3.39-3.4 6.8 0 6.8 0"/>
+      <path d="m5 0.23s5.5 4.77 0 9.54"/>
+      <path d="m5 0.23s-5.5 4.77 0 9.54"/>
+      <path d="m5 0.452v9.1"/>
     </g>
+  </symbol>
+{%- endif %}
+{%- if 'search' in config.plugins %}
+  <symbol id="search" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <ellipse cx="3.25" cy="3.25" rx="2.75" ry="2.75" fill="none"/>
+    <path d="m5 5 4.65 4.65" fill="none"/>
   </symbol>
 {%- endif %}
 </svg>

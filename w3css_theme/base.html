@@ -49,8 +49,9 @@
   <link rel="stylesheet" href="{{ 'css/fonts.css'|url }}">
 {%- endblock %}
   <script>
+  var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
   function checkTheme() {
-    let theme = localStorage.getItem('theme');
+    let theme = localStorage.getItem(themeItem);
     if (theme) {
       if (theme == 'light') {
         document.getElementById('light').media = '';
@@ -129,7 +130,10 @@
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
     <button class="w3-button w3-hover-theme w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-icon svg-1em"><use xlink:href="#to-top" /></svg></button>
-    <button class="w3-button w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme()" id="myThemeToggle"><svg class="svg-icon svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
+    <button class="w3-button w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-icon svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
+    {%- if 'search' in config.plugins %}
+    <button class="w3-button w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-icon svg-1em"><use xlink:href="#search" /></svg></button> 
+    {%- endif %}
     </span>
   </p>
 </div>
@@ -281,7 +285,12 @@
 <footer class="w3-container w3-theme no-print">
   <p class="w3-tiny">
     <a href="https://www.mkdocs.org" target="_blank">MkDocs</a>
-    {%- if 'i18n' in config.plugins %}/ <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n plugin</a>{%- endif %}
+{%- if 'i18n' in config.plugins %}
+    / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n plugin</a>
+{%- endif %}
+{%- if 'encryptcontent' in config.plugins %}
+    / <a href="https://github.com/CoinK0in/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent plugin</a>
+{%- endif %}
     / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a>
   </p>
 </footer>

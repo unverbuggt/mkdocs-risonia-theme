@@ -44,27 +44,27 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
-function toggleTheme() {
-  let theme = localStorage.getItem('theme');
-  let newtheme
+function toggleTheme(themeItem) {
+  let theme = localStorage.getItem(themeItem);
+  let newtheme;
   if (theme) {
     if (theme == 'light') {
-      newtheme = 'dark'
+      newtheme = 'dark';
     }
     if (theme == 'dark') {
-      newtheme = 'light'
+      newtheme = 'light';
     }
   } else {
     if (window.matchMedia) {
       if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-        newtheme = 'light'
+        newtheme = 'light';
       } else {
-        newtheme = 'dark'
+        newtheme = 'dark';
       }
     } else {
-      newtheme = 'dark'
+      newtheme = 'dark';
     }
   }
-  localStorage.setItem('theme', newtheme)
-  checkTheme()
+  localStorage.setItem(themeItem, newtheme);
+  checkTheme();
 }

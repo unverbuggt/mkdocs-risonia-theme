@@ -9,23 +9,24 @@ h1,h2,h3,h4{
   margin-top: -80px;
 }
 table{
-    border-collapse:collapse;
-    border-spacing:0;
-    width:100%;
-    display:table
+  border-collapse:collapse;
+  border-spacing:0;
+  width:100%;
+  display:table
 }
 table tr{
-    border-bottom:1px solid #ddd
+  border-bottom:1px solid #ddd
 }
 table td,table th{
-    padding:8px 8px;
-    display:table-cell;
-    text-align:left;
-    vertical-align:top
+  padding:8px 8px;
+  display:table-cell;
+  text-align:left;
+  vertical-align:top
 }
 table th:first-child,table td:first-child{
-    padding-left:16px
+  padding-left:16px
 }
+
 @media print
 {
   .no-print, .no-print *

@@ -1,4 +1,5 @@
 site_name: MkDocs Basic theme
+site_url: https://epwg.de/test
 theme:
     name: w3csstheme
     custom_dir: files/

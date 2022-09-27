@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html{% if 'i18n' in config.plugins %} lang="{{ i18n_page_locale }}"{% endif %}>
 <head>
-  <meta charset="utf-8">
-{%- block htmltitle %}
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-{%- endblock %}
 {%- block site_meta %}
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if page and page.is_homepage %}<meta name="description" content="{{ config['site_description'] }}">{% endif %}
+  {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+  {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+  {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon|url }}">
+  {% else %}<link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">{% endif %}
   {%- if 'i18n' in config.plugins %}
     {%- for lang, display in config.plugins.i18n.config.languages.items() %}
       {%- if lang != i18n_page_locale %}
@@ -27,11 +29,10 @@
   <link rel="manifest" href="{{ '/' + config.theme.manifest|url }}">
     {%- endif %}
   {%- endif %}
-  {% if page and page.is_homepage %}<meta name="description" content="{{ config['site_description'] }}">{% endif %}
-  {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
-  {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
-  {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon|url }}">
-  {% else %}<link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">{% endif %}
+{%- endblock %}
+
+{%- block htmltitle %}
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
 {%- endblock %}
 
 {%- block styles %}
@@ -48,6 +49,7 @@
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
   <link rel="stylesheet" href="{{ 'css/fonts.css'|url }}">
 {%- endblock %}
+{%- block scripts %}
   <script>
   var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
   function checkTheme() {
@@ -65,6 +67,7 @@
   }
   checkTheme()
   </script>
+{%- endblock %}
 {%- block extrahead %} {% endblock %}
 </head>
 
@@ -149,6 +152,7 @@
   </p>
 </header>
 
+{%- block site_nav %}
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
   <div id="myNav">
@@ -210,6 +214,7 @@
 
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 {%- endif %}
+{%- endblock %}
 
 {%- set toc_check = namespace(anchors=0) %}
 {%- for toc_item in page.toc %}
@@ -281,7 +286,7 @@
 {{ page.content | indent(2, True)}}
 {%- endblock %}
 </div>
-
+{%- block footer %}
 <footer class="w3-container w3-theme no-print">
   <p class="w3-tiny">
     <a href="https://www.mkdocs.org" target="_blank">MkDocs</a>
@@ -294,12 +299,12 @@
     / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a>
   </p>
 </footer>
-
+{%- endblock %}
 </div>
 
-
-
+{%- block libs %}
 <script src="{{ 'js/theme.js'|url }}"></script>
+{%- endblock %}
 {%- if config.theme.serviceworker %}
 <script>
   if ('serviceWorker' in navigator) { 
@@ -314,3 +319,9 @@
 {%- endif %}
 </body>
 </html>
+{% if page and page.is_homepage %}
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
+{% endif %}

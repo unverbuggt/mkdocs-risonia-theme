@@ -8,5 +8,6 @@ theme:
 plugins:
     - color-theme:
         theme_color: 'FF6633'
+    - search: {}
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

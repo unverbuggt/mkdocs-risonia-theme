@@ -52,6 +52,7 @@
 {%- block scripts %}
   <script>
   var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
+  var base_url = {{ base_url | tojson }};
   function checkTheme() {
     let theme = localStorage.getItem(themeItem);
     if (theme) {
@@ -285,6 +286,26 @@
 {%- block content %}
 {{ page.content | indent(2, True)}}
 {%- endblock %}
+
+{%- if 'search' in config.plugins %}
+<div id="mkdocs_search_modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-theme-l4">
+      <span onclick="closeSearch();" class="w3-theme-l2 w3-button w3-hover-theme w3-display-topright"><svg class="svg-icon svg-1em"><use xlink:href="#close-menu" /></svg></span>
+      <span class="w3-display-topleft" style="padding: 8px 16px;"><svg class="svg-icon svg-2em"><use xlink:href="#search" /></svg></span>
+      <form id="content_search">
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">
+          <input type="search" class="w3-input w3-border w3-round w3-theme-l5 w3-hover-theme" placeholder="" id="mkdocs-search-query">
+        </div>
+      </form>
+      <div class="w3-container" id="mkdocs-search-results" data-no-results-text="-">&nbsp;</div>
+    </div>
+  </div>
+</div>
+{%- endif %}
+
 </div>
 {%- block footer %}
 <footer class="w3-container w3-theme no-print">
@@ -305,6 +326,9 @@
 {%- block libs %}
 <script src="{{ 'js/theme.js'|url }}"></script>
 {%- endblock %}
+{%- for path in extra_javascript %}
+<script src="{{ path }}" defer></script>
+{%- endfor %}
 {%- if config.theme.serviceworker %}
 <script>
   if ('serviceWorker' in navigator) { 

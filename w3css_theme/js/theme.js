@@ -68,3 +68,12 @@ function toggleTheme(themeItem) {
   localStorage.setItem(themeItem, newtheme);
   checkTheme();
 }
+
+function openSearch() {
+  document.getElementById('mkdocs_search_modal').style.display='block';
+  document.getElementById('mkdocs-search-query').focus();
+}
+function closeSearch() {
+  document.getElementById('mkdocs_search_modal').style.display='none'
+}
+

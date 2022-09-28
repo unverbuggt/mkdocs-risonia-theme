@@ -18,7 +18,8 @@ setup(
             'w3csstheme = w3css_theme',
         ],
         'mkdocs.plugins': [
-            'color-theme = w3css_theme.plugins.color.plugin:W3cssColorTheme'
+            'color-theme = w3css_theme.plugins.color.plugin:W3cssColorTheme',
+            'w3css-classes = w3css_theme.plugins.classes.plugin:W3cssClassesPlugin'
         ]
     },
     zip_safe=False

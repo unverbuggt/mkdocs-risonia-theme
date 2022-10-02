@@ -38,18 +38,25 @@ TPL_THEME = \
 .w3-hover-text-theme:hover {color:{{ bgcolor_theme }} !important}
 .w3-hover-border-theme:hover {border-color:{{ bgcolor_theme }} !important}
 
-pre {
-  color:{{ color_l4 }};
-  background-color:{{ bgcolor_l4 }};
+.w3-code {
   border-left:4px solid {{ bgcolor_theme }};
 }
-code {
-  background-color:{{ bgcolor_l4 }};
+.w3-code, .w3-codespan {
+  color:{{ color_l3 }};
+  background-color:{{ bgcolor_l3 }};
 }
 
 a{color: inherit !important;}
 
-table tbody tr:hover,table li:hover{
+.w3-striped tbody tr:nth-child(even){
+    background-color:{{ bgcolor_l4 }}
+}
+
+.w3-bordered tr{
+    border-bottom:1px solid {{ color_l5 }}
+}
+
+.w3-table tbody tr:hover,table li:hover{
   background-color:{{ bgcolor_l3 }}
 }"""
 

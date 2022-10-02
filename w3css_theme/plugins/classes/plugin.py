@@ -21,8 +21,8 @@ class W3cssClassesPlugin(BasePlugin):
     def on_page_content(self, html, page, config, files):
         html = re.sub('<blockquote>', '<div class="w3-panel w3-theme-l4 w3-leftbar w3-border-theme">', html)
         html = re.sub('</blockquote>', '</div>', html)
-        #html = re.sub('<table>', '<table class="w3-table w3-theme-l4 w3-border w3-bordered w3-hoverable">', html)
-        #html = re.sub('<tr>', '<tr class="w3-hover-theme">', html)
-        #html = re.sub('<pre>', '<pre class="w3-code">', html)
-        #html = re.sub('<code>', '<code class="w3-codespan">', html)
+        html = re.sub('<table>', '<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">', html)
+        html = re.sub('</table>', '</table></div>', html)
+        html = re.sub('<pre>', '<pre class="w3-code">', html)
+        html = re.sub('<code>', '<code class="w3-codespan">', html)
         return html

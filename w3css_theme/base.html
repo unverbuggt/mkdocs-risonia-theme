@@ -50,14 +50,15 @@
 {%- endblock %}
 {%- block scripts %}
   <script>
-  var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
   var base_url = {{ base_url | tojson }};
+  var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
+
   function checkTheme() {
     let theme = localStorage.getItem(themeItem);
     if (theme) {
       if (theme == 'light') {
-        document.getElementById('light').media = '';
         document.getElementById('dark').media = 'none';
+        document.getElementById('light').media = '';
       }
       if (theme == 'dark') {
         document.getElementById('light').media = 'none';
@@ -67,6 +68,9 @@
   }
   checkTheme()
   </script>
+  {%- for path in extra_javascript %}
+  <script src="{{ path }}" defer></script>
+  {%- endfor %}
 {%- endblock %}
 {%- block extrahead %} {% endblock %}
 </head>
@@ -299,7 +303,7 @@
           <input type="search" class="w3-input w3-border w3-round w3-theme-l5 w3-hover-theme" placeholder="" id="mkdocs-search-query">
         </div>
       </form>
-      <div class="w3-container" id="mkdocs-search-results" data-no-results-text="-">&nbsp;</div>
+      <div class="w3-container search-results" id="mkdocs-search-results" data-no-results-text="-">&nbsp;</div>
     </div>
   </div>
 </div>

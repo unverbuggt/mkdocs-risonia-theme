@@ -58,6 +58,10 @@ a{color: inherit !important;}
 
 .w3-table tbody tr:hover,table li:hover{
   background-color:{{ bgcolor_l3 }}
+}
+
+.search-results article:hover {
+  background-color:{{ bgcolor_l3 }}
 }"""
 
 TPL = \

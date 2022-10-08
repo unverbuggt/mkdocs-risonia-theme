@@ -4,6 +4,8 @@ import re
 from timeit import default_timer as timer
 from datetime import datetime, timedelta
 
+from bs4 import BeautifulSoup
+
 from mkdocs import utils as mkdocs_utils
 from mkdocs.config import config_options, Config
 from mkdocs.plugins import BasePlugin
@@ -19,10 +21,26 @@ class W3cssClassesPlugin(BasePlugin):
         self.total_time = 0
 
     def on_page_content(self, html, page, config, files):
-        html = re.sub('<blockquote>', '<div class="w3-panel w3-theme-l4 w3-leftbar w3-border-theme">', html)
-        html = re.sub('</blockquote>', '</div>', html)
-        html = re.sub('<table>', '<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">', html)
-        html = re.sub('</table>', '</table></div>', html)
-        html = re.sub('<pre>', '<pre class="w3-code">', html)
-        html = re.sub('<code>', '<code class="w3-codespan">', html)
-        return html
+        soup = BeautifulSoup(html, 'html.parser')
+        for blockquote_tag in soup.find_all('blockquote'):
+            blockquote_tag.replace_with('div')
+            blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme']
+
+        responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})
+        for table_tag in soup.find_all('table'):
+            table_tag['class'] = table_tag.get('class', []) + ['w3-table', 'w3-bordered', 'w3-striped']
+            table_tag.wrap(responsive_wrapper)
+        
+        for pre_tag in soup.find_all('pre'):
+            pre_tag['class'] = pre_tag.get('class', []) + ['w3-code']
+
+        for code_tag in soup.find_all('code'):
+            code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']
+
+        #html = re.sub('<blockquote>', '<div class="w3-panel w3-theme-l4 w3-leftbar w3-border-theme">', html)
+        #html = re.sub('</blockquote>', '</div>', html)
+        #html = re.sub('<table>', '<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">', html)
+        #html = re.sub('</table>', '</table></div>', html)
+        #html = re.sub('<pre>', '<pre class="w3-code">', html)
+        #html = re.sub('<code>', '<code class="w3-codespan">', html)
+        return str(soup)

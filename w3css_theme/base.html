@@ -269,9 +269,9 @@
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
       {%- for lang, display in config.plugins.i18n.config.languages.items() %}
         {%- if lang == i18n_page_locale %}
-          {%- set langcolor = "w3-theme-l4" %}
-        {%- else %}
           {%- set langcolor = "w3-theme-l2" %}
+        {%- else %}
+          {%- set langcolor = "w3-theme-l4" %}
         {%- endif %}
 
         {%- if lang == i18n_config.default_language %}

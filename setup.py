@@ -8,6 +8,11 @@ setup(
     version=VERSION,
     url='https://github.com/unverbuggt/mkdocs-w3css-theme',
     license='MIT',
+    python_requires='>=3.5',
+    install_requires=[
+        'mkdocs',
+        'beautifulsoup4',
+    ],
     description='w3css theme for MkDocs',
     author='René Rüthlein',
     author_email='unverbuggt@xn--rthlein-n2a.de',

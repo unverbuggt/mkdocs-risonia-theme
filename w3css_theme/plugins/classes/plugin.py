@@ -27,12 +27,13 @@ class W3cssClassesPlugin(BasePlugin):
             blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme']
 
         responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})
+        
         for table_tag in soup.find_all('table'):
             table_tag['class'] = table_tag.get('class', []) + ['w3-table', 'w3-bordered', 'w3-striped']
             table_tag.wrap(responsive_wrapper)
         
         for pre_tag in soup.find_all('pre'):
-            pre_tag['class'] = pre_tag.get('class', []) + ['w3-code']
+            pre_tag['class'] = pre_tag.get('class', []) + ['w3-code', 'w3-responsive']
 
         for code_tag in soup.find_all('code'):
             code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']

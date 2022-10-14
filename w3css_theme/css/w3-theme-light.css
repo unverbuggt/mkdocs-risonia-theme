@@ -1,38 +1,38 @@
-.w3-theme-l5 {color:#000 !important; background-color:#fef8e6 !important}
-.w3-theme-l4 {color:#000 !important; background-color:#ffedb9 !important}
-.w3-theme-l3 {color:#000 !important; background-color:#ffe28c !important}
-.w3-theme-l2 {color:#000 !important; background-color:#ffd760 !important}
-.w3-theme-l1 {color:#000 !important; background-color:#ffcc33 !important}
-.w3-theme-d1 {color:#000 !important; background-color:#ebb000 !important}
-.w3-theme-d2 {color:#000 !important; background-color:#d19d00 !important}
-.w3-theme-d3 {color:#000 !important; background-color:#b78900 !important}
-.w3-theme-d4 {color:#000 !important; background-color:#9d7500 !important}
-.w3-theme-d5 {color:#000 !important; background-color:#836200 !important}
+.w3-theme-l5 {color:#000 !important; background-color:#feeee6 !important}
+.w3-theme-l4 {color:#000 !important; background-color:#fccfb9 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#fbb18c !important}
+.w3-theme-l2 {color:#000 !important; background-color:#f99360 !important}
+.w3-theme-l1 {color:#000 !important; background-color:#f87433 !important}
+.w3-theme-d1 {color:#000 !important; background-color:#dd4e07 !important}
+.w3-theme-d2 {color:#000 !important; background-color:#c44506 !important}
+.w3-theme-d3 {color:#000 !important; background-color:#ac3c05 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#933404 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#7b2b04 !important}
 
-.w3-theme-light {color:#000 !important; background-color:#fef8e6 !important}
-.w3-theme-dark {color:#000 !important; background-color:#836200 !important}
-.w3-theme-action {color:#000 !important; background-color:#836200 !important}
+.w3-theme-light {color:#000 !important; background-color:#feeee6 !important}
+.w3-theme-dark {color:#fff !important; background-color:#7b2b04 !important}
+.w3-theme-action {color:#fff !important; background-color:#7b2b04 !important}
 
-.w3-theme {color:#000 !important; background-color:#ffc106 !important}
-.w3-text-theme {color:#ffc106 !important}
-.w3-border-theme {border-color:#ffc106 !important}
+.w3-theme {color:#000 !important; background-color:#f65708 !important}
+.w3-text-theme {color:#f65708 !important}
+.w3-border-theme {border-color:#f65708 !important}
 
-.w3-hover-theme:hover {color:#000 !important; background-color:#ffc106 !important}
-.w3-hover-text-theme:hover {color:#ffc106 !important}
-.w3-hover-border-theme:hover {border-color:#ffc106 !important}
+.w3-hover-theme:hover {color:#000 !important; background-color:#f65708 !important}
+.w3-hover-text-theme:hover {color:#f65708 !important}
+.w3-hover-border-theme:hover {border-color:#f65708 !important}
 
 .w3-code {
-  border-left:4px solid #ffc106;
+  border-left:4px solid #f65708;
 }
 .w3-code, .w3-codespan {
   color:#000;
-  background-color:#ffe28c;
+  background-color:#fbb18c;
 }
 
 a{color: inherit !important;}
 
 .w3-striped tbody tr:nth-child(even){
-    background-color:#ffedb9
+    background-color:#fccfb9
 }
 
 .w3-bordered tr{
@@ -40,5 +40,9 @@ a{color: inherit !important;}
 }
 
 .w3-table tbody tr:hover,table li:hover{
-  background-color:#ffe28c
+  background-color:#fbb18c
+}
+
+.search-results article:hover {
+  background-color:#fbb18c
 }

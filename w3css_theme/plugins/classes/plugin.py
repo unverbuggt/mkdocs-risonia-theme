@@ -34,10 +34,13 @@ class W3cssClassesPlugin(BasePlugin):
         
         for pre_tag in soup.find_all('pre'):
             pre_tag['class'] = pre_tag.get('class', []) + ['w3-code', 'w3-responsive']
-
+        
         for code_tag in soup.find_all('code'):
             code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']
-
+        
+        for img_tag in soup.find_all('img'):
+            img_tag['class'] = img_tag.get('class', []) + ['w3-image']
+        
         #html = re.sub('<blockquote>', '<div class="w3-panel w3-theme-l4 w3-leftbar w3-border-theme">', html)
         #html = re.sub('</blockquote>', '</div>', html)
         #html = re.sub('<table>', '<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">', html)

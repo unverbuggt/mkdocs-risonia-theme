@@ -41,10 +41,4 @@ class W3cssClassesPlugin(BasePlugin):
         for img_tag in soup.find_all('img'):
             img_tag['class'] = img_tag.get('class', []) + ['w3-image']
         
-        #html = re.sub('<blockquote>', '<div class="w3-panel w3-theme-l4 w3-leftbar w3-border-theme">', html)
-        #html = re.sub('</blockquote>', '</div>', html)
-        #html = re.sub('<table>', '<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">', html)
-        #html = re.sub('</table>', '</table></div>', html)
-        #html = re.sub('<pre>', '<pre class="w3-code">', html)
-        #html = re.sub('<code>', '<code class="w3-codespan">', html)
-        return str(soup)
+        return soup.prettify()

@@ -1,13 +1,14 @@
 site_name: MkDocs Basic theme
-site_url: https://epwg.de/test
+site_url: https://unverbuggt.de/risonia
 theme:
     name: w3csstheme
     custom_dir: files/
     logo: img/logo.svg
 
 plugins:
-    - color-theme:
-        theme_color: 'FF6633'
     - search: {}
+    - color-theme:
+        theme_color: '#1da7e2'
+    - w3css-classes: {}
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

@@ -97,6 +97,7 @@ class W3cssColorTheme(BasePlugin):
 
     config_scheme = (
         ('theme_color', config_options.Type(str, default='#efc050')),
+        ('secondary_color', config_options.Type(str, default='mono')),
         ('light_text_color', config_options.Type(str, default='#000')),
         ('dark_text_color', config_options.Type(str, default='#fff')),
     )
@@ -118,34 +119,66 @@ class W3cssColorTheme(BasePlugin):
         else:
             return self.config['light_text_color']
 
-    def generate_theme(self, config, theme_color, name, scheme='monochromatic'):
+    def generate_theme(self, config, theme_color, name, secondary_color):
         themergb = hex_to_rgb(theme_color)
         themehls = rgb_to_hls(themergb[0],themergb[1],themergb[2])
+        
+        #don't change theme color
         hue_theme = themehls[0]
+        light_theme = themehls[1]
+        sat_theme = themehls[2]
+        
+        #initialize for monochomatic secondary color
         hues = [hue_theme] * 10
-        light = themehls[1]
-        sat = themehls[2]
+        light = light_theme
+        sat =sat_theme
         
-        if scheme == 'analogous':
-            huep = hue_theme + (1/12)
-            huem = hue_theme - (1/12)
-            hues[0],hues[3],hues[4],hues[7],hues[8] = [huep] * 5
-            hues[1],hues[2],hues[5],hues[6],hues[9] = [huem] * 5
-        elif scheme == 'complementary':
-            hues[0],hues[1],hues[2],hues[3],hues[4] = [hue_theme + 0.5] * 5
-            hues[5],hues[6],hues[7],hues[8],hues[9] = [hue_theme] * 5
-        elif scheme == 'triadic':
-            huep = hue_theme + (4/12)
-            huem = hue_theme - (4/12)
-            hues[0],hues[3],hues[4],hues[7],hues[8] = [huep] * 5
-            hues[1],hues[2],hues[5],hues[6],hues[9] = [huem] * 5
-        elif scheme == 'compound':
-            huep = hue_theme + (5/12)
-            huem = hue_theme - (5/12)
-            hues[0],hues[3],hues[4],hues[7],hues[8] = [huep] * 5
-            hues[1],hues[2],hues[5],hues[6],hues[9] = [huem] * 5
+        scheme = secondary_color.lower()
         
-        #check of scheme made hue12 leave range
+        if scheme.startswith('#'):
+            secondaryrgb = hex_to_rgb(secondary_color)
+            secondaryhls = rgb_to_hls(secondaryrgb[0],secondaryrgb[1],secondaryrgb[2])
+            hues = [secondaryhls[0]] * 10
+            light = secondaryhls[1]
+            sat =secondaryhls[2]
+        elif scheme.startswith('analogous'):
+            if scheme.endswith('2'):
+                hue1 = hue_theme - (1/12)
+                hue2 = hue_theme + (1/12)
+            else:
+                hue1 = hue_theme + (1/12)
+                hue2 = hue_theme - (1/12)
+            hues[0],hues[3],hues[4],hues[7],hues[8] = [hue1] * 5
+            hues[1],hues[2],hues[5],hues[6],hues[9] = [hue2] * 5
+        elif scheme.startswith('complementary'):
+            if scheme.endswith('2'):
+                hue1 = hue_theme
+                hue2 = hue_theme + (1/2)
+            else:
+                hue1 = hue_theme + (1/2)
+                hue2 = hue_theme
+            hues[0],hues[1],hues[2],hues[3],hues[4] = [hue1] * 5
+            hues[5],hues[6],hues[7],hues[8],hues[9] = [hue2] * 5
+        elif scheme.startswith('triadic'):
+            if scheme.endswith('2'):
+                hue1 = hue_theme - (4/12)
+                hue2 = hue_theme + (4/12)
+            else:
+                hue1 = hue_theme + (4/12)
+                hue2 = hue_theme - (4/12)
+            hues[0],hues[3],hues[4],hues[7],hues[8] = [hue1] * 5
+            hues[1],hues[2],hues[5],hues[6],hues[9] = [hue2] * 5
+        elif scheme.startswith('compound'):
+            if scheme.endswith('2'):
+                hue1 = hue_theme - (5/12)
+                hue2 = hue_theme + (5/12)
+            else:
+                hue1 = hue_theme + (5/12)
+                hue2 = hue_theme - (5/12)
+            hues[0],hues[3],hues[4],hues[7],hues[8] = [hue1] * 5
+            hues[1],hues[2],hues[5],hues[6],hues[9] = [hue2] * 5
+        
+        #check if scheme made hues leave range
         for i in range(len(hues)):
             if hues[i] < 0:
                 hues[i] = hues[i] + 1
@@ -158,7 +191,7 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light + ((1.0-light) / 5.0 * 2.7), sat))
         data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light + ((1.0-light) / 5.0 * 1.8), sat))
         data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light + ((1.0-light) / 5.0 * 0.9), sat))
-        data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light, sat))
+        data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light_theme, sat_theme))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hues[5], light - (light / 5.0 * 0.5), sat))
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hues[6], light - (light / 5.0 * 1), sat))
         data['bgcolor_d3'] = rgb_to_hex(hls_to_rgb(hues[7], light - (light / 5.0 * 1.5), sat))
@@ -186,7 +219,7 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_d3'] = rgb_to_hex(hls_to_rgb(hues[7], light + ((1.0-light) / 5.0 * 1.5), sat))
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hues[6], light + ((1.0-light) / 5.0 * 1), sat))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hues[5], light + ((1.0-light) / 5.0 * 0.5), sat))
-        data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light, sat))
+        data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light_theme, sat_theme))
         data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light - (light / 5.0 * 0.9), sat))
         data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light - (light / 5.0 * 1.8), sat))
         data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light - (light / 5.0 * 2.7), sat))
@@ -226,15 +259,29 @@ class W3cssColorTheme(BasePlugin):
             file.write(out_theme_dark)
 
     def on_post_build(self, config, **kwargs):
-        theme = self.config['theme_color']
-        self.generate_theme(config, theme, '')
-        for color in self.themes_to_build:
-            self.generate_theme(config, color, '-'+color.lstrip('#'))
+        theme_color = self.config['theme_color']
+        secondary_color = self.config['secondary_color']
+        self.generate_theme(config, theme_color, '', secondary_color)
+        for theme in self.themes_to_build:
+            pcolor, scolor = theme.split(',',1)
+            self.generate_theme(config, pcolor, '-'+pcolor.lstrip('#')+'-'+scolor.lstrip('#'), scolor)
 
     def on_page_context(self, context, page, config, nav):
+        #get meta keys from pages
+        theme_color = None
+        secondary_color = None
         if 'theme_color' in page.meta.keys():
-            theme_color = str(page.meta.get('theme_color'))
-            if theme_color is not None:
-                context['theme_color'] = theme_color.lstrip('#')
-                self.themes_to_build.add(theme_color)
+            theme_color = str(page.meta.get('theme_color')).lower()
+        if 'secondary_color' in page.meta.keys():
+            secondary_color = str(page.meta.get('secondary_color')).lower()
+        
+        if theme_color is not None or secondary_color is not None:
+            if theme_color is None:
+                theme_color = self.config['theme_color']
+            if secondary_color is None:
+                secondary_color = self.config['secondary_color']
+            
+            context['page_theme'] = theme_color.lstrip('#') + '-' + secondary_color.lstrip('#') #let jinja2 template know about the template to use
+            self.themes_to_build.add(theme_color+','+secondary_color)
+
         return context

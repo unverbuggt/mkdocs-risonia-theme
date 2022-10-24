@@ -8,7 +8,8 @@ theme:
 plugins:
     - search: {}
     - color-theme:
-        theme_color: '#1da7e2'
+        theme_color: '#11a7e2'
+        secondary_color: 'compound2'
     - w3css-classes: {}
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

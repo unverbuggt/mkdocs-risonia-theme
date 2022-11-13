@@ -9,7 +9,7 @@
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
   {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon|url }}">
   {% else %}<link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">{% endif %}
-  {%- if 'i18n' in config.plugins %}
+  {%- if i18n_config %}
     {%- for lang, display in config.plugins.i18n.config.languages.items() %}
       {%- if lang != i18n_page_locale %}
         {%- if lang == i18n_config.default_language %}
@@ -23,7 +23,7 @@
     {%- endfor %}
   {%- endif %}
   {%- if config.theme.manifest %}
-    {%- if 'i18n' in config.plugins and i18n_page_file_locale %}
+    {%- if i18n_config and i18n_page_file_locale %}
   <link rel="manifest" href="{{ ('/'+ i18n_page_locale + '/' + config.theme.manifest)|url }}">
     {%- else %}
   <link rel="manifest" href="{{ '/' + config.theme.manifest|url }}">
@@ -263,7 +263,7 @@
       </div>
     </div>
   {%- endif %}
-  {%- if 'i18n' in config.plugins %}
+  {%- if i18n_config %}
     <div class="w3-dropdown-hover">
       <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-icon svg-1em"><use xlink:href="#i18n" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
@@ -336,7 +336,7 @@
 <script>
   if ('serviceWorker' in navigator) { 
     // register service worker
-{%- if 'i18n' in config.plugins and i18n_page_file_locale %}
+{%- if i18n_config and i18n_page_file_locale %}
     navigator.serviceWorker.register("{{ ('/' + i18n_page_locale + '/' + config.theme.serviceworker)|url }}");
 {%- else %}
     navigator.serviceWorker.register("{{ ('/' + config.theme.serviceworker)|url }}");

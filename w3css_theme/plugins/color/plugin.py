@@ -65,7 +65,7 @@ a{color: inherit !important;}
 }"""
 
 TPL = \
-"""/* inspired by https://www.w3schools.com/w3css/w3css_color_generator.asp */
+"""/* inspired by https://www.w3schools.com/w3css/w3css_color_generator.asp and https://www.w3schools.com/colors/colors_schemes.asp */
 
 /* light theme */
 {{ tpl_light }}
@@ -186,11 +186,11 @@ class W3cssColorTheme(BasePlugin):
                 hues[i] = hues[i] - 1
         
         data = {}
-        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hues[0], light + ((1.0-light) / 5.0 * 4.5), sat))
-        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hues[1], light + ((1.0-light) / 5.0 * 3.6), sat))
-        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light + ((1.0-light) / 5.0 * 2.7), sat))
-        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light + ((1.0-light) / 5.0 * 1.8), sat))
-        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light + ((1.0-light) / 5.0 * 0.9), sat))
+        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hues[0], light + ((1.0-light) / 5.0 * 4.75), sat))
+        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hues[1], light + ((1.0-light) / 5.0 * 4.0), sat))
+        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light + ((1.0-light) / 5.0 * 3.25), sat))
+        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light + ((1.0-light) / 5.0 * 2.5), sat))
+        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light + ((1.0-light) / 5.0 * 1.75), sat))
         data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light_theme, sat_theme))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hues[5], light - (light / 5.0 * 0.5), sat))
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hues[6], light - (light / 5.0 * 1), sat))
@@ -220,11 +220,11 @@ class W3cssColorTheme(BasePlugin):
         data['bgcolor_d2'] = rgb_to_hex(hls_to_rgb(hues[6], light + ((1.0-light) / 5.0 * 1), sat))
         data['bgcolor_d1'] = rgb_to_hex(hls_to_rgb(hues[5], light + ((1.0-light) / 5.0 * 0.5), sat))
         data['bgcolor_theme'] = rgb_to_hex(hls_to_rgb(hue_theme, light_theme, sat_theme))
-        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light - (light / 5.0 * 0.9), sat))
-        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light - (light / 5.0 * 1.8), sat))
-        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light - (light / 5.0 * 2.7), sat))
-        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hues[1], light - (light / 5.0 * 3.6), sat))
-        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hues[0], light - (light / 5.0 * 4.5), sat))
+        data['bgcolor_l1'] = rgb_to_hex(hls_to_rgb(hues[4], light - (light / 5.0 * 1.75), sat))
+        data['bgcolor_l2'] = rgb_to_hex(hls_to_rgb(hues[3], light - (light / 5.0 * 2.5), sat))
+        data['bgcolor_l3'] = rgb_to_hex(hls_to_rgb(hues[2], light - (light / 5.0 * 3.25), sat))
+        data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hues[1], light - (light / 5.0 * 4.0), sat))
+        data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hues[0], light - (light / 5.0 * 4.75), sat))
         
         data['color_l5'] = self.text_contrast(data['bgcolor_l5'],1)
         data['color_l4'] = self.text_contrast(data['bgcolor_l4'],1)

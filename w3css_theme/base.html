@@ -68,9 +68,11 @@
   }
   checkTheme()
   </script>
+  {%- block libs %}
   {%- for path in extra_javascript %}
   <script src="{{ path }}" defer></script>
   {%- endfor %}
+  {%- endblock %}
 {%- endblock %}
 {%- block extrahead %} {% endblock %}
 </head>
@@ -326,12 +328,7 @@
 {%- endblock %}
 </div>
 
-{%- block libs %}
 <script src="{{ 'js/theme.js'|url }}"></script>
-{%- endblock %}
-{%- for path in extra_javascript %}
-<script src="{{ path }}" defer></script>
-{%- endfor %}
 {%- if config.theme.serviceworker %}
 <script>
   if ('serviceWorker' in navigator) { 

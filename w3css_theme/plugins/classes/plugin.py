@@ -41,4 +41,4 @@ class W3cssClassesPlugin(BasePlugin):
         for img_tag in soup.find_all('img'):
             img_tag['class'] = img_tag.get('class', []) + ['w3-image']
         
-        return soup.prettify()
+        return str(soup) #nix! .prettify()

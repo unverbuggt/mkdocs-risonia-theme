@@ -1,15 +1,20 @@
 site_name: MkDocs Basic theme
 site_url: https://unverbuggt.de/risonia
+
 theme:
-    name: w3csstheme
+    name: risonia
     custom_dir: files/
     logo: img/logo.svg
+    favicon: img/logo.ico
 
 plugins:
-    - search: {}
+    #- mkdocs-simple-hooks:
+    #  hooks:
+    #    on_files: "hooks:on_files"
     - color-theme:
-        theme_color: '#11a7e2'
-        secondary_color: 'compound2'
+        theme_color: '#ff9933'
+        secondary_color: 'monochromatic'
     - w3css-classes: {}
+    - search: {}
 
 repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme

@@ -44,7 +44,7 @@ def find_r(pb):
                 hue = hls[0]
                 light = hls[1]
                 sat = hls[2]
-                if light == 0.5 and sat > 0.3:
+                if light == 0.5 and (abs(sat-0.47) < 0.01 or abs(sat-0.57) < 0.01 or abs(sat-0.67) < 0.01 or abs(sat-0.77) < 0.01 or abs(sat-0.87) < 0.01):
                     rgb = rgb_to_hex(hls_to_rgb(hue,light,sat))
                     colors.add(rgb)
 
@@ -57,7 +57,7 @@ def find_g(pb):
                 hue = hls[0]
                 light = hls[1]
                 sat = hls[2]
-                if light == 0.5 and sat > 0.3:
+                if light == 0.5 and (abs(sat-0.47) < 0.01 or abs(sat-0.57) < 0.01 or abs(sat-0.67) < 0.01 or abs(sat-0.77) < 0.01 or abs(sat-0.87) < 0.01):
                     rgb = rgb_to_hex(hls_to_rgb(hue,light,sat))
                     colors.add(rgb)
 
@@ -71,7 +71,7 @@ def find_b(pb):
                 hue = hls[0]
                 light = hls[1]
                 sat = hls[2]
-                if light == 0.5 and sat > 0.3:
+                if light == 0.5 and (abs(sat-0.47) < 0.01 or abs(sat-0.57) < 0.01 or abs(sat-0.67) < 0.01 or abs(sat-0.77) < 0.01 or abs(sat-0.87) < 0.01):
                     rgb = rgb_to_hex(hls_to_rgb(hue,light,sat))
                     colors.add(rgb)
 

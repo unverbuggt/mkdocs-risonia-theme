@@ -12,8 +12,8 @@ plugins:
     #  hooks:
     #    on_files: "hooks:on_files"
     - color-theme:
-        theme_color: '#ff9933'
-        secondary_color: 'monochromatic'
+        theme_color: '#ff6600'
+        secondary_color: 'complementary'
     - w3css-classes: {}
     - search: {}
 

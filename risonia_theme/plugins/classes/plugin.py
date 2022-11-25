@@ -41,4 +41,15 @@ class W3cssClassesPlugin(BasePlugin):
         for img_tag in soup.find_all('img'):
             img_tag['class'] = img_tag.get('class', []) + ['w3-image']
         
+        if 'extlink' in config['theme']._vars and config['theme']._vars['extlink']:
+            for link_tag in soup.find_all('a'):
+                href = link_tag['href']
+                svg_tag = soup.new_tag("svg")
+                svg_tag['class'] = "svg-icon svg-1em"
+                svg_extlink = soup.new_tag("use")
+                svg_extlink['xlink:href'] = "#extlink"
+                svg_tag.append(svg_extlink)
+                if href.startswith('http://') or href.startswith('https://'):
+                    link_tag.append(svg_tag)
+        
         return str(soup) #nix! .prettify()

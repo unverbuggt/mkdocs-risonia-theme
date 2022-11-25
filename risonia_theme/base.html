@@ -109,6 +109,13 @@
     <path d="m2.75 8.75h6.75"/>
     <path d="m0.5 8.75h1.5"/>
   </symbol>
+{%- if config.theme.extlink %}
+  <symbol id="extlink" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m5 5 4-4" stroke-width=".75"/>
+    <path d="m9 4v-3h-3" stroke-width=".75"/>
+    <path d="m5 3h-3.5v5.5h5.5v-3.5" stroke-width="1.25"/>
+  </symbol>
+{%- endif %}
 {%- if 'i18n' in config.plugins %}
   <symbol id="i18n" viewBox="0 0 10 10" fill="none" stroke="currentColor">
     <ellipse cx="5" cy="5" rx="4.63" ry="4.63" fill="none" stroke-width=".732"/>
@@ -130,7 +137,7 @@
 {%- endif %}
 {%- if 'encryptcontent' in config.plugins %}
   <symbol id="encrypted" viewBox="0 0 10 10">
-    <path transform="scale(.265)" d="m7.56 15.1v22.7h22.7v-22.7zm11.3 4.28c2.87 6.63e-4 5.19 1.88 5.19 4.21-6.29e-4 1.85-1.5 3.49-3.69 4.02l2.05 6.54h-7.1l2.05-6.54c-2.19-0.537-3.69-2.17-3.69-4.02 1.62e-4 -2.32 2.32-4.21 5.19-4.21z" fill="currentColor" stroke="none"/>
+    <path transform="scale(.265)" d="m5.67 15.1v22.7h26.5v-22.7zm13.2 4.28c2.87 6.63e-4 5.19 1.88 5.19 4.21-6.29e-4 1.85-1.5 3.49-3.69 4.02l2.05 6.54h-7.1l2.05-6.54c-2.19-0.537-3.69-2.17-3.69-4.02 1.62e-4 -2.32 2.32-4.21 5.19-4.21z"  fill="currentColor" stroke="none"/>
     <path d="m5 0.874c-1.4-1.61e-4 -2.53 1.13-2.53 2.53 3.17e-4 0.179 0.0197 0.887 0.0579 1.06h4.94c0.0382-0.175 0.0576-0.883 0.0579-1.06 1.61e-4 -1.4-1.13-2.53-2.53-2.53z" fill="none" stroke="currentColor" stroke-width="1"/>
   </symbol>
 {%- endif %}

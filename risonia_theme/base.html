@@ -341,15 +341,15 @@
 {%- block footer %}
 <footer class="w3-container w3-theme no-print">
   <p class="w3-tiny">
-    <a href="https://www.mkdocs.org" target="_blank">MkDocs</a>
+    <a href="https://www.mkdocs.org" target="_blank">MkDocs{% if config.theme.extlink %}<svg class="svg-icon svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
 {%- if 'i18n' in config.plugins %}
-    / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n plugin</a>
+    / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n{% if config.theme.extlink %}<svg class="svg-icon svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
 {%- endif %}
 {%- if 'encryptcontent' in config.plugins %}
-    / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent plugin</a>
+    / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent{% if config.theme.extlink %}<svg class="svg-icon svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
 {%- endif %}
-    / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a>
-    / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia Theme</a>
+    / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css{% if config.theme.extlink %}<svg class="svg-icon svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
+    / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme{% if config.theme.extlink %}<svg class="svg-icon svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
     </p>
 </footer>
 {%- endblock %}

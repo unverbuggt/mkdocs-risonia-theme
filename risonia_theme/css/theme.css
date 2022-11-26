@@ -18,19 +18,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /*svg icons*/
-.svg-icon {
+.svg-1em {
+  height: 1em;
+  width: 1em;
   display: inline-flex;
   bottom: .125em;
   position: relative;
   vertical-align: middle;
 }
-.svg-1em {
-  height: 1em;
-  width: 1em;
-}
 .svg-2em {
   height: 2em;
   width: 2em;
+  display: inline-flex;
+  bottom: .125em;
+  position: relative;
+  vertical-align: middle;
 }
 
 /*fonts*/

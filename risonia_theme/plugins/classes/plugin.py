@@ -45,7 +45,7 @@ class W3cssClassesPlugin(BasePlugin):
             for link_tag in soup.find_all('a'):
                 href = link_tag['href']
                 svg_tag = soup.new_tag("svg")
-                svg_tag['class'] = "svg-icon svg-1em"
+                svg_tag['class'] = "svg-1em"
                 svg_extlink = soup.new_tag("use")
                 svg_extlink['xlink:href'] = "#extlink"
                 svg_tag.append(svg_extlink)

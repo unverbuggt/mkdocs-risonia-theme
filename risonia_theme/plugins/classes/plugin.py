@@ -23,7 +23,8 @@ class W3cssClassesPlugin(BasePlugin):
     def on_page_content(self, html, page, config, files):
         soup = BeautifulSoup(html, 'html.parser')
         for blockquote_tag in soup.find_all('blockquote'):
-            blockquote_tag.replace_with('div')
+            #blockquote_tag.replace_with('div')
+            blockquote_tag.name = 'div'
             blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme']
 
         responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})
@@ -32,11 +33,14 @@ class W3cssClassesPlugin(BasePlugin):
             table_tag['class'] = table_tag.get('class', []) + ['w3-table', 'w3-bordered', 'w3-striped']
             table_tag.wrap(responsive_wrapper)
         
+        for code_tag in soup.find_all('code'):
+            if 'pre' not in code_tag.parent.name:
+                code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']
+            else:
+                code_tag.replaceWithChildren()
+        
         for pre_tag in soup.find_all('pre'):
             pre_tag['class'] = pre_tag.get('class', []) + ['w3-code', 'w3-responsive']
-        
-        for code_tag in soup.find_all('code'):
-            code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']
         
         for img_tag in soup.find_all('img'):
             img_tag['class'] = img_tag.get('class', []) + ['w3-image']

@@ -13,7 +13,7 @@
     {%- for lang, display in config.plugins.i18n.config.languages.items() %}
       {%- if lang != i18n_page_locale %}
         {%- if lang == i18n_config.default_language %}
-  <link rel="alternate" hreflang="x-default" href="{{  page.canonical_url | replace('/' + i18n_page_locale + '/', '/') }}">
+  <link rel="alternate" hreflang="x-default" href="{{ page.canonical_url | replace('/' + i18n_page_locale + '/', '/') }}">
         {%- elif i18n_page_file_locale is none %}
   <link rel="alternate" hreflang="{{ lang }}" href="{{ page.canonical_url | replace(page.url, '') + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}">
         {%- else %}
@@ -48,7 +48,6 @@
   {%- endif %}
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
 {%- endblock %}
-{%- block scripts %}
   <script>
   var base_url = {{ base_url | tojson }};
   var themeItem = 'risonia_theme_'+encodeURIComponent('{{ config.site_url }}');
@@ -69,11 +68,7 @@
   checkTheme()
   </script>
   {%- block libs %}
-  {%- for path in extra_javascript %}
-  <script src="{{ path }}" defer></script>
-  {%- endfor %}
   {%- endblock %}
-{%- endblock %}
 {%- block extrahead %} {% endblock %}
 </head>
 
@@ -305,7 +300,7 @@
         {%- if lang == i18n_config.default_language %}
           <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
         {%- elif i18n_page_file_locale is none %}
-          <a href="{{ '/../' + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
+          <a href="{{ page.abs_url | replace(page.url, '') + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
         {%- else %}
           <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/' + lang + '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
         {%- endif %}
@@ -315,7 +310,7 @@
   {%- endif %}
   </div> 
 {%- block content %}
-{{ page.content | indent(2, True)}}
+{{ page.content }}
 {%- endblock %}
 
 {%- if 'search' in config.plugins %}
@@ -355,7 +350,11 @@
 {%- endblock %}
 </div>
 
+{%- block scripts %}
 <script src="{{ 'js/theme.js'|url }}"></script>
+{%- for path in extra_javascript %}
+<script src="{{ path }}" defer></script>
+{%- endfor %}
 {%- if config.theme.serviceworker %}
 <script>
   if ('serviceWorker' in navigator) { 
@@ -368,6 +367,7 @@
   }
 </script>
 {%- endif %}
+{%- endblock %}
 </body>
 </html>
 {% if page and page.is_homepage %}

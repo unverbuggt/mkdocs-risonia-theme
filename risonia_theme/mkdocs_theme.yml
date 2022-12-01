@@ -4,3 +4,6 @@ static_templates:
 include_search_page: false
 
 navigation_depth: 3
+
+extlink: true
+

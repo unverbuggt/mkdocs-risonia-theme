@@ -155,8 +155,13 @@ head="""
 """
 print(head)
 
+cnt = 2
 for color in sorted(scolors, key=scolors.get):
-    print('<div class="w3-center w3-padding w3-col l1 m2 s3" style="background-color:'+color+';cursor: copy;" onclick="copyColor(this.textContent);">'+color+'</div>')
+    if cnt == 0:
+        print('<div class="w3-center w3-padding w3-col l1 m2 s3" style="background-color:'+color+';cursor: copy;" onclick="copyColor(this.textContent);">'+color+'</div>')
+        cnt = 2
+    else:
+        cnt -= 1
 
 foot="""
 </div>

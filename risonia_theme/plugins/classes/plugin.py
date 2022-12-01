@@ -23,28 +23,25 @@ class W3cssClassesPlugin(BasePlugin):
     def on_page_content(self, html, page, config, files):
         soup = BeautifulSoup(html, 'html.parser')
         for blockquote_tag in soup.find_all('blockquote'):
-            #blockquote_tag.replace_with('div')
-            blockquote_tag.name = 'div'
-            blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme']
-
-        responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})
+            blockquote_tag.name = 'div' #convert blockquote to <div>
+            blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme'] #add classes
         
         for table_tag in soup.find_all('table'):
-            table_tag['class'] = table_tag.get('class', []) + ['w3-table', 'w3-bordered', 'w3-striped']
-            table_tag.wrap(responsive_wrapper)
+            responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})
+            table_tag['class'] = table_tag.get('class', []) + ['w3-table', 'w3-bordered', 'w3-striped'] #add classes to <table>
+            table_tag.wrap(responsive_wrapper) #wrap tables in w3-responsive <div>
         
         for code_tag in soup.find_all('code'):
-            if 'pre' not in code_tag.parent.name:
-                code_tag['class'] = code_tag.get('class', []) + ['w3-codespan']
-            else:
-                code_tag.replaceWithChildren()
+            if 'pre' not in code_tag.parent.name: #if not a code block
+                code_tag['class'] = code_tag.get('class', []) + ['w3-codespan'] #add class to code
         
         for pre_tag in soup.find_all('pre'):
-            pre_tag['class'] = pre_tag.get('class', []) + ['w3-code', 'w3-responsive']
+            pre_tag['class'] = pre_tag.get('class', []) + ['w3-code', 'w3-responsive'] #add classes to code block
         
         for img_tag in soup.find_all('img'):
-            img_tag['class'] = img_tag.get('class', []) + ['w3-image']
+            img_tag['class'] = img_tag.get('class', []) + ['w3-image'] #add class to <image>
         
+        #add extlink svg after external links if configured
         if 'extlink' in config['theme']._vars and config['theme']._vars['extlink']:
             for link_tag in soup.find_all('a'):
                 href = link_tag['href']
@@ -56,4 +53,4 @@ class W3cssClassesPlugin(BasePlugin):
                 if href.startswith('http://') or href.startswith('https://'):
                     link_tag.append(svg_tag)
         
-        return str(soup) #nix! .prettify()
+        return str(soup)

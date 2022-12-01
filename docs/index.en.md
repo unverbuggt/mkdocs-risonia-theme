@@ -1,4 +1,4 @@
-# mkdocs-risonia-theme
+title: MkDocs Risonia theme
 
 A simple theme for [MkDocs](https://www.mkdocs.org/). Based on [this demo](https://www.w3schools.com/w3css/tryw3css_examples_material.htm) 
 using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable color schemes

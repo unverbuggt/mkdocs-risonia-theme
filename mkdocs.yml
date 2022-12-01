@@ -1,20 +1,67 @@
-site_name: MkDocs Basic theme
-site_url: https://unverbuggt.de/risonia
+site_name: MkDocs Risonia Theme
+site_url: https://unverbuggt.de/risonia/
+site_author: René Rüthlein
 
 theme:
     name: risonia
     custom_dir: files/
     logo: img/logo.svg
     favicon: img/logo.ico
+    extlink: true
+
+nav:
+    - 'index.md'
+    - Farben:
+      - 'colors.md'
 
 plugins:
     #- mkdocs-simple-hooks:
     #  hooks:
     #    on_files: "hooks:on_files"
+    - search:
+        lang: de
+    - i18n:
+        default_language: de
+        default_language_only: false
+        docs_structure: suffix
+        languages:
+          default:
+            name: Deutsch
+            build: true
+            site_name: "MkDocs Risonia Theme"
+          en:
+            name: English
+            build: true
+            site_name: "epwg.de tools"
+        nav_translations:
+          en:
+            Farben: Colors
+
     - color-theme:
-        theme_color: '#ff6600'
+        theme_color: '#ef6110'
         secondary_color: 'complementary'
     - w3css-classes: {}
-    - search: {}
+    - encryptcontent:
+        title_prefix: ''
+        summary: 'Encrypted Test Page.'
+        placeholder: '12345'
+        decryption_failure_message: 'Wrong password, please enter "12345".'
+        encryption_info_message: 'Please enter "12345".'
+        input_class: 'w3-input'
+        button_class: 'w3-button w3-theme-l1 w3-hover-theme'
+        hljs: False
+        arithmatex: False
+        mermaid2: False
+        remember_password: true
+        session_storage: true
+        encrypted_something:
+          myNav: [div, id]
+          myToc: [div, id]
+          myTocButton: [div, id]
+        search_index: 'dynamically' #dynamically
+        password_button: True
+        password_button_text: 'ENTER'
+        selfhost: true
+        selfhost_download: false
 
-repo_url: https://github.com/unverbuggt/mkdocs-w3css-theme
+repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme

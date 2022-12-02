@@ -11,6 +11,11 @@ from pathlib import Path
 from mkdocs.config import config_options
 from mkdocs.plugins import BasePlugin
 
+try:
+    from mkdocs.utils import string_types
+except ImportError:
+    string_types = str
+
 #PLUGIN_DIR = os.path.dirname(os.path.realpath(__file__))
 #CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
 
@@ -62,7 +67,9 @@ a{color: inherit !important;}
 
 .search-results article:hover {
   background-color:{{ bgcolor_l3 }}
-}"""
+}
+
+{{ additional }}"""
 
 TPL = \
 """/* inspired by https://www.w3schools.com/w3css/w3css_color_generator.asp and https://www.w3schools.com/colors/colors_schemes.asp */
@@ -100,6 +107,8 @@ class W3cssColorTheme(BasePlugin):
         ('secondary_color', config_options.Type(str, default='mono')),
         ('light_text_color', config_options.Type(str, default='#000')),
         ('dark_text_color', config_options.Type(str, default='#fff')),
+        ('extra_light_path', config_options.Type(string_types, default='')),
+        ('extra_dark_path', config_options.Type(string_types, default='')),
     )
 
     def text_contrast(self, value, pref_dark):
@@ -209,6 +218,9 @@ class W3cssColorTheme(BasePlugin):
         data['color_d3'] = self.text_contrast(data['bgcolor_d3'],0)
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],0)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],0)
+        if self.config['extra_light_path']:
+            with open(self.config['extra_light_path'], 'r') as additional_css:
+                data['additional'] = additional_css.read()
         
         tpl = Template(TPL_THEME)
         out_theme_light = tpl.render(data)
@@ -237,6 +249,9 @@ class W3cssColorTheme(BasePlugin):
         data['color_d3'] = self.text_contrast(data['bgcolor_d3'],1)
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],1)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],1)
+        if self.config['extra_dark_path']:
+            with open(self.config['extra_dark_path'], 'r') as additional_css:
+                data['additional'] = additional_css.read()
 
         tpl = Template(TPL_THEME)
         out_theme_dark = tpl.render(data)

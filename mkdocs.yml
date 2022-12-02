@@ -46,7 +46,11 @@ plugins:
     - color-theme:
         theme_color: '#ef6110'
         secondary_color: 'complementary'
+        extra_light_path: 'css/atom-one-light.min.css'
+        extra_dark_path: 'css/atom-one-dark.min.css'
+
     - w3css-classes: {}
+
     - encryptcontent:
         title_prefix: ''
         summary: 'Encrypted Test Page.'

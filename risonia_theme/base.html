@@ -24,9 +24,9 @@
   {%- endif %}
   {%- if config.theme.manifest %}
     {%- if i18n_config and i18n_page_file_locale %}
-  <link rel="manifest" href="{{ ('/'+ i18n_page_locale + '/' + config.theme.manifest)|url }}">
+  <link rel="manifest" href="{{ (base_url + '/' + i18n_page_locale + '/' + config.theme.manifest)|url }}">
     {%- else %}
-  <link rel="manifest" href="{{ '/' + config.theme.manifest|url }}">
+  <link rel="manifest" href="{{ (base_url + '/' + config.theme.manifest)|url }}">
     {%- endif %}
   {%- endif %}
 {%- endblock %}
@@ -360,9 +360,9 @@
   if ('serviceWorker' in navigator) { 
     // register service worker
 {%- if i18n_config and i18n_page_file_locale %}
-    navigator.serviceWorker.register("{{ ('/' + i18n_page_locale + '/' + config.theme.serviceworker)|url }}");
+    navigator.serviceWorker.register("{{ (base_url + '/' + i18n_page_locale + '/' + config.theme.serviceworker)|url }}");
 {%- else %}
-    navigator.serviceWorker.register("{{ ('/' + config.theme.serviceworker)|url }}");
+    navigator.serviceWorker.register("{{ (base_url + '/' + config.theme.serviceworker)|url }}");
 {%- endif %}
   }
 </script>

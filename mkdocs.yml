@@ -2,12 +2,18 @@ site_name: MkDocs Risonia Theme
 site_url: https://unverbuggt.de/risonia/
 site_author: René Rüthlein
 
+extra_javascript:
+  - 'assets/javascripts/highlight.min.js'
+
 theme:
     name: risonia
     custom_dir: files/
     logo: img/logo.svg
     favicon: img/logo.ico
     extlink: true
+    manifest: manifest.json
+    serviceworker: service-worker.js
+
 
 nav:
     - 'index.md'

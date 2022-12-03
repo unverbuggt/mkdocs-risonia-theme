@@ -218,9 +218,11 @@
             {%- if not nav_item.children[0].is_index or (nav_item.children[0].is_index and not accid.hidden2) %}
     <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden2 %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
               {%- for nav_item in nav_item.children %}
+                {%- if not nav_item.is_index %}
       <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 32px;">
         {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
       </a>
+                {%- endif %}
               {%- endfor %}
             {%- endif %}
     </div>

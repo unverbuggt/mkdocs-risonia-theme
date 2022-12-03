@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="dark">
   {%- endif %}
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
+  {%- for path in extra_css %}
+  <link href="{{ path }}" rel="stylesheet">
+  {%- endfor %}
 {%- endblock %}
   <script>
   var base_url = {{ base_url | tojson }};

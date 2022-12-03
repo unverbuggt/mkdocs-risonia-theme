@@ -24,7 +24,7 @@ class W3cssClassesPlugin(BasePlugin):
         soup = BeautifulSoup(html, 'html.parser')
         for blockquote_tag in soup.find_all('blockquote'):
             blockquote_tag.name = 'div' #convert blockquote to <div>
-            blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l4', 'w3-leftbar', 'w3-border-theme'] #add classes
+            blockquote_tag['class'] = blockquote_tag.get('class', []) + ['w3-panel', 'w3-theme-l3', 'w3-leftbar', 'w3-border-theme'] #add classes
         
         for table_tag in soup.find_all('table'):
             responsive_wrapper = soup.new_tag('div', **{"class": "w3-responsive"})

@@ -47,8 +47,8 @@ plugins:
     - color-theme:
         theme_color: '#ef6110'
         secondary_color: 'complementary'
-        extra_light_path: 'css/atom-one-light.min.css'
-        extra_dark_path: 'css/atom-one-dark.min.css'
+        extra_light_path: 'css/stackoverflow-light.min.css'
+        extra_dark_path: 'css/stackoverflow-dark.min.css'
 
     - w3css-classes: {}
 

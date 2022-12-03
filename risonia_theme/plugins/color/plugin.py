@@ -47,8 +47,8 @@ TPL_THEME = \
   border-left:4px solid {{ bgcolor_theme }};
 }
 .w3-code, .w3-codespan {
-  color:{{ color_l3 }};
-  background-color:{{ bgcolor_l3 }};
+  color:{{ color_l4 }};
+  background-color:{{ bgcolor_l4 }};
 }
 
 a{color: inherit !important;}

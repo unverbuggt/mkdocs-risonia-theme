@@ -1,7 +1,7 @@
 title: Primary colors
 
 These colors were chosen in a way that light text is displayed in dark mode and conversely.
-All colors share a similar preceived brightness and a equal visibility.
+All colors share a similar preceived brightness and an equal mixture between black and white.
 
 <div class="w3-row-padding" style="color:#fff">
 

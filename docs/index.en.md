@@ -22,7 +22,9 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 
 ## Features
 
-* muh
+* Light and dark mode.
+* Integration of `mkdocs-static-i18n` pLugin.
+* Integration of `mkdocs-encryptcontent-plugin`.
 
 ## Installation
 
@@ -60,6 +62,8 @@ plugins:
     - color-theme: #optional
         theme_color: '#ff6600' #primary color
         secondary_color: 'complementary' #can be a color or scheme
+        #extra_light_path: 'css/additional-light.css' #path to addition CSS for light mode
+        #extra_dark_path: 'css/additional-dark.min.css' #path to addition CSS for dark mode
     - w3css-classes: {} #mandatory
     #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
 ```

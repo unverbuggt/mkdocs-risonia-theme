@@ -19,7 +19,19 @@ extra_css:
 nav:
     - 'index.md'
     - Farben:
-      - 'colors.md'
+      - 'colors/index.md'
+      - 'colors/primary.md'
+      - Zweitfarben:
+        - 'colors/secondary/index.md'
+        - 'colors/secondary/mono.md'
+        - 'colors/secondary/analogous.md'
+        - 'colors/secondary/analogous2.md'
+        - 'colors/secondary/complementary.md'
+        - 'colors/secondary/complementary2.md'
+        - 'colors/secondary/triadic.md'
+        - 'colors/secondary/triadic2.md'
+        - 'colors/secondary/compound.md'
+        - 'colors/secondary/compound2.md'
 
 plugins:
     #- mkdocs-simple-hooks:
@@ -43,6 +55,7 @@ plugins:
         nav_translations:
           en:
             Farben: Colors
+            Zweitfarben: Secondary colors
 
     - color-theme:
         theme_color: '#ef6110'

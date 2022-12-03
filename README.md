@@ -60,6 +60,8 @@ plugins:
     - color-theme: #optional
         theme_color: '#ff6600' #primary color
         secondary_color: 'complementary' #can be a color or scheme
+        #extra_light_path: 'css/additional-light.css'
+        #extra_dark_path: 'css/additional-dark.min.css'
     - w3css-classes: {} #mandatory
     #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
 ```

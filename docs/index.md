@@ -22,11 +22,9 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 
 ## Merkmale
 
-* muh
-
-> Test
-> 
-> Test2
+* Helle und dunkle Ansicht.
+* Integration von `mkdocs-static-i18n` PLugin.
+* Integration von `mkdocs-encryptcontent-plugin`.
 
 ## Installation
 
@@ -64,6 +62,8 @@ plugins:
     - color-theme: #optional
         theme_color: '#ff6600' #Hauptfarbe
         secondary_color: 'complementary' #Zweitfarbe oder Farbschema
+        #extra_light_path: 'css/additional-light.css'
+        #extra_dark_path: 'css/additional-dark.min.css'
     - w3css-classes: {} #nötig
     #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
 ```

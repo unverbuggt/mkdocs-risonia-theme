@@ -1,7 +1,12 @@
 title: Primary colors
 
-These colors were chosen in a way that light text is displayed in dark mode and conversely.
-All colors share a similar preceived brightness and an equal mixture between black and white.
+<video autoplay loop style="width: 30%">
+  <source src="../../../videos/desaturate.mp4" type="video/mp4">
+</video> 
+
+These example colors are almost of the same medium preceived lightness. This is why they share good contrast to black and white text color.
+
+In addition they are of medium visibility, so the secondary colors in light and dark mode will show similar shades.
 
 <div class="w3-row-padding" style="color:#fff">
 

@@ -1,7 +1,12 @@
 title: Hauptfarben
 
-Diese Farben wurden so ausgewählt, dass beim dunklen Schema heller Text angezeigt wird und umgekehrt. 
-Alle Farben haben eine ähnliche wahrgenommene Helligkeit und sind mittelhell.
+<video autoplay loop style="width: 30%">
+  <source src="../../videos/desaturate.mp4" type="video/mp4">
+</video>
+
+Diese Beispielfarben haben alle eine mittlere wahrgenommene Helligkeit. Sie haben daher einen guten Kontrast zu schwarzer und weisser Schriftfarbe.
+
+Außerdem sind sind sie von mittlerer Sichtbarkeit, sodass die Zweitfarben in heller und dunkler Ansicht eine ähnliche Schattierung aufweisen.
 
 <div class="w3-row-padding" style="color:#fff">
 

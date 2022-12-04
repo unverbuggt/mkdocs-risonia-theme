@@ -18,7 +18,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 
 * Wegen w3css müssen leider zusätzliche Klassen an die Markdownausgabe angefügt werden.
     * Aber wenn wir schonmal dabei sind, können wir gleich externe Links erkennen und markieren.
-* Die SVG Symbole müssen in jede Seite eingebunden werden, weil sie sonst nicht in Textfarbe erscheinen können.
+* Die SVG Symbole müssen in jede Seite eingefügt werden, weil sie sonst nicht in Textfarbe erscheinen können.
 
 ## Merkmale
 

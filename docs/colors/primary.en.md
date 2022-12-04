@@ -4,7 +4,7 @@ title: Primary colors
   <source src="../../../videos/desaturate.mp4" type="video/mp4">
 </video> 
 
-These example colors are almost of the same medium preceived lightness. This is why they share good contrast to black and white text color.
+These example colors are almost of the same medium [perceived brightness](https://alienryderflex.com/hsp.html). This is why they share good contrast to black and white text color.
 
 In addition they are of medium visibility, so the secondary colors in light and dark mode will show similar shades.
 

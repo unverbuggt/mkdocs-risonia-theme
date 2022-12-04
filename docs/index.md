@@ -23,8 +23,8 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 ## Merkmale
 
 * Helle und dunkle Ansicht.
-* Integration von `mkdocs-static-i18n` PLugin.
-* Integration von `mkdocs-encryptcontent-plugin`.
+* Integration vom `mkdocs-static-i18n` Plugin.
+* Integration vom `mkdocs-encryptcontent-plugin`.
 
 ## Installation
 

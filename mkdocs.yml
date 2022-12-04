@@ -8,6 +8,7 @@ theme:
     logo: img/logo.svg
     favicon: img/logo.ico
     extlink: true
+    extblank: true
     manifest: manifest.json
     serviceworker: service-worker.js
 

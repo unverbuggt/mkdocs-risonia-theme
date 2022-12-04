@@ -53,4 +53,11 @@ class W3cssClassesPlugin(BasePlugin):
                 if href.startswith('http://') or href.startswith('https://'):
                     link_tag.append(svg_tag)
         
+        #send external links to new tab?
+        if 'extblank' in config['theme']._vars and config['theme']._vars['extblank']:
+            for link_tag in soup.find_all('a'):
+                if href.startswith('http://') or href.startswith('https://'):
+                    if not 'target' in link_tag:
+                        link_tag['target'] = '_blank'
+        
         return str(soup)

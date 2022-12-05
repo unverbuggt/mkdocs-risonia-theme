@@ -32,14 +32,3 @@ The settings `theme_color` and `secondary_color` can also be set as meta tag in 
 theme_color: #ef6110
 secondary_color: mono
 ```
-
-
-<script>
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((el) => {
-    hljs.highlightElement(el);
-  });
-});
-
-</script>

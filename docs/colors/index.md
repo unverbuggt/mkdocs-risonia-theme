@@ -32,14 +32,3 @@ Die beiden Einstellungen `theme_color` und `secondary_color` können auch als Me
 theme_color: #ef6110
 secondary_color: mono
 ```
-
-
-<script>
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((el) => {
-    hljs.highlightElement(el);
-  });
-});
-
-</script>

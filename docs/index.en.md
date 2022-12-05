@@ -67,13 +67,3 @@ plugins:
     - w3css-classes: {} #mandatory
     #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
 ```
-
-<script>
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((el) => {
-    hljs.highlightElement(el);
-  });
-});
-
-</script>

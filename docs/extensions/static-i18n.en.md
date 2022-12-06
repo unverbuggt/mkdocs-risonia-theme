@@ -1,0 +1,1 @@
+title: static i18n plugin

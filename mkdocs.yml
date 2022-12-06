@@ -1,10 +1,10 @@
-site_name: MkDocs Risonia Theme
+site_name: MkDocs Risonia Thema
 site_url: https://unverbuggt.de/risonia/
 site_author: René Rüthlein
 
 theme:
     name: risonia
-    custom_dir: files/
+    custom_dir: theme_override/
     logo: img/logo.svg
     favicon: img/logo.ico
     extlink: true
@@ -14,11 +14,16 @@ theme:
 
 extra_javascript:
   - 'assets/javascripts/highlight.min.js'
+  - 'assets/javascripts/tablesort.js'
+  - 'assets/javascripts/tablesort.number.js'
+
 extra_css:
   - 'css/fonts.css'
 
 nav:
     - 'index.md'
+    - 'theme.md'
+    - 'markdown.md'
     - Farben:
       - 'colors/index.md'
       - 'colors/primary.md'
@@ -33,6 +38,13 @@ nav:
         - 'colors/secondary/triadic2.md'
         - 'colors/secondary/compound.md'
         - 'colors/secondary/compound2.md'
+    - Erweiterungen:
+        - 'extensions/static-i18n.md'
+        - 'extensions/encryptcontent.md'
+        - 'extensions/webfonts.md'
+        - Javascript:
+          - 'extensions/hljs.md'
+          - 'extensions/tablesort.md'
 
 plugins:
     #- mkdocs-simple-hooks:
@@ -48,15 +60,16 @@ plugins:
           default:
             name: Deutsch
             build: true
-            site_name: "MkDocs Risonia Theme"
           en:
             name: English
             build: true
-            site_name: "epwg.de tools"
+            site_name: "MkDocs Risonia theme"
         nav_translations:
           en:
             Farben: Colors
             Zweitfarben: Secondary colors
+            Erweiterungen: Extensions
+            Javascript: Javascript
 
     - color-theme:
         theme_color: '#ef6110'

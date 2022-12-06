@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((el) => {
     hljs.highlightElement(el);
   });
-  document.querySelectorAll("article table:not([class])").forEach(function(table) {
+  document.querySelectorAll("table").forEach(function(table) {
     new Tablesort(table)
   });
 });

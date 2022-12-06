@@ -111,8 +111,8 @@ class W3cssColorTheme(BasePlugin):
         ('secondary_color', config_options.Type(str, default='mono')),
         ('light_text_color', config_options.Type(str, default='#000')),
         ('dark_text_color', config_options.Type(str, default='#fff')),
-        ('extra_light_path', config_options.Type(string_types, default='')),
-        ('extra_dark_path', config_options.Type(string_types, default='')),
+        ('extra_light_path', config_options.Type(list, default=[])),
+        ('extra_dark_path', config_options.Type(list, default=[])),
     )
 
     def text_contrast(self, value, pref_dark):
@@ -223,8 +223,10 @@ class W3cssColorTheme(BasePlugin):
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],0)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],0)
         if self.config['extra_light_path']:
-            with open(self.config['extra_light_path'], 'r') as additional_css:
-                data['additional'] = additional_css.read()
+            data['additional'] = ''
+            for css_filename in self.config['extra_light_path']:
+                with open(css_filename, 'r') as additional_css:
+                    data['additional'] = data['additional'] + additional_css.read()
         
         tpl = Template(TPL_THEME)
         out_theme_light = tpl.render(data)
@@ -254,8 +256,10 @@ class W3cssColorTheme(BasePlugin):
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],1)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],1)
         if self.config['extra_dark_path']:
-            with open(self.config['extra_dark_path'], 'r') as additional_css:
-                data['additional'] = additional_css.read()
+            data['additional'] = ''
+            for css_filename in self.config['extra_dark_path']:
+                with open(css_filename, 'r') as additional_css:
+                    data['additional'] = data['additional'] + additional_css.read()
 
         tpl = Template(TPL_THEME)
         out_theme_dark = tpl.render(data)

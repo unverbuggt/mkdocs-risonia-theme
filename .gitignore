@@ -5,3 +5,4 @@ site/
 build/
 _css/_out
 theme_override/assets/
+_css/

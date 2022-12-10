@@ -47,11 +47,13 @@ nav:
           - 'extensions/tablesort.md'
 
 plugins:
-    #- mkdocs-simple-hooks:
-    #  hooks:
-    #    on_files: "hooks:on_files"
+    - mkdocs-simple-hooks:
+        hooks:
+          on_post_build: "hooks:get_external_assets"
+
     - search:
         lang: de
+
     - i18n:
         default_language: de
         default_language_only: false

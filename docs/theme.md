@@ -25,6 +25,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 * Helle und dunkle Ansicht.
 * Integration vom `mkdocs-static-i18n` Plugin.
 * Integration vom `mkdocs-encryptcontent-plugin`.
+* Seite kann als Webapp installiert werden.
 
 ## Installation
 

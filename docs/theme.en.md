@@ -25,6 +25,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 * Light and dark mode.
 * Integration of `mkdocs-static-i18n` pLugin.
 * Integration of `mkdocs-encryptcontent-plugin`.
+* Web app support.
 
 ## Installation
 

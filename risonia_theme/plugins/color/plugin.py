@@ -111,8 +111,8 @@ class W3cssColorTheme(BasePlugin):
         ('secondary_color', config_options.Type(str, default='mono')),
         ('light_text_color', config_options.Type(str, default='#000')),
         ('dark_text_color', config_options.Type(str, default='#fff')),
-        ('extra_light_path', config_options.Type(list, default=[])),
-        ('extra_dark_path', config_options.Type(list, default=[])),
+        ('extra_css_light', config_options.Type(list, default=[])),
+        ('extra_css_dark', config_options.Type(list, default=[])),
     )
 
     def text_contrast(self, value, pref_dark):
@@ -222,9 +222,9 @@ class W3cssColorTheme(BasePlugin):
         data['color_d3'] = self.text_contrast(data['bgcolor_d3'],0)
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],0)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],0)
-        if self.config['extra_light_path']:
+        if self.config['extra_css_light']:
             data['additional'] = ''
-            for css_filename in self.config['extra_light_path']:
+            for css_filename in self.config['extra_css_light']:
                 with open(css_filename, 'r') as additional_css:
                     data['additional'] = data['additional'] + additional_css.read()
         
@@ -255,9 +255,9 @@ class W3cssColorTheme(BasePlugin):
         data['color_d3'] = self.text_contrast(data['bgcolor_d3'],1)
         data['color_d4'] = self.text_contrast(data['bgcolor_d4'],1)
         data['color_d5'] = self.text_contrast(data['bgcolor_d5'],1)
-        if self.config['extra_dark_path']:
+        if self.config['extra_css_dark']:
             data['additional'] = ''
-            for css_filename in self.config['extra_dark_path']:
+            for css_filename in self.config['extra_css_dark']:
                 with open(css_filename, 'r') as additional_css:
                     data['additional'] = data['additional'] + additional_css.read()
 

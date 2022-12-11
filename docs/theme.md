@@ -58,12 +58,18 @@ theme:
     
 plugins:
     - search: {}
+
     #- i18n: {...} #mkdocs-static-i18n
+
     - color-theme: #optional
         theme_color: '#ff6600' #Hauptfarbe
         secondary_color: 'complementary' #Zweitfarbe oder Farbschema
-        #extra_light_path: 'css/additional-light.css'
-        #extra_dark_path: 'css/additional-dark.min.css'
+        #extra_css_light: #Liste mit zuätzlichen CSS Dateien für die helle Ansicht
+        #    - 'css/additional-light.css'
+        #extra_css_dark:  #Liste mit zuätzlichen CSS Dateien für die dunkle Ansicht
+        #    - 'css/additional-dark.css'
+
     - w3css-classes: {} #nötig
+
     #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
 ```

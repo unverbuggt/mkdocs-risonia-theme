@@ -19,8 +19,10 @@ plugins:
         secondary_color: 'complementary' #can be a color or scheme
         light_text_color: '#000' #black
         dark_text_color: '#fff' #white
-        #extra_light_path: 'css/additional-light.css' #path to addition CSS for light mode
-        #extra_dark_path: 'css/additional-dark.min.css' #path to addition CSS for dark mode
+        #extra_css_light: #list of extra CSS for light mode
+        #    - 'css/additional-light.css'
+        #extra_css_dark:  #list of extra CSS for dark mode
+        #    - 'css/additional-dark.css'
     #...
 ```
 

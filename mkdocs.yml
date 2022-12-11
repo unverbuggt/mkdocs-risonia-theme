@@ -76,10 +76,10 @@ plugins:
     - color-theme:
         theme_color: '#ef6110'
         secondary_color: 'complementary'
-        extra_light_path: 
+        extra_css_light: 
           - 'extra_css/stackoverflow-light.min.css'
           - 'extra_css/tablesort-light.css'
-        extra_dark_path: 
+        extra_css_dark: 
           - 'extra_css/stackoverflow-dark.min.css'
           - 'extra_css/tablesort-dark.css'
 

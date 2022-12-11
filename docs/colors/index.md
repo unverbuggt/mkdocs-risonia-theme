@@ -19,8 +19,10 @@ plugins:
         secondary_color: 'complementary' #Zweitfarbe oder Farbschema
         light_text_color: '#000' #Schwarz
         dark_text_color: '#fff' #Weiss
-        #extra_light_path: 'css/additional-light.css' #Pfad zu CSS helle Ansicht
-        #extra_dark_path: 'css/additional-dark.min.css' #Pfad zu CSS dunkele Ansicht
+        #extra_css_light: #Liste mit zuätzlichen CSS Dateien für die helle Ansicht
+        #    - 'css/additional-light.css'
+        #extra_css_dark:  #Liste mit zuätzlichen CSS Dateien für die dunkle Ansicht
+        #    - 'css/additional-dark.css'
     #...
 ```
 

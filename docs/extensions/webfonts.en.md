@@ -41,5 +41,5 @@ So the web fonts (woff\* files) reside in `theme_override/assets/fonts/` in this
 The web font can added to the heading like this:
 
 ```markdown
-## Self-host web fonts { style="font-family:Lobster;" }
+## Self-host web fonts { .font-lobster }
 ```

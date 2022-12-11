@@ -41,5 +41,5 @@ Die Webfonts (woff\* Dateien) selber liegen also in `theme_override/assets/fonts
 In der Markdown Datei kann das Webfont dann so zugewiesen werden:
 
 ```markdown
-## Webfonts selbst hosten { style="font-family:Lobster;" }
+## Webfonts selbst hosten { .font-lobster }
 ```

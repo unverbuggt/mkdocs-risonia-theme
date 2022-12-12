@@ -47,6 +47,10 @@ nav:
           - 'extensions/tablesort.md'
 
 plugins:
+    - exclude:
+        glob:
+          - '*.tmp'
+
     - mkdocs-simple-hooks:
         hooks:
           on_post_build: "hooks:get_external_assets"
@@ -112,3 +116,5 @@ repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme
 
 markdown_extensions:
     - attr_list
+    - pymdownx.escapeall:
+        hardbreak: true

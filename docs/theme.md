@@ -50,27 +50,28 @@ In der `mkdocs.yml` mit Thema und Plugins konfigurieren:
 ```yaml
 theme:
     name: risonia
-    #custom_dir: files/ # statische Inhalte und Anpassungen
+    #custom_dir: theme_override/ # statische Inhalte und Anpassungen
     #logo: img/logo.svg # ohne logo wird bei mobilen Geräten ein Burgermenü angezeigt
     #favicon: img/logo.ico # sonst wird img/favicon.ico angenommen
     #manifest: manifest.json # Manifest für Webapp
     #serviceworker: service-worker.js # Benötigt für Webapp, kann eine leere Datei sein
     #extlink: true # externe Links markieren
+    #extblank: true # externe Links im neuen Browserfenster öffnen
     
 plugins:
     - search: {}
 
-    #- i18n: {...} #mkdocs-static-i18n
+    #- i18n: {...} # mkdocs-static-i18n
 
     - color-theme: #optional
-        theme_color: '#ff6600' #Hauptfarbe
-        secondary_color: 'complementary' #Zweitfarbe oder Farbschema
-        #extra_css_light: #Liste mit zuätzlichen CSS Dateien für die helle Ansicht
+        theme_color: '#ff6600' # Hauptfarbe
+        secondary_color: 'complementary' # Zweitfarbe oder Farbschema
+        #extra_css_light: # Liste mit zuätzlichen CSS Dateien für die helle Ansicht
         #    - 'css/additional-light.css'
-        #extra_css_dark:  #Liste mit zuätzlichen CSS Dateien für die dunkle Ansicht
+        #extra_css_dark:  # Liste mit zuätzlichen CSS Dateien für die dunkle Ansicht
         #    - 'css/additional-dark.css'
 
-    - w3css-classes: {} #nötig
+    - w3css-classes: {} # nötig
 
-    #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
+    #- encryptcontent: {...} # mkdocs-encryptcontent-plugin
 ```

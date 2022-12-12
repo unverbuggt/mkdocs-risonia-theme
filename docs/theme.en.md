@@ -50,27 +50,28 @@ Enable the theme and plugins in your `mkdocs.yml`:
 ```yaml
 theme:
     name: risonia
-    #custom_dir: files/ #add static files or overrides
-    #logo: img/logo.svg #if undefined a burger symbol is displayed on mobile devices
-    #favicon: img/logo.ico #if undefined img/favicon.ico is used
-    #manifest: manifest.json #manifest for installable webapp
-    #serviceworker: service-worker.js #for webapp an empty file is sufficient
-    #extlink: true #mark external links with symbol
+    #custom_dir: theme_override/ # add static files or overrides
+    #logo: img/logo.svg # if undefined a burger symbol is displayed on mobile devices
+    #favicon: img/logo.ico # if undefined img/favicon.ico is used
+    #manifest: manifest.json # manifest for installable webapp
+    #serviceworker: service-worker.js # for webapp an empty file is sufficient
+    #extlink: true # mark external links with symbol
+    #extblank: true # send external links to new browser tab
     
 plugins:
     - search: {}
 
-    #- i18n: {...} #mkdocs-static-i18n
+    #- i18n: {...} # mkdocs-static-i18n
 
-    - color-theme: #optional
-        theme_color: '#ff6600' #primary color
-        secondary_color: 'complementary' #can be a color or scheme
-        #extra_css_light: #list of extra CSS for light mode
+    - color-theme: # optional
+        theme_color: '#ff6600' # primary color
+        secondary_color: 'complementary' # can be a color or scheme
+        #extra_css_light: # list of extra CSS for light mode
         #    - 'css/additional-light.css'
-        #extra_css_dark:  #list of extra CSS for dark mode
+        #extra_css_dark:  # list of extra CSS for dark mode
         #    - 'css/additional-dark.css'
 
-    - w3css-classes: {} #mandatory
+    - w3css-classes: {} # mandatory
 
-    #- encryptcontent: {...} #mkdocs-encryptcontent-plugin
+    #- encryptcontent: {...} # mkdocs-encryptcontent-plugin
 ```

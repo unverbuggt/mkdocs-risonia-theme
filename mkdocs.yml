@@ -21,8 +21,8 @@ extra_css:
   - 'css/fonts.css'
 
 nav:
+    - 'mkdocs.md'
     - 'index.md'
-    - 'theme.md'
     - 'markdown.md'
     - Farben:
       - 'colors/index.md'
@@ -111,6 +111,8 @@ plugins:
         password_button_text: 'ENTER'
         selfhost: true
         selfhost_download: false
+        reload_scripts:
+          - '#theme'
 
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme
 

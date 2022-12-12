@@ -173,7 +173,7 @@
 {%- if nav|length>1 %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
   <div id="myNav" style="font-weight: bold;">
-  <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-1em"><use xlink:href="#close-menu" /></svg></a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-1em"><use xlink:href="#close-menu" /></svg></a>
 {%- set accid = namespace(value=1, hidden=true, hidden2=true) %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
@@ -193,54 +193,54 @@
       {%- endif %}
     {%- endfor %}
     {%- if nav_item.children[0].is_index %}
-  <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}">
-    {{ nav_item.title }}{% if nav_item.children[0].encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
-  </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}">
+      {{ nav_item.title }}{% if nav_item.children[0].encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
     {%- else %}
-  <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">
-    {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
-  </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)">
+      {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
     {%- endif %}
     {%- if not nav_item.children[0].is_index or (nav_item.children[0].is_index and not accid.hidden) %}
-  <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
+    <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
       {%- for nav_item in nav_item.children %}
         {%- if not nav_item.is_index %}
           {%- if nav_item.children %}
             {%- if nav_item.children[0].is_index %}
-    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}" style="padding-left: 24px;">
-      {{ nav_item.title }}{% if nav_item.children[0].encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
-    </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.children[0].active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.children[0].url|url }}" style="padding-left: 24px;">
+        {{ nav_item.title }}{% if nav_item.children[0].encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+      </a>
             {%- else %}
-    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)" style="padding-left: 24px;">
-      {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
-    </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc{{  accid.value }}')" href="javascript:void(0)" style="padding-left: 24px;">
+        {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+      </a>
             {%- endif %}
             {%- if not nav_item.children[0].is_index or (nav_item.children[0].is_index and not accid.hidden2) %}
-    <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden2 %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
+      <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden2 %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
               {%- for nav_item in nav_item.children %}
                 {%- if not nav_item.is_index %}
-      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 32px;">
-        {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
-      </a>
+        <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 32px;">
+          {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
+        </a>
                 {%- endif %}
               {%- endfor %}
+      </div>
             {%- endif %}
-    </div>
           {%- else %}
-    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 24px;">
-      {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
-    </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}" style="padding-left: 24px;">
+        {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
+      </a>
           {%- endif %}
         {%- endif %}
       {%- endfor %}
+    </div>
     {%- endif %}
   {%- else %}
-  <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}">
-    {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
-  </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme{% if nav_item.active %} w3-theme-l2{% else %} w3-theme-l4{% endif %}" href="{{ nav_item.url|url }}">
+      {{ nav_item.title }}{% if nav_item.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}
+    </a>
   {%- endif %}
 {%- endfor %}
-  </div>
   </div>
   <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
 </nav>
@@ -251,7 +251,7 @@
 
 {%- set toc_check = namespace(anchors=0) %}
 {%- for toc_item in page.toc %}
-  {% set toc_check.anchors = toc_check.anchors + 1 %}
+  {%- set toc_check.anchors = toc_check.anchors + 1 %}
   {%- for toc_item in toc_item.children %}
     {% set toc_check.anchors = toc_check.anchors + 1 %}
   {%- endfor %}
@@ -352,7 +352,9 @@
 {%- endif %}
     / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
     / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
-    </p>
+  </p>
+  {%- block footer_ext %}
+  {%- endblock %}
 </footer>
 {%- endblock %}
 </div>

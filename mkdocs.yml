@@ -91,10 +91,11 @@ plugins:
 
     - encryptcontent:
         title_prefix: ''
-        summary: 'Encrypted Test Page.'
+        summary: 'Verschlüsselte Testseite.'
         placeholder: '12345'
-        decryption_failure_message: 'Wrong password, please enter "12345".'
-        encryption_info_message: 'Please enter "12345".'
+        password_button_text: 'ENTER'
+        decryption_failure_message: 'Falsches Passwort, bitte "12345" eingeben.'
+        encryption_info_message: 'Bitte "12345" eingeben.'
         input_class: 'w3-input'
         button_class: 'w3-button w3-theme-l1 w3-hover-theme'
         hljs: False
@@ -108,11 +109,18 @@ plugins:
           myTocButton: [div, id]
         search_index: 'dynamically' #dynamically
         password_button: True
-        password_button_text: 'ENTER'
         selfhost: true
         selfhost_download: false
         reload_scripts:
           - '#theme'
+        translations:
+          en:
+            title_prefix: ''
+            summary: 'Encrypted Test Page.'
+            placeholder: '12345'
+            password_button_text: 'ENTER'
+            decryption_failure_message: 'Wrong password, please enter "12345".'
+            encryption_info_message: 'Please enter "12345".'
 
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme
 

@@ -75,3 +75,42 @@ plugins:
 
     #- encryptcontent: {...} # mkdocs-encryptcontent-plugin
 ```
+
+
+## Overrides
+
+The file `main.html` in `custom_dir` can be used to further cutomize the template:
+
+```html
+{% extends "base.html" %}
+
+{% block exec_script %}
+<script id="theme">
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+  document.querySelectorAll('table').forEach(function(table) {
+    if (!table.hasAttribute('Tablesort')) {
+      new Tablesort(table);
+      table.setAttribute('Tablesort', '');
+    }
+  });
+});
+</script>
+{% endblock %}
+
+{%- block footer_ext %}
+  <p class="w3-tiny" style="float:right;">
+  {%- if i18n_config and i18n_page_file_locale %}
+    <a href="{{ (i18n_page_locale + '/imprint/') | url }}">Imprint</a>
+  {%- else %}
+    <a href="{{ 'imprint/' | url }}">Impressum</a>
+  {%- endif %}
+  </p>
+{%- endblock %}
+
+{%- block top_buttons %}
+    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">&lt;/&gt;</a> 
+{%- endblock %}
+```

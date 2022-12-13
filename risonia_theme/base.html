@@ -154,6 +154,8 @@
     {%- if 'search' in config.plugins %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button> 
     {%- endif %}
+    {%- block top_buttons %}
+    {%- endblock %}
     </span>
   </p>
 </div>

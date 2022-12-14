@@ -26,6 +26,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 * Integration vom `mkdocs-static-i18n` Plugin.
 * Integration vom `mkdocs-encryptcontent-plugin`.
 * Seite kann als Webapp installiert werden.
+* Ziemlich [leichtgewichtig](mkdocs/#groenvergleich)
 
 ## Installation
 

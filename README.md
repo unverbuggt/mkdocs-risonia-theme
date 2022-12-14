@@ -4,6 +4,10 @@ A simple theme for [MkDocs](https://www.mkdocs.org/). Based on [this demo](https
 using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable color schemes
 (inspiration [here](https://www.w3schools.com/colors/colors_schemes.asp)).
 
+## Demo
+
+See a demo and documentation [here](https://unverbuggt.xn--rthlein-n2a.de/risonia/en/)
+
 ## Design goals
 
 * Be a simple starting point for modifications.
@@ -26,6 +30,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 * Integration of `mkdocs-static-i18n` pLugin.
 * Integration of `mkdocs-encryptcontent-plugin`.
 * Web app support.
+* Rather [lightweight](https://unverbuggt.xn--rthlein-n2a.de/risonia/en/mkdocs/#size-comparison)
 
 ## Installation
 

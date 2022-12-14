@@ -8,3 +8,4 @@ theme_override/assets/
 _css/
 docs/imprint*
 .cache/
+_test_data/

@@ -23,8 +23,8 @@ setup(
             'risonia = risonia_theme',
         ],
         'mkdocs.plugins': [
-            'color-theme = risonia_theme.plugins.color.plugin:W3cssColorTheme',
-            'w3css-classes = risonia_theme.plugins.classes.plugin:W3cssClassesPlugin'
+            'risonia/color-theme = risonia_theme.plugins.color.plugin:W3cssColorTheme',
+            'risonia/w3css-classes = risonia_theme.plugins.classes.plugin:W3cssClassesPlugin'
         ]
     },
     zip_safe=False

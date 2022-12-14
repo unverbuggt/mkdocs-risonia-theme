@@ -1,9 +1,10 @@
 *.pyc
 dist/
 mkdocs_risonia_theme.egg-info/
-site/
+site*/
 build/
 _css/_out
 theme_override/assets/
 _css/
 docs/imprint*
+.cache/

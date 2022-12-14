@@ -89,6 +89,8 @@ plugins:
 
     - w3css-classes: {}
 
+    #- privacy: {}
+
     - encryptcontent:
         title_prefix: ''
         summary: 'Verschlüsselte Testseite.'

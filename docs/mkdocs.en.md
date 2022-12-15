@@ -28,6 +28,8 @@ Theme | Version | HTML | CSS | JS/JSON/MAP | Webfonts | Miscellaneous | Total
 `material` | 8.4.4-insiders | 1110 | 534 | 2946 | 703 | 801 | 6094
 
 HTML, CSS, JS should be somewhat comperable, whereat Risonia doesn't use "minify".
+To be fair the `material` theme uses [Pygments](https://pygments.org/)
+instead of [highlight.js](https://highlightjs.org/) for code highlighting, which increses the size of HTML.
 
 The webfont size is not really comperable, because `mkdocs` f.ex. supplies all flavors of the webfonts for best downward compatibility.
 Risonia doesn't use webfonts by default.

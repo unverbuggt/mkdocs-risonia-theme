@@ -86,8 +86,11 @@ The file `main.html` in `custom_dir` can be used to further cutomize the templat
 {% extends "base.html" %}
 
 {% block exec_script %}
+<script>
+  var DOMContentLoaded_fired = false;
+</script>
 <script id="theme">
-document.addEventListener('DOMContentLoaded', (event) => {
+function runWhenDOMContentLoaded() {
   document.querySelectorAll('pre code').forEach((el) => {
     hljs.highlightElement(el);
   });
@@ -97,6 +100,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       table.setAttribute('Tablesort', '');
     }
   });
+}
+if (DOMContentLoaded_fired) {
+  runWhenDOMContentLoaded();
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  DOMContentLoaded_fired=true;
+  runWhenDOMContentLoaded();
 });
 </script>
 {% endblock %}

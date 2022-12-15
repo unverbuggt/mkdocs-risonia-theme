@@ -29,6 +29,8 @@ Thema | Version | HTML | CSS | JS/JSON/MAP | Webfonts | Sonstiges | Gesamt
 `material` | 8.4.4-insiders | 1110 | 534 | 2946 | 703 | 801 | 6094
 
 HTML, CSS, JS müsste einigermaßen vergleichbar sein, wobei Risonia kein "minify" verwendet.
+Allerdings verwendet das `material` Thema [Pygments](https://pygments.org/)
+statt [highlight.js](https://highlightjs.org/) um Code einzufärben , was den HTML Teil vergrößert.
 
 Bei Webfonts kann man schlecht vergleichen, da `mkdocs` z.B. aus Abwärtskompatibilität sämtliche
 Versionen der Schriftarten mitliefert.

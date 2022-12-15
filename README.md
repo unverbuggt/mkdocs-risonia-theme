@@ -92,8 +92,11 @@ The file `main.html` in `custom_dir` can be used to further cutomize the templat
 {% extends "base.html" %}
 
 {% block exec_script %}
+<script>
+  var DOMContentLoaded_fired = false;
+</script>
 <script id="theme">
-document.addEventListener('DOMContentLoaded', (event) => {
+function runWhenDOMContentLoaded() {
   document.querySelectorAll('pre code').forEach((el) => {
     hljs.highlightElement(el);
   });
@@ -103,12 +106,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
       table.setAttribute('Tablesort', '');
     }
   });
+}
+if (DOMContentLoaded_fired) {
+  runWhenDOMContentLoaded();
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  DOMContentLoaded_fired=true;
+  runWhenDOMContentLoaded();
 });
 </script>
 {% endblock %}
 
 {%- block footer_ext %}
-  <p class="w3-tiny" style="float:right;">
+  <p class="w3-right w3-tiny">
   {%- if i18n_config and i18n_page_file_locale %}
     <a href="{{ (i18n_page_locale + '/imprint/') | url }}">Imprint</a>
   {%- else %}
@@ -118,6 +130,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 {%- endblock %}
 
 {%- block top_buttons %}
-    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">&lt;/&gt;</a> 
+    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="{{ config.repo_url }}" target="_blank">&lt;/&gt;</a> 
 {%- endblock %}
 ```

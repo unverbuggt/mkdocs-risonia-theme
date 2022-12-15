@@ -41,7 +41,7 @@ Install the package from source with pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.1-py3-none-any.whl
 ```
 
 ## Configuration

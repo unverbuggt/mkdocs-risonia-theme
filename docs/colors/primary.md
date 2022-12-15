@@ -1,6 +1,6 @@
 title: Hauptfarben
 
-<video autoplay loop style="width: 30%">
+<video autoplay loop style="max-width: 50%">
   <source src="../../videos/desaturate.mp4" type="video/mp4">
 </video>
 

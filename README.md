@@ -8,7 +8,8 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 
 See a demo and documentation [here](https://unverbuggt.xn--rthlein-n2a.de/risonia/en/)
 
-![](screen_big.png) ![](screen_small.png)
+![](https://github.com/unverbuggt/mkdocs-risonia-theme/raw/main/screen_big.png)
+![](https://github.com/unverbuggt/mkdocs-risonia-theme/raw/main/screen_small.png)
 
 ## Design goals
 

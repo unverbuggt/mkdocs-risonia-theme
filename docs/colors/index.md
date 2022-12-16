@@ -9,7 +9,7 @@ Durch `secondary_color` wird entweder eine [Zweitfarbe](secondary/) oder ein [Sc
 Die Textfarben unter `light_text_color` und `dark_text_color` müssen nicht unbedingt Schwarz und Weiss lauten.
 Sie werden allerdings nicht explizit für helle bzw. dunkle Ansicht verwendet sondern je nach bestem Kontrast ausgewählt.
 
-Durch die Option `extra_light_path` und `extra_dark_path` können zusätzliche CSS in das Aussehen der jeweiligen Ansicht eingebunden werden.
+Durch die Option `extra_css_light` und `extra_css_dark` können zusätzliche CSS in das Aussehen der jeweiligen Ansicht eingebunden werden.
 
 ```yaml
 plugins:

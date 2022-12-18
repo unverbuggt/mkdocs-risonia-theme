@@ -1,5 +1,9 @@
 # mkdocs-risonia-theme
 
+[![PyPI Version][pypi-v-image]][pypi-v-link]
+[![PyPI downloads](https://img.shields.io/pypi/dm/mkdocs-risonia-theme.svg)](https://pypi.org/project/mkdocs-risonia-theme)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
 A simple theme for [MkDocs](https://www.mkdocs.org/). Based on [this demo](https://www.w3schools.com/w3css/tryw3css_examples_material.htm) 
 using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable color schemes
 (inspiration [here](https://www.w3schools.com/colors/colors_schemes.asp)).

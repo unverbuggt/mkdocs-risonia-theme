@@ -1,6 +1,6 @@
 # mkdocs-risonia-theme
 
-[![PyPI Version][pypi-v-image]][pypi-v-link]
+[![PyPI Version][https://img.shields.io/pypi/v/mkdocs-risonia-theme.svg]][https://pypi.org/project/mkdocs-risonia-theme/]
 [![PyPI downloads](https://img.shields.io/pypi/dm/mkdocs-risonia-theme.svg)](https://pypi.org/project/mkdocs-risonia-theme)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 

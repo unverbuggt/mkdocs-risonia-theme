@@ -41,7 +41,7 @@ Oder aus den Quellen bauen mit pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.1-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.2-py3-none-any.whl
 ```
 
 ## Konfiguration
@@ -123,6 +123,6 @@ document.addEventListener('DOMContentLoaded',function(){
 {%- endblock %}
 
 {%- block top_buttons %}
-    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="{{ config.repo_url }}" target="_blank">&lt;/&gt;</a> 
+    <a class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-right no-print" href="{{ config.repo_url }}" target="_blank">&lt;/&gt;</a> 
 {%- endblock %}
 ```

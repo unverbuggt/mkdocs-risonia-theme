@@ -149,10 +149,10 @@
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
-    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
-    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
+    <button class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
+    <button class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
     {%- if 'search' in config.plugins %}
-    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button> 
+    <button class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button> 
     {%- endif %}
     {%- block top_buttons %}
     {%- endblock %}

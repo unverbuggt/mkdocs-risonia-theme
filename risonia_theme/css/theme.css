@@ -33,6 +33,10 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
   vertical-align: middle;
 }
+.top-button {
+  position:relative;
+  top:.125em;
+}
 
 /*fonts*/
 body{

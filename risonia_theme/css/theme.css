@@ -30,7 +30,6 @@ h1,h2,h3,h4,h5,h6 {
   height: 2em;
   width: 2em;
   display: inline-flex;
-  bottom: .125em;
   position: relative;
   vertical-align: middle;
 }

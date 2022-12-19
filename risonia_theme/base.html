@@ -144,9 +144,9 @@
 <div id="myTop" class="w3-container w3-top w3-theme w3-large no-print">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
     {%- else %}
-    <svg class="w3-hide-large no-print svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
@@ -163,9 +163,9 @@
 <header class="w3-container w3-theme w3-large">
   <p>
     {%- if config.theme.logo %}
-    <img src="{{ config.theme.logo | url }}" class="svg-icon" style="height: 2em;" onclick="w3_open()">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
     {%- else %}
-    <svg class="w3-hide-large no-print svg-2em" onclick="w3_open()"><use xlink:href="#open-menu" /></svg>
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
     <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
   </p>

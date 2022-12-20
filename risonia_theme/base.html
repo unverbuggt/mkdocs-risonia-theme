@@ -148,7 +148,7 @@
     {%- else %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
-    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}
+    <span class="w3-margin-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}
     <button class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
     <button class="w3-button w3-theme-d1 w3-hover-theme top-button w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
     {%- if 'search' in config.plugins %}
@@ -167,7 +167,7 @@
     {%- else %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
-    <span class="w3-margin-left">{% if page.title %}{{ page.title }}{% endif %}</span>
+    <span class="w3-margin-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
   </p>
 </header>
 

@@ -1,5 +1,5 @@
-title: Markdown 
-<!-- "title" is shown in navigation and top bar -->
+title: Markdown Test, TEst, tEst, test...
+<!-- "title" is shown in top bar -->
 
 # This is a title
 
@@ -68,8 +68,8 @@ Furthermore inline HTML is possible: <svg class="svg-1em"><use xlink:href="#encr
 ## This is how the page looks in Markdown:
 
 ```markdown
-title: Markdown 
-<!-- "title" is shown in navigation and top bar -->
+title: Markdown Test, TEst, tEst, test...
+<!-- "title" is shown in top bar -->
 
 # This is a title
 
@@ -139,7 +139,7 @@ Furthermore inline HTML is possible: <svg class="svg-1em"><use xlink:href="#encr
 ## This is how the page looks in HTML:
 
 ```html
-<!-- "title" is shown in navigation and top bar -->
+<!-- "title" is shown in top bar -->
 <h1 id="this-is-a-title">This is a title</h1>
 <h2 id="this-is-a-heading">This is a heading</h2>
 <h3 id="this-is-a-subheading">This is a subheading</h3>

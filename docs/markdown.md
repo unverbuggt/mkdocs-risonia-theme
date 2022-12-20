@@ -1,5 +1,5 @@
-title: Markdown 
-<!-- "title" wird in der Navigation und Titelleiste angezeigt -->
+title: Markdown Test, TEst, tEst, test...
+<!-- "title" wird in der Titelleiste angezeigt -->
 
 # Dies ist der Seitentitel
 
@@ -68,8 +68,8 @@ Außerdem ist inline HTML möglich: <svg class="svg-1em"><use xlink:href="#encry
 ## So sieht der Markdowntext dieser Seite aus:
 
 ```markdown
-title: Markdown 
-<!-- "title" wird in der Navigation und Titelleiste angezeigt -->
+title: Markdown Test, TEst, tEst, test...
+<!-- "title" wird in der Titelleiste angezeigt -->
 
 # Dies ist der Seitentitel
 
@@ -139,7 +139,7 @@ Außerdem ist inline HTML möglich: <svg class="svg-1em"><use xlink:href="#encry
 ## Und dieses HTML wird daraus erzeugt:
 
 ```html
-<!-- "title" wird in der Navigation und Titelleiste angezeigt -->
+<!-- "title" wird in der Titelleiste angezeigt -->
 <h1 id="dies-ist-der-seitentitel">Dies ist der Seitentitel</h1>
 <h2 id="dies-eine-uberschrift">Dies eine Überschrift</h2>
 <h3 id="und-eine-unteruberschrift">Und eine Unterüberschrift</h3>

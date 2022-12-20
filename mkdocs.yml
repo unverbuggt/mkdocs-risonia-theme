@@ -23,7 +23,7 @@ extra_css:
 nav:
     - 'mkdocs.md'
     - 'index.md'
-    - 'markdown.md'
+    - Markdown: 'markdown.md'
     - Farben:
       - 'colors/index.md'
       - 'colors/primary.md'
@@ -76,6 +76,7 @@ plugins:
             Zweitfarben: Secondary colors
             Erweiterungen: Extensions
             Javascript: Javascript
+            Markdown: Markdown
 
     - color-theme:
         theme_color: '#ef6110'

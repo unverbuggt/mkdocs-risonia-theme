@@ -141,21 +141,24 @@
 {%- endif %}
 </svg>
 
-<div id="myTop" class="w3-container w3-padding-16 w3-top w3-theme w3-large no-print">
-  <div class="w3-cell w3-cell-middle">
+<div id="myTop" class="w3-container w3-cell-row w3-top w3-theme w3-large no-print">
+  <div class="w3-cell w3-cell-middle" style="width:0">
     {%- if config.theme.logo %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
     {%- else %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
   </div>
-  <div class="w3-cell w3-cell-middle" style="min-width:65%">
-    <span class="w3-margin-left w3-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
   </div>
   <div class="w3-cell w3-cell-middle">
+    <span class="w3-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
+  </div>
+  <div class="w3-cell w3-cell-middle" style="width:0">
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-left w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
   </div>
-  <div class="w3-cell w3-cell-middle" style="width:35%">
+  <div class="w3-cell w3-cell-middle">
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button> 
     {%- if 'search' in config.plugins %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button> 
@@ -165,16 +168,17 @@
     </div>
 </div>
 
-<header class="w3-container w3-padding-16 w3-theme w3-large">
+<header class="w3-container w3-theme w3-large">
+  {%- if config.theme.logo %}
   <div class="w3-cell w3-cell-middle">
-    {%- if config.theme.logo %}
-    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
-    {%- else %}
-    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
-    {%- endif %}
+    <button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
+  </div>
+  {%- endif %}
+  <div class="w3-cell w3-cell-middle w3-padding-24">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
   </div>
   <div class="w3-cell w3-cell-middle">
-    <span class="w3-margin-left w3-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
+    <span class="w3-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
   </div>
 </header>
 

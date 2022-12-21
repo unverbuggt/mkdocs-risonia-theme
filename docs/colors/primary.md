@@ -4,7 +4,7 @@ title: Hauptfarben
   <source src="../../videos/desaturate.mp4" type="video/mp4">
 </video>
 
-Diese Beispielfarben haben alle eine mittlere [wahrgenommene Helligkeit](https://alienryderflex.com/hsp.html). Sie haben daher einen guten Kontrast zu schwarzer und weisser Schriftfarbe.
+Diese Beispielfarben haben alle eine mittlere [wahrgenommene Helligkeit](https://alienryderflex.com/hsp.html). Sie haben daher einen guten Kontrast zu schwarzer und weißer Schriftfarbe.
 
 Außerdem sind sind sie von mittlerer Sichtbarkeit, sodass die Zweitfarben in heller und dunkler Ansicht eine ähnliche Schattierung aufweisen.
 

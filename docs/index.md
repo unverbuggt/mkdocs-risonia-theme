@@ -17,7 +17,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 ## Blöde Kompromisse
 
 * Wegen w3css müssen leider zusätzliche Klassen an die Markdownausgabe angefügt werden.
-    * Aber wenn wir schonmal dabei sind, können wir gleich externe Links erkennen und markieren.
+    * Aber wenn wir schon mal dabei sind, können wir gleich externe Links erkennen und markieren.
 * Die SVG Symbole müssen in jede Seite eingefügt werden, weil sie sonst nicht in Textfarbe erscheinen können.
 
 ## Merkmale
@@ -27,6 +27,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 * Integration vom `mkdocs-encryptcontent-plugin`.
 * Seite kann als Webapp installiert werden.
 * Ziemlich [leichtgewichtig](mkdocs/#groenvergleich)
+* Kurze (Navigation) und lange (Oben) [Seitentitel](#seitentitel)
 
 ## Installation
 
@@ -41,7 +42,7 @@ Oder aus den Quellen bauen mit pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.2-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.3-py3-none-any.whl
 ```
 
 ## Konfiguration
@@ -125,4 +126,22 @@ document.addEventListener('DOMContentLoaded',function(){
 {%- block top_buttons %}
     <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="{{ config.repo_url }}" target="_blank">&lt;/&gt;</a> 
 {%- endblock %}
+```
+
+## Seitentitel
+
+Normalerweise würde sich der Seitentitel in `nav` der Konfigurationsdatei gegen `#` und `title` in der Markdowndatei durchsetzen.
+Aber in diesem Thema wird `title` für die Titelleiste verwendet wenn es definiert wurde.
+
+Wenn z.B. in der Navigation ein Titel gesetzt wurde wird dieser in der Navigation verwendet:
+
+```yaml
+nav:
+    - Kurztitel: 'index.md'
+```
+
+Und in der `index.md` Datei kann man so den Titel für die Titelleiste definieren:
+
+```markdown
+title: Langer, ausführlicher Titel
 ```

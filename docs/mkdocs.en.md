@@ -27,12 +27,12 @@ Theme | Version | HTML | CSS | JS/JSON/MAP | Webfonts | Miscellaneous | Total
 `material` | 8.5.10 | 1045 | 151 | 2183 | 76 | 801 | 4256
 `material` | 8.4.4-insiders | 1110 | 534 | 2946 | 703 | 801 | 6094
 
-HTML, CSS, JS should be somewhat comperable, whereat Risonia doesn't use "minify".
+HTML, CSS, JS should be somewhat comparable, whereat Risonia doesn't use "minify".
 To be fair the `material` theme uses [Pygments](https://pygments.org/)
-instead of [highlight.js](https://highlightjs.org/) for code highlighting, which increses the size of HTML.
+instead of [highlight.js](https://highlightjs.org/) for code highlighting, which increases the size of HTML.
 
-The webfont size is not really comperable, because `mkdocs` f.ex. supplies all flavors of the webfonts for best downward compatibility.
-Risonia doesn't use webfonts by default.
+The web font size is not really comperable, because `mkdocs` f.ex. supplies all flavors of the web fonts for best downward compatibility.
+Risonia doesn't use web fonts by default.
 
 The "insiders" version of `material` was configured with the `privacy` plugin,
 so all dependencies were downloaded.

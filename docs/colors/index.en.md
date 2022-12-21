@@ -7,7 +7,7 @@ The `color-theme` plugin generates the colors of the theme depending on various 
 With `secondary_color` you can either define a [secondary color](secondary/) or a [color scheme](secondary/mono/).
 
 The text colors `light_text_color` and `dark_text_color` don't need to be black and white.
-But they aren't explicitely assigned to dark or light mode. They are chosen depending on best contrast.
+But they aren't explicitly assigned to dark or light mode. They are chosen depending on best contrast.
 
 Use options `extra_css_light` and `extra_css_dark` to integrate additional CSS to the modes.
 

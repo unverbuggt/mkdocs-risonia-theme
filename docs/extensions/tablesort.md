@@ -16,7 +16,7 @@ title: tablesort
 
 ## Einrichtung
 
-Um tablesort zu nutzen erstmal [herunterladen](https://github.com/tristen/tablesort/releases/), in `custom_dir` speichern und als `extra_javascript` in die `mkdocs.yml` Datei einfügen.
+Um tablesort zu nutzen erst mal [herunterladen](https://github.com/tristen/tablesort/releases/), in `custom_dir` speichern und als `extra_javascript` in die `mkdocs.yml` Datei einfügen.
 
 Aus dem Beispiel [CSS](https://tristen.ca/tablesort/tablesort.css) kann man durch ändern des `border-color` leicht eine Version für das dunkle Thema machen.
 

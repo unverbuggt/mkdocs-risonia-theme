@@ -27,6 +27,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 * Integration of `mkdocs-encryptcontent-plugin`.
 * Web app support.
 * Rather [lightweight](mkdocs/#size-comparison)
+* Short (nav) and long (top panel) [page titles](#page-titles)
 
 ## Installation
 
@@ -41,7 +42,7 @@ Install the package from source with pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.2-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.3-py3-none-any.whl
 ```
 
 ## Configuration
@@ -80,7 +81,7 @@ plugins:
 
 ## Overrides
 
-The file `main.html` in `custom_dir` can be used to further cutomize the template:
+The file `main.html` in `custom_dir` can be used to further customize the template:
 
 ```html
 {% extends "base.html" %}
@@ -126,4 +127,22 @@ document.addEventListener('DOMContentLoaded',function(){
 {%- block top_buttons %}
     <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="{{ config.repo_url }}" target="_blank">&lt;/&gt;</a> 
 {%- endblock %}
+```
+
+## Page titles
+
+Normally `nav` page titles would override `#` heading or `title` meta tag.
+But in this theme the `title` meta tag will always be used for the top panel if defined.
+
+For example define the navigation:
+
+```yaml
+nav:
+    - Short title: 'index.md'
+```
+
+And within `index.md` you define the long title like this:
+
+```markdown
+title: Long long long title
 ```

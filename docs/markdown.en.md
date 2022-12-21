@@ -50,7 +50,7 @@ This is a numbered list:
 
 1. Walnuts
 2. Almonds
-2. Hazelnuts (Numbering is countinued automatically)
+2. Hazelnuts (Numbering is continued automatically)
 
 This is a table:
 
@@ -120,7 +120,7 @@ This is a numbered list:
 
 1. Walnuts
 2. Almonds
-2. Hazelnuts (Numbering is countinued automatically)
+2. Hazelnuts (Numbering is continued automatically)
 
 This is a table:
 
@@ -176,7 +176,7 @@ with all formatting intact.
 <ol>
 <li>Walnuts</li>
 <li>Almonds</li>
-<li>Hazelnuts (Numbering is countinued automatically)</li>
+<li>Hazelnuts (Numbering is continued automatically)</li>
 </ol>
 <p>This is a table:</p>
 <div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">

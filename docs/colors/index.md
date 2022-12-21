@@ -6,7 +6,7 @@ Mit `theme_color` wird die [Hauptfarbe](primary/) des Themas festgelegt. Diese F
 
 Durch `secondary_color` wird entweder eine [Zweitfarbe](secondary/) oder ein [Schema](secondary/mono/) für die Zweitfarben definiert.
 
-Die Textfarben unter `light_text_color` und `dark_text_color` müssen nicht unbedingt Schwarz und Weiss lauten.
+Die Textfarben unter `light_text_color` und `dark_text_color` müssen nicht unbedingt Schwarz und Weiß lauten.
 Sie werden allerdings nicht explizit für helle bzw. dunkle Ansicht verwendet sondern je nach bestem Kontrast ausgewählt.
 
 Durch die Option `extra_css_light` und `extra_css_dark` können zusätzliche CSS in das Aussehen der jeweiligen Ansicht eingebunden werden.

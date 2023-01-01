@@ -291,7 +291,7 @@
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
   {%- if toc_check.anchors > 1 %}
-    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton">
+    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton" style="z-index:1">
       <button class="w3-button w3-hover-theme w3-theme-l3 w3-hover-theme"><svg class="svg-1em"><use xlink:href="#toc" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
       {%- for toc_item in page.toc %}
@@ -307,7 +307,7 @@
     </div>
   {%- endif %}
   {%- if i18n_config %}
-    <div class="w3-dropdown-hover">
+    <div class="w3-dropdown-hover" style="z-index:1">
       <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0">
       {%- for lang, display in config.plugins.i18n.config.languages.items() %}
@@ -358,12 +358,12 @@
   <p class="w3-left w3-tiny">
     <a href="https://www.mkdocs.org" target="_blank">MkDocs{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
 {%- if 'i18n' in config.plugins %}
-    / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
+    <span class="w3-hide-small"> / <a class="w3-hide-small" href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a></span>
 {%- endif %}
 {%- if 'encryptcontent' in config.plugins %}
-    / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
+    <span class="w3-hide-small"> / <a class="w3-hide-small" href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a></span>
 {%- endif %}
-    / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
+    <span class="w3-hide-small"> / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a></span>
     / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme{% if config.theme.extlink %}<svg class="svg-1em"><use xlink:href="#extlink" /></svg>{% endif %}</a>
   </p>
   {%- block footer_ext %}

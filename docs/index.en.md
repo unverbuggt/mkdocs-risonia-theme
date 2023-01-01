@@ -23,7 +23,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 ## Features
 
 * Light and dark mode.
-* Integration of `mkdocs-static-i18n` pLugin.
+* Integration of `mkdocs-static-i18n` plugin.
 * Integration of `mkdocs-encryptcontent-plugin`.
 * Web app support.
 * Rather [lightweight](mkdocs/#size-comparison)
@@ -42,7 +42,7 @@ Install the package from source with pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.3-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.4-py3-none-any.whl
 ```
 
 ## Configuration

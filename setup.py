@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-VERSION = '0.1.3'
+VERSION = '0.1.4'
 
 def read(fname):
     file_path = os.path.join(os.path.dirname(__file__), fname)
@@ -24,7 +24,6 @@ setup(
         'beautifulsoup4',
     ],
     author='René Rüthlein',
-    author_email='unverbuggt@xn--rthlein-n2a.de',
     packages=find_packages(),
     include_package_data=True,
     entry_points={

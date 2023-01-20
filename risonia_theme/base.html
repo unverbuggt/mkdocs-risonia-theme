@@ -141,21 +141,21 @@
 {%- endif %}
 </svg>
 
-<div id="myTop" class="w3-container w3-cell-row w3-top w3-theme w3-large no-print" style="z-index:2">
-  <div class="w3-cell w3-cell-middle" style="width:0">
+<div id="myTop" class="w3-container w3-cell-row w3-top w3-theme w3-large no-print" style="z-index:2;">
+  <div class="w3-cell w3-cell-middle" style="width:0;">
     {%- if config.theme.logo %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
     {%- else %}
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-hide-large no-print" onclick="w3_open()"><svg class="svg-2em"><use xlink:href="#open-menu" /></svg></button>
     {%- endif %}
   </div>
-  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0">
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
     <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
   </div>
   <div class="w3-cell w3-cell-middle">
     <span class="w3-left">{% if page.title %}{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ page.title }}{% endif %}{% endif %}</span>
   </div>
-  <div class="w3-cell w3-cell-middle" style="width:0">
+  <div class="w3-cell w3-cell-middle" style="width:0;">
     <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-left w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
   </div>
   <div class="w3-cell w3-cell-middle">
@@ -171,10 +171,10 @@
 <header class="w3-container w3-theme w3-large">
   {%- if config.theme.logo %}
   <div class="w3-cell w3-cell-middle">
-    <button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
+    <button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important;"><img src="{{ config.theme.logo | url }}" class="svg-2em"></button>
   </div>
   {%- endif %}
-  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0">
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
     <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
   </div>
   <div class="w3-cell w3-cell-middle">
@@ -258,7 +258,7 @@
   <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
 </nav>
 
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;" id="myOverlay"></div>
 {%- endif %}
 {%- endblock %}
 
@@ -291,9 +291,9 @@
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
   {%- if toc_check.anchors > 1 %}
-    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton" style="z-index:1">
+    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton" style="z-index:1;">
       <button class="w3-button w3-hover-theme w3-theme-l3 w3-hover-theme"><svg class="svg-1em"><use xlink:href="#toc" /></svg></button>
-      <div class="w3-dropdown-content w3-bar-block" style="right:0">
+      <div class="w3-dropdown-content w3-bar-block" style="right:0;">
       {%- for toc_item in page.toc %}
         <a href="{{ toc_item.url }}" class="w3-bar-item w3-button w3-hover-theme w3-theme-l3">{{ toc_item.title }}</a>
         {%- for toc_item in toc_item.children %}
@@ -307,9 +307,9 @@
     </div>
   {%- endif %}
   {%- if i18n_config %}
-    <div class="w3-dropdown-hover" style="z-index:1">
+    <div class="w3-dropdown-hover" style="z-index:1;">
       <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n" /></svg></button>
-      <div class="w3-dropdown-content w3-bar-block" style="right:0">
+      <div class="w3-dropdown-content w3-bar-block" style="right:0;">
       {%- for lang, display in config.plugins.i18n.config.languages.items() %}
         {%- if lang == i18n_page_locale %}
           {%- set langcolor = "w3-theme-l2" %}

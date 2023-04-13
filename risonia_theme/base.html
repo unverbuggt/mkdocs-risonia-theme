@@ -184,9 +184,8 @@
 
 {%- block site_nav %}
 {%- if nav|length>1 %}
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-collapse{% if config.theme.toc_sidebar %}-custom{% endif %} w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
   <div id="myNav" style="font-weight: bold;">
-    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l1 w3-hide-large w3-large w3-right-align" href="javascript:void(0)" onclick="w3_close()"><svg class="svg-1em"><use xlink:href="#close-menu" /></svg></a>
 {%- set accid = namespace(value=1, hidden=true, hidden2=true) %}
 {%- for nav_item in nav %}
   {%- if nav_item.children %}
@@ -258,7 +257,7 @@
   <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
 </nav>
 
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;" id="myOverlay"></div>
+<div class="w3-overlay w3-hide{% if config.theme.toc_sidebar %}-huge{% else %}-large{% endif %} w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;" id="myOverlay"></div>
 {%- endif %}
 {%- endblock %}
 
@@ -269,7 +268,7 @@
     {% set toc_check.anchors = toc_check.anchors + 1 %}
   {%- endfor %}
 {%- endfor %}
-{%- if toc_check.anchors > 1 %}
+{%- if toc_check.anchors > 1 and config.theme.toc_sidebar %}
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-theme-l4" style="z-index:3;width:300px;right:0;" id="myTocbar">
   <div id="myToc">
   {%- for toc_item in page.toc %}
@@ -286,12 +285,12 @@
 </nav>
 {%- endif %}
 
-<div class="w3-main" style="margin-left:300px;{% if toc_check.anchors > 1 %} margin-right:300px;{% endif %}">
+<div class="w3-main{% if config.theme.toc_sidebar %}-custom{% endif %}" style="margin-left:300px;{% if toc_check.anchors > 1 and config.theme.toc_sidebar %} margin-right:300px;{% endif %}">
 
 <div class="w3-container" style="padding: 32px;">
   <div class="w3-right w3-margin-bottom no-print">
   {%- if toc_check.anchors > 1 %}
-    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton" style="z-index:1;">
+    <div class="w3-dropdown-hover{% if config.theme.toc_sidebar %} w3-hide-large{% endif %}" id="myTocButton" style="z-index:1;">
       <button class="w3-button w3-hover-theme w3-theme-l3 w3-hover-theme"><svg class="svg-1em"><use xlink:href="#toc" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0;">
       {%- for toc_item in page.toc %}

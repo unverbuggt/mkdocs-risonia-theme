@@ -125,6 +125,7 @@ plugins:
             decryption_failure_message: 'Wrong password, please enter "12345".'
             encryption_info_message: 'Please enter "12345".'
 
+
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme
 
 markdown_extensions:

@@ -59,6 +59,7 @@ theme:
     #serviceworker: service-worker.js # Benötigt für Webapp, kann eine leere Datei sein
     #extlink: true # externe Links markieren
     #extblank: true # externe Links im neuen Browserfenster öffnen
+    #toc_sidebar: true # Wenn Anzeige breit genug, dann Inhaltsverzeichnis rechts anzeigen
     
 plugins:
     - search: {}

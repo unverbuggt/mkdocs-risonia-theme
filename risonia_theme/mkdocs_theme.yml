@@ -8,3 +8,5 @@ navigation_depth: 3
 extlink: false
 
 extblank: true
+
+toc_sidebar: true

@@ -59,6 +59,7 @@ theme:
     #serviceworker: service-worker.js # for webapp an empty file is sufficient
     #extlink: true # mark external links with symbol
     #extblank: true # send external links to new browser tab
+    #toc_sidebar: true # If display is wide enough, then display TOC on the right side
     
 plugins:
     - search: {}

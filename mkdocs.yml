@@ -113,17 +113,19 @@ plugins:
         search_index: 'dynamically' #dynamically
         password_button: True
         selfhost: true
-        selfhost_download: false
+        selfhost_download: true
+        selfhost_dir: 'theme_override'
         reload_scripts:
           - '#theme'
         translations:
           en:
             title_prefix: ''
             summary: 'Encrypted Test Page.'
-            placeholder: '12345'
+            placeholder: '54321'
             password_button_text: 'ENTER'
-            decryption_failure_message: 'Wrong password, please enter "12345".'
-            encryption_info_message: 'Please enter "12345".'
+            decryption_failure_message: 'Wrong password, please enter "54321".'
+            encryption_info_message: 'Please enter "54321".'
+        #kdf_pow: 4
 
 
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme

@@ -35,10 +35,10 @@ plugins:
           en:
             title_prefix: ''
             summary: 'Encrypted Test Page.'
-            placeholder: '12345'
+            placeholder: '54321'
             password_button_text: 'ENTER'
-            decryption_failure_message: 'Wrong password, please enter "12345".'
-            encryption_info_message: 'Please enter "12345".'
+            decryption_failure_message: 'Wrong password, please enter "54321".'
+            encryption_info_message: 'Please enter "54321".'
     #...
 ```
 

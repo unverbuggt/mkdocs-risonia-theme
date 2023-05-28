@@ -42,7 +42,7 @@ Oder aus den Quellen bauen mit pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.7-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.8-py3-none-any.whl
 ```
 
 ## Konfiguration

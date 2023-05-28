@@ -96,6 +96,7 @@ plugins:
         title_prefix: ''
         summary: 'Verschlüsselte Testseite.'
         placeholder: '12345'
+        placeholder_user: Benutzer
         password_button_text: 'ENTER'
         decryption_failure_message: 'Falsches Passwort, bitte "12345" eingeben.'
         encryption_info_message: 'Bitte "12345" eingeben.'
@@ -122,10 +123,20 @@ plugins:
             title_prefix: ''
             summary: 'Encrypted Test Page.'
             placeholder: '54321'
+            placeholder_user: User
             password_button_text: 'ENTER'
             decryption_failure_message: 'Wrong password, please enter "54321".'
             encryption_info_message: 'Please enter "54321".'
+        password_inventory:
+          classified: 'password1'
+          confidential:
+            - 'password2'
+            - 'password3'
+          secret:
+            user4: 'password4'
+            user5: 'password5'
         #kdf_pow: 4
+        sign_files: True
 
 
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme

@@ -1,5 +1,5 @@
 title: Encrypt Content
-password: 12345
+level: secret
 
 Ist das [`mkdocs-encryptcontent-plugin`](https://github.com/unverbuggt/mkdocs-encryptcontent-plugin) installiert, in der `mkdocs.yaml` Datei aktiviert und konfiguriert,
 dann wird über das <svg class="svg-1em"><use xlink:href="#encrypted" /></svg> Symbol neben einer Seite in der Navigation angezeigt, dass der Inhalt der Seite verschlüsselt ist.

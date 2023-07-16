@@ -122,7 +122,7 @@ class W3cssColorTheme(BasePlugin):
         diff_to_l = abs(pbg-pl)
         diff_to_d = abs(pbg-pd)
         diff_ld = abs(diff_to_l-diff_to_d)
-        if diff_ld < 0.2: #if the contrast difference isnt't too big, allow to choose text color based on preference
+        if diff_ld < 0.33: #if the contrast difference isnt't too big, allow to choose text color based on preference
             if pref_dark:
                 return self.config['dark_text_color']
             else:

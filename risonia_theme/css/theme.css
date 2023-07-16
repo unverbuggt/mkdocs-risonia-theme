@@ -37,19 +37,26 @@ h1,h2,h3,h4,h5,h6 {
 /*fonts*/
 body{
   font-family: Tahoma, Verdana, sans-serif;
+  font-size: .8rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h1{font-size:2.25rem}h2{font-size:1.875rem}h3{font-size:1.5rem}h4{font-size:1.25rem}h5{font-size:1.125rem}h6{font-size:1rem}
+
 .w3-code, .w3-codespan {
   font-family:Consolas, Courier, monospace;
 }
 
 .w3-main-custom,#main{transition:margin-left .4s}
+
 @media (max-width:992px){ /*medium or small*/
   .w3-main-custom{margin-left:0!important;margin-right:0!important}
+  html {
+    font-size: 125%;
+  }
 }
 @media (max-width:1280px){ /*small or medium or large*/
   .w3-collapse-custom{display:none}
@@ -58,4 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width:1281px){ /*huge*/
   .w3-hide-huge{display:none!important}
   .w3-collapse-custom{display:block!important}
+  html{
+    font-size: 137.5%;
+  }
 }

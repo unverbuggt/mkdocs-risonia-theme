@@ -128,6 +128,7 @@ plugins:
             decryption_failure_message: 'Wrong password, please enter "54321".'
             encryption_info_message: 'Please enter "54321".'
         password_inventory:
+          test: '12345'
           classified: 'password1'
           confidential:
             - 'password2'
@@ -136,7 +137,7 @@ plugins:
             user4: 'password4'
             user5: 'password5'
         #kdf_pow: 4
-        sign_files: True
+        sign_files: 'risonia-theme.json'
 
 
 repo_url: https://github.com/unverbuggt/mkdocs-risonia-theme

@@ -48,24 +48,24 @@ h1{font-size:2.25rem}h2{font-size:1.875rem}h3{font-size:1.5rem}h4{font-size:1.25
 
 .w3-code, .w3-codespan {
   font-family:Consolas, Courier, monospace;
+  font-size:.8rem;
 }
+
+.w3-tiny{font-size:0.625rem!important}.w3-small{font-size:0.75rem!important}.w3-medium{font-size:0.9375rem!important}.w3-large{font-size:1.125rem!important}
+.w3-xlarge{font-size:1.5rem!important}.w3-xxlarge{font-size:2.25rem!important}.w3-xxxlarge{font-size:3rem!important}.w3-jumbo{font-size:4rem!important}
 
 .w3-main-custom,#main{transition:margin-left .4s}
 
 @media (max-width:992px){ /*medium or small*/
   .w3-main-custom{margin-left:0!important;margin-right:0!important}
-  html {
-    font-size: 125%;
-  }
 }
 @media (max-width:1280px){ /*small or medium or large*/
   .w3-collapse-custom{display:none}
   .w3-main-custom{margin-left:0!important}
+  html{font-size: 125%}
 }
 @media (min-width:1281px){ /*huge*/
   .w3-hide-huge{display:none!important}
   .w3-collapse-custom{display:block!important}
-  html{
-    font-size: 137.5%;
-  }
+  html{font-size: 137.5%}
 }

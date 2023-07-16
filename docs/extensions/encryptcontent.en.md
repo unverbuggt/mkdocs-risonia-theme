@@ -1,5 +1,5 @@
 title: Encrypt content
-level: confidential
+level: test
 
 If the [`mkdocs-encryptcontent-plugin`](https://github.com/unverbuggt/mkdocs-encryptcontent-plugin) is installed, activated in `mkdocs.yaml` and configured,
 then encrypted pages are maked with the <svg class="svg-1em"><use xlink:href="#encrypted" /></svg> symbol at the navigation.

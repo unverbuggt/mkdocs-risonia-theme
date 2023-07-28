@@ -72,3 +72,7 @@ function closeSearch() {
   document.getElementById('mkdocs_search_modal').style.display='none'
 }
 
+function zoomImg(element) {
+    document.getElementById('img_modal').src=element.src;
+    document.getElementById('zoom_img_modal').style.display='block';
+}

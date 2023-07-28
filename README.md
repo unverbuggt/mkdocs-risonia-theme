@@ -53,7 +53,7 @@ Install the package from source with pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.8-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.9-py3-none-any.whl
 ```
 
 ## Configuration
@@ -71,6 +71,7 @@ theme:
     #extlink: true # mark external links with symbol
     #extblank: true # send external links to new browser tab
     #toc_sidebar: true # If display is wide enough, then display TOC on the right side
+    #zoom_img: true # click on images to view them bigger
     
 plugins:
     - search: {}

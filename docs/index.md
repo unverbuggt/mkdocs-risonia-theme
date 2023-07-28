@@ -42,7 +42,7 @@ Oder aus den Quellen bauen mit pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.8-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.9-py3-none-any.whl
 ```
 
 ## Konfiguration
@@ -60,6 +60,7 @@ theme:
     #extlink: true # externe Links markieren
     #extblank: true # externe Links im neuen Browserfenster öffnen
     #toc_sidebar: true # Wenn Anzeige breit genug, dann Inhaltsverzeichnis rechts anzeigen
+    #zoom_img: true # beim Klicken auf ein Bild wird es größer angezeigt
     
 plugins:
     - search: {}

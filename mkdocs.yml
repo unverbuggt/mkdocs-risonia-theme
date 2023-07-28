@@ -11,6 +11,7 @@ theme:
     extblank: true
     manifest: manifest.json
     serviceworker: service-worker.js
+    zoom_img: true
 
 extra_javascript:
   - 'assets/javascripts/highlight.min.js'

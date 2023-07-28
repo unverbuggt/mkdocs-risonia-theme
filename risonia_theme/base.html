@@ -350,8 +350,14 @@
   </div>
 </div>
 {%- endif %}
-
 </div>
+{%- if config.theme.zoom_img %}
+<div id="zoom_img_modal" class="w3-modal" onclick="this.style.display='none'">
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img_modal" style="width:100%;">
+  </div>
+</div>
+{%- endif %}
 {%- block footer %}
 <footer class="w3-container w3-theme no-print">
   <p class="w3-left w3-tiny">

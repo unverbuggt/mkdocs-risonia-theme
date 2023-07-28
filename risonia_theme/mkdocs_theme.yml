@@ -10,3 +10,5 @@ extlink: false
 extblank: true
 
 toc_sidebar: true
+
+zoom_img: false

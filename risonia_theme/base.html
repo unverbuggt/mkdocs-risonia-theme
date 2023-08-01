@@ -227,6 +227,12 @@
         {{ nav_subitem.title }}{% if nav_subitem.encrypted %} <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>{% endif %}<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
       </a>
             {%- endif %}
+            {%- set accid.hidden2 = true %}
+            {%- for nav_subsubitem in nav_subitem.children %}
+              {%- if nav_subsubitem.active %}
+                {%- set accid.hidden2 = false %}
+              {%- endif %}
+            {%- endfor %}
             {%- if not nav_subitem.children[0].is_index or (nav_subitem.children[0].is_index and not accid.hidden2) %}
       <div id="acc{{  accid.value }}" class="w3-animate-left{% if accid.hidden2 %} w3-hide{% endif %}">{% set accid.value = accid.value + 1 %}
               {%- for nav_subsubitem in nav_subitem.children %}

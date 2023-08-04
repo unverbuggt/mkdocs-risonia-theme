@@ -47,8 +47,8 @@
   <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="dark">
   {%- endif %}
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
-  {%- for path in extra_css %}
-  <link href="{{ path }}" rel="stylesheet">
+  {%- for path in config.extra_css %}
+  <link href="{{ path|url }}" rel="stylesheet">
   {%- endfor %}
 {%- endblock %}
   <script>
@@ -385,8 +385,8 @@
 
 {%- block scripts %}
 <script src="{{ 'js/theme.js'|url }}"></script>
-{%- for path in extra_javascript %}
-<script src="{{ path }}" defer></script>
+{%- for script in config.extra_javascript %}
+  {{ script | script_tag }}
 {%- endfor %}
 {%- if config.theme.serviceworker %}
 <script>

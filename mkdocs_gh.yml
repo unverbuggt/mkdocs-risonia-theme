@@ -1,5 +1,5 @@
 site_name: MkDocs Risonia Thema
-site_url: https://unverbuggt.rüthlein.de/risonia/
+site_url: https://unverbuggt.github.io/mkdocs-risonia-theme/
 site_author: René Rüthlein
 
 theme:
@@ -12,6 +12,7 @@ theme:
     manifest: manifest.json
     serviceworker: service-worker.js
     zoom_img: true
+    no_imprint: true
 
 extra_javascript:
   - 'assets/javascripts/highlight.min.js'

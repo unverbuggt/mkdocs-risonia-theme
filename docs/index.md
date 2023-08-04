@@ -26,7 +26,7 @@ Ein einfaches Thema für [MkDocs](https://www.mkdocs.org/), basierend auf [diese
 * Integration vom `mkdocs-static-i18n` Plugin.
 * Integration vom `mkdocs-encryptcontent-plugin`.
 * Seite kann als Webapp installiert werden.
-* Ziemlich [leichtgewichtig](mkdocs/#groenvergleich)
+* Ziemlich [leichtgewichtig](mkdocs.md/#groenvergleich)
 * Kurze (Navigation) und lange (Oben) [Seitentitel](#seitentitel)
 
 ## Installation
@@ -42,7 +42,7 @@ Oder aus den Quellen bauen mit pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.9-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.10-py3-none-any.whl
 ```
 
 ## Konfiguration

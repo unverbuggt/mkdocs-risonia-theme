@@ -2,9 +2,9 @@ title: color-theme Plugin
 
 Das `color-theme` Plugin generiert das farbliche Aussehen anhand von verschiedenen Optionen. Die Verwendung des Plugins ist optional.
 
-Mit `theme_color` wird die [Hauptfarbe](primary/) des Themas festgelegt. Diese Farbe bleibt in der hellen und dunklen Ansicht (<svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg>) gleich.
+Mit `theme_color` wird die [Hauptfarbe](primary.md) des Themas festgelegt. Diese Farbe bleibt in der hellen und dunklen Ansicht (<svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg>) gleich.
 
-Durch `secondary_color` wird entweder eine [Zweitfarbe](secondary/) oder ein [Schema](secondary/mono/) für die Zweitfarben definiert.
+Durch `secondary_color` wird entweder eine [Zweitfarbe](secondary/index.md) oder ein [Schema](secondary/mono.md) für die Zweitfarben definiert.
 
 Die Textfarben unter `light_text_color` und `dark_text_color` müssen nicht unbedingt Schwarz und Weiß lauten.
 Sie werden allerdings nicht explizit für helle bzw. dunkle Ansicht verwendet sondern je nach bestem Kontrast ausgewählt.

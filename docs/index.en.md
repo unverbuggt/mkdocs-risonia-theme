@@ -26,7 +26,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 * Integration of `mkdocs-static-i18n` plugin.
 * Integration of `mkdocs-encryptcontent-plugin`.
 * Web app support.
-* Rather [lightweight](mkdocs/#size-comparison)
+* Rather [lightweight](mkdocs.de/#size-comparison)
 * Short (nav) and long (top panel) [page titles](#page-titles)
 
 ## Installation
@@ -42,7 +42,7 @@ Install the package from source with pip:
 ```bash
 cd mkdocs-risonia-theme/
 python setup.py sdist bdist_wheel
-pip install dist/mkdocs_risonia_theme-0.1.9-py3-none-any.whl
+pip install dist/mkdocs_risonia_theme-0.1.10-py3-none-any.whl
 ```
 
 ## Configuration

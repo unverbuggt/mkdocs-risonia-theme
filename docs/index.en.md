@@ -26,7 +26,7 @@ using the [w3.css](https://www.w3schools.com/w3css/) framework and configurable 
 * Integration of `mkdocs-static-i18n` plugin.
 * Integration of `mkdocs-encryptcontent-plugin`.
 * Web app support.
-* Rather [lightweight](mkdocs.de/#size-comparison)
+* Rather [lightweight](mkdocs.md/#size-comparison)
 * Short (nav) and long (top panel) [page titles](#page-titles)
 
 ## Installation

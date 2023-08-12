@@ -386,7 +386,11 @@
 {%- block scripts %}
 <script src="{{ 'js/theme.js'|url }}"></script>
 {%- for script in config.extra_javascript %}
-  {{ script | script_tag }}
+  {%- if script.path %}  {# Detected MkDocs 1.5+ which has `script.path` and `script_tag` #}
+    {{ script | script_tag }}
+  {%- else %}  {# Fallback - examine the file name directly #}
+    <script src="{{ script | url }}"{% if script.endswith(".mjs") %} type="module"{% endif %}></script>
+  {%- endif %}
 {%- endfor %}
 {%- if config.theme.serviceworker %}
 <script>

@@ -12,6 +12,7 @@ theme:
     manifest: manifest.json
     serviceworker: service-worker.js
     zoom_img: true
+    lazy_img: false
 
 extra_javascript:
   - 'assets/javascripts/highlight.min.js'

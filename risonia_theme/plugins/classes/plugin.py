@@ -41,8 +41,9 @@ class W3cssClassesPlugin(BasePlugin):
         for img_tag in soup.find_all('img'):
             img_tag['class'] = img_tag.get('class', []) + ['w3-image'] #add class to <image>
             if 'zoom_img' in config['theme']._vars and config['theme']._vars['zoom_img']:
-                img_tag['loading'] = "lazy"
                 img_tag['onclick'] = "zoomImg(this);";
+            if 'lazy_img' in config['theme']._vars and config['theme']._vars['lazy_img']:
+                img_tag['loading'] = "lazy"
         
         #add extlink svg after external links if configured
         if 'extlink' in config['theme']._vars and config['theme']._vars['extlink']:

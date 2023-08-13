@@ -12,3 +12,4 @@ extblank: true
 toc_sidebar: true
 
 zoom_img: false
+lazy_img: false

@@ -60,24 +60,27 @@ plugins:
         lang: de
 
     - i18n:
-        default_language: de
-        default_language_only: false
-        docs_structure: suffix
-        languages:
-          de:
-            name: Deutsch
-            build: true
-          en:
-            name: English
-            build: true
-            site_name: "MkDocs Risonia theme"
-        nav_translations:
-          en:
-            Farben: Colors
-            Zweitfarben: Secondary colors
-            Erweiterungen: Extensions
-            Javascript: Javascript
-            Markdown: Markdown
+          docs_structure: suffix
+          fallback_to_default: true
+          languages:
+            - build: true
+              default: true
+              locale: de
+              name: Deutsch
+            - build: true
+              default: false
+              locale: en
+              name: English
+              nav_translations:
+                Erweiterungen: Extensions
+                Farben: Colors
+                Javascript: Javascript
+                Markdown: Markdown
+                Zweitfarben: Secondary colors
+              site_name: MkDocs Risonia theme
+          reconfigure_material: false
+          reconfigure_search: true
+
 
     - color-theme:
         theme_color: '#ef6110'

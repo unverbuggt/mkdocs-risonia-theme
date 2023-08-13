@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html{% if 'i18n' in config.plugins %} lang="{{ i18n_page_locale }}"{% endif %}>
 <head>
+{%- if i18n_config %}
+  {%- set i18n_theme = namespace(default="", languages=dict()) %}
+  {%- if 'default_language' in i18n_config %}
+    {%- set i18n_theme.default = i18n_config.default_language %}
+    {%- for lang, display in config.plugins.i18n.config.languages.items() %}
+      {%- set _ = i18n_theme.languages.update({lang: display.name }) %}
+    {%- endfor %}
+  {% else %}
+    {%- for lang in i18n_config.languages %}
+      {%- if lang.default %}
+        {%- set i18n_theme.default = lang.locale %}
+      {%- endif %}
+      {%- set _ = i18n_theme.languages.update({lang.locale: lang.name }) %}
+    {%- endfor %}
+  {%- endif %}
+{%- endif %}
 {%- block site_meta %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +26,11 @@
   {% if config.theme.favicon %}<link rel="shortcut icon" href="{{ config.theme.favicon|url }}">
   {%- else %}<link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">{% endif %}
   {%- if i18n_config %}
-    {%- for lang, display in config.plugins.i18n.config.languages.items() %}
+    {%- for lang, name in i18n_theme.languages.items() %}
       {%- if lang != i18n_page_locale %}
-        {%- if lang == i18n_config.default_language %}
+        {%- if lang == i18n_theme.default %}
   <link rel="alternate" hreflang="x-default" href="{{ page.canonical_url | replace('/' + i18n_page_locale + '/', '/') }}">
-        {%- elif i18n_page_file_locale is none %}
+        {%- elif i18n_page_locale == i18n_theme.default %}
   <link rel="alternate" hreflang="{{ lang }}" href="{{ page.canonical_url | replace(page.url, '') + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}">
         {%- else %}
   <link rel="alternate" hreflang="{{ lang }}" href="{{ page.canonical_url | replace('/' + i18n_page_locale + '/', '/' + lang + '/') }}">
@@ -23,10 +39,10 @@
     {%- endfor %}
   {%- endif %}
   {%- if config.theme.manifest %}
-    {%- if i18n_config and i18n_page_file_locale %}
-  <link rel="manifest" href="{{ (base_url + '/' + i18n_page_locale + '/' + config.theme.manifest)|url }}">
+    {%- if i18n_config and i18n_page_locale != i18n_theme.default %}
+  <link rel="manifest" href="{{ base_url + '/' + i18n_page_locale + '/' + config.theme.manifest }}">
     {%- else %}
-  <link rel="manifest" href="{{ (base_url + '/' + config.theme.manifest)|url }}">
+  <link rel="manifest" href="{{ base_url + '/' + config.theme.manifest }}">
     {%- endif %}
   {%- endif %}
 {%- endblock %}
@@ -315,19 +331,19 @@
     <div class="w3-dropdown-hover" style="z-index:1;">
       <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n" /></svg></button>
       <div class="w3-dropdown-content w3-bar-block" style="right:0;">
-      {%- for lang, display in config.plugins.i18n.config.languages.items() %}
+      {%- for lang, name in i18n_theme.languages.items() %}
         {%- if lang == i18n_page_locale %}
           {%- set langcolor = "w3-theme-l2" %}
         {%- else %}
           {%- set langcolor = "w3-theme-l4" %}
         {%- endif %}
 
-        {%- if lang == i18n_config.default_language %}
-          <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
-        {%- elif i18n_page_file_locale is none %}
-          <a href="{{ page.abs_url | replace(page.url, '') + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
+        {%- if lang == i18n_theme.default %}
+          <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ name }}</a>
+        {%- elif i18n_page_locale == i18n_theme.default %}
+          <a href="{{ page.abs_url | replace(page.url, '') + lang + '/' + page.url | replace(i18n_page_locale + '/', '') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ name }}</a>
         {%- else %}
-          <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/' + lang + '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ display.name }}</a>
+          <a href="{{ page.abs_url | replace('/' + i18n_page_locale + '/', '/' + lang + '/') }}" class="w3-bar-item w3-button w3-hover-theme {{ langcolor }}">{{ name }}</a>
         {%- endif %}
       {%- endfor %}
       </div>

@@ -198,6 +198,8 @@ class W3cssColorTheme(BasePlugin):
             elif hues[i] > 1:
                 hues[i] = hues[i] - 1
         
+        config_path = Path(config.data['config_file_path']).parents[0]
+
         data = {}
         data['bgcolor_l5'] = rgb_to_hex(hls_to_rgb(hues[0], light + ((1.0-light) / 5.0 * 4.75), sat))
         data['bgcolor_l4'] = rgb_to_hex(hls_to_rgb(hues[1], light + ((1.0-light) / 5.0 * 4.0), sat))
@@ -225,7 +227,7 @@ class W3cssColorTheme(BasePlugin):
         if self.config['extra_css_light']:
             data['additional'] = ''
             for css_filename in self.config['extra_css_light']:
-                with open(css_filename, 'r') as additional_css:
+                with open(config_path.joinpath(css_filename), 'r') as additional_css:
                     data['additional'] = data['additional'] + additional_css.read()
         
         tpl = Template(TPL_THEME)
@@ -258,7 +260,7 @@ class W3cssColorTheme(BasePlugin):
         if self.config['extra_css_dark']:
             data['additional'] = ''
             for css_filename in self.config['extra_css_dark']:
-                with open(css_filename, 'r') as additional_css:
+                with open(config_path.joinpath(css_filename), 'r') as additional_css:
                     data['additional'] = data['additional'] + additional_css.read()
 
         tpl = Template(TPL_THEME)

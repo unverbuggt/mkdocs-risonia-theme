@@ -81,10 +81,15 @@ plugins:
     - color-theme: # optional
         theme_color: '#ff6600' # primary color
         secondary_color: 'complementary' # can be a color or scheme
-        #extra_css_light: # list of extra CSS for light mode
-        #    - 'css/additional-light.css'
-        #extra_css_dark:  # list of extra CSS for dark mode
-        #    - 'css/additional-dark.css'
+        light_text_color: '#000' # black
+        dark_text_color: '#fff' # white
+        extra_css_light: # list of extra CSS for light mode
+            - 'css/additional-light.css'
+        extra_css_dark:  # list of extra CSS for dark mode
+            - 'css/additional-dark.css'
+        additional: # build these themes also
+          - theme_color: '#44bb4f'
+            secondary_color: 'complementary'
 
     - w3css-classes: {} # mandatory
 

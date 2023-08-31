@@ -47,3 +47,10 @@ Um eine Seite zu verschlüsseln muss nur der Wert `password` gesetzt werden.
 ```markdown
 password: 12345
 ```
+
+<script id="autostart">
+const ctheme = 'css/w3-theme-44bb4f-complementary';
+document.getElementById('theme-auto').href = base_url + '/' + ctheme + '.css';
+document.getElementById('theme-light').href = base_url + '/' + ctheme + '-light.css';
+document.getElementById('theme-dark').href = base_url + '/' + ctheme + '-dark.css';
+</script>

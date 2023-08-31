@@ -54,13 +54,13 @@
 {%- block styles %}
   <link rel="stylesheet" href="{{ 'css/w3.css'|url }}">
   {%- if page_theme %}
-  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'.css')|url }}">
-  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'-light.css')|url }}" media="none" id="light">
-  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'-dark.css')|url }}" media="none" id="dark">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'.css')|url }}" id="theme-auto">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'-light.css')|url }}" media="none" id="theme-light">
+  <link rel="stylesheet" href="{{ ('css/w3-theme-'+page_theme+'-dark.css')|url }}" media="none" id="theme-dark">
   {%- else %}
-  <link rel="stylesheet" href="{{ 'css/w3-theme.css'|url }}">
-  <link rel="stylesheet" href="{{ 'css/w3-theme-light.css'|url }}" media="none" id="light">
-  <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="dark">
+  <link rel="stylesheet" href="{{ 'css/w3-theme.css'|url }}" id="theme-auto">
+  <link rel="stylesheet" href="{{ 'css/w3-theme-light.css'|url }}" media="none" id="theme-light">
+  <link rel="stylesheet" href="{{ 'css/w3-theme-dark.css'|url }}" media="none" id="theme-dark">
   {%- endif %}
   <link rel="stylesheet" href="{{ 'css/theme.css'|url }}">
   {%- for path in config.extra_css %}
@@ -75,12 +75,12 @@
     let theme = localStorage.getItem(themeItem);
     if (theme) {
       if (theme == 'light') {
-        document.getElementById('dark').media = 'none';
-        document.getElementById('light').media = '';
+        document.getElementById('theme-dark').media = 'none';
+        document.getElementById('theme-light').media = '';
       }
       if (theme == 'dark') {
-        document.getElementById('light').media = 'none';
-        document.getElementById('dark').media = '';
+        document.getElementById('theme-light').media = 'none';
+        document.getElementById('theme-dark').media = '';
       }
     }
   }

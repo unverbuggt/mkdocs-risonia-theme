@@ -3,6 +3,7 @@ import os
 from colorsys import rgb_to_hls
 from colorsys import hls_to_rgb
 import math
+import logging
 
 from jinja2 import Template
 
@@ -15,6 +16,8 @@ try:
     from mkdocs.utils import string_types
 except ImportError:
     string_types = str
+
+logger = logging.getLogger("mkdocs.plugins.colortheme")
 
 #PLUGIN_DIR = os.path.dirname(os.path.realpath(__file__))
 #CSS_TPL_PATH = os.path.join(PLUGIN_DIR, 'w3-theme.jinja2.py')
@@ -113,6 +116,7 @@ class W3cssColorTheme(BasePlugin):
         ('dark_text_color', config_options.Type(str, default='#fff')),
         ('extra_css_light', config_options.Type(list, default=[])),
         ('extra_css_dark', config_options.Type(list, default=[])),
+        ('additional', config_options.Type(list, default=[])),
     )
 
     def text_contrast(self, value, pref_dark):
@@ -290,6 +294,16 @@ class W3cssColorTheme(BasePlugin):
         for theme in self.themes_to_build:
             pcolor, scolor = theme.split(',',1)
             self.generate_theme(config, pcolor, '-'+pcolor.lstrip('#')+'-'+scolor.lstrip('#'), scolor)
+        if self.config.get('additional'):
+            try:
+                for additional in self.config['additional']:
+                    pcolor = additional['theme_color']
+                    scolor = additional['secondary_color']
+                    name = '-'+pcolor.lstrip('#')+'-'+scolor.lstrip('#')
+                    self.generate_theme(config, pcolor, name, scolor)
+                    logger.info('Built additional color theme "w3-theme{name}".'.format(name=name))
+            except:
+                logger.info('Could not build additional color-themes')
 
     def on_page_context(self, context, page, config, nav):
         #get meta keys from pages

@@ -15,14 +15,17 @@ Durch die Option `extra_css_light` und `extra_css_dark` können zusätzliche CSS
 plugins:
     #...
     - color-theme:
-        theme_color: '#ef6110' #Hauptfarbe
-        secondary_color: 'complementary' #Zweitfarbe oder Farbschema
-        light_text_color: '#000' #Schwarz
-        dark_text_color: '#fff' #Weiss
-        #extra_css_light: #Liste mit zuätzlichen CSS Dateien für die helle Ansicht
-        #    - 'css/additional-light.css'
-        #extra_css_dark:  #Liste mit zuätzlichen CSS Dateien für die dunkle Ansicht
-        #    - 'css/additional-dark.css'
+        theme_color: '#ef6110' # Hauptfarbe
+        secondary_color: 'complementary' # Zweitfarbe oder Farbschema
+        light_text_color: '#000' # Schwarz
+        dark_text_color: '#fff' # Weiss
+        extra_css_light: # Liste mit zusätzlichen CSS Dateien für die helle Ansicht
+            - 'css/additional-light.css'
+        extra_css_dark:  # Liste mit zusätzlichen CSS Dateien für die dunkle Ansicht
+            - 'css/additional-dark.css'
+        additional: # Diese themes auch noch erzeugen
+          - theme_color: '#44bb4f'
+            secondary_color: 'complementary'
     #...
 ```
 

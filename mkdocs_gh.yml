@@ -98,6 +98,9 @@ plugins:
         extra_css_dark: 
           - 'extra_css/stackoverflow-dark.min.css'
           - 'extra_css/tablesort-dark.css'
+        additional:
+          - theme_color: '#44bb4f'
+            secondary_color: 'complementary'
 
     - w3css-classes: {}
 
@@ -129,6 +132,7 @@ plugins:
         selfhost_dir: 'theme_override'
         reload_scripts:
           - '#theme'
+          - '#autostart'
         translations:
           de:
             title_prefix: ''

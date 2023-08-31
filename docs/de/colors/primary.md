@@ -1,8 +1,6 @@
 title: Hauptfarben
 
-<video autoplay loop style="max-width: 50%">
-  <source src="../../videos/desaturate.mp4" type="video/mp4">
-</video>
+![type:video](../videos/desaturate.mp4)
 
 Diese Beispielfarben haben alle eine mittlere [wahrgenommene Helligkeit](https://alienryderflex.com/hsp.html). Sie haben daher einen guten Kontrast zu schwarzer und weißer Schriftfarbe.
 

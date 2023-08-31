@@ -1,8 +1,6 @@
 title: Primary colors
 
-<video autoplay loop style="max-width: 50%">
-  <source src="../../../videos/desaturate.mp4" type="video/mp4">
-</video> 
+![type:video](../videos/desaturate.mp4)
 
 These example colors are almost of the same medium [perceived brightness](https://alienryderflex.com/hsp.html). This is why they share good contrast to black and white text color.
 

@@ -61,7 +61,7 @@ This is a table:
 | Pears | Hazelnuts | Peas |
 
 This is an image:
-![](../../img/logo192.png)
+![](../img/logo192.png)
 
 Furthermore inline HTML is possible: <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>.
 

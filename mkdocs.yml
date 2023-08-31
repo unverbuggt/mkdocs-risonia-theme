@@ -57,28 +57,36 @@ plugins:
         hooks:
           on_post_build: "hooks:get_external_assets"
 
+    - mkdocs-video:
+        is_video: True
+        video_autoplay: True
+        video_loop: True
+        css_style:
+          width: "50%"
+
     - search:
         lang: de
 
     - i18n:
-        default_language: de
-        default_language_only: false
-        docs_structure: suffix
+        docs_structure: folder
+        fallback_to_default: true
         languages:
-          de:
+          - locale: de
+            default: true
             name: Deutsch
             build: true
-          en:
+          - locale: en
             name: English
             build: true
             site_name: "MkDocs Risonia theme"
-        nav_translations:
-          en:
-            Farben: Colors
-            Zweitfarben: Secondary colors
-            Erweiterungen: Extensions
-            Javascript: Javascript
-            Markdown: Markdown
+            nav_translations:
+              Erweiterungen: Extensions
+              Farben: Colors
+              Javascript: Javascript
+              Markdown: Markdown
+              Zweitfarben: Secondary colors
+        reconfigure_material: false
+        reconfigure_search: true
 
     - color-theme:
         theme_color: '#ef6110'

@@ -55,7 +55,7 @@ plugins:
 
     - mkdocs-simple-hooks:
         hooks:
-          on_post_build: "hooks:get_external_assets"
+          on_pre_build: "hooks:get_external_assets"
 
     - mkdocs-video:
         is_video: True

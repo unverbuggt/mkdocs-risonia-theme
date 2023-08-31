@@ -6,6 +6,7 @@ build/
 _css/_out
 theme_override/assets/
 _css/
-docs/imprint*
+docs/de/imprint*
+docs/en/imprint*
 .cache/
 _test_data/

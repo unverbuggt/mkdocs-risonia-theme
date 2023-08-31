@@ -151,7 +151,7 @@ plugins:
           secret:
             user4: 'password4'
             user5: 'password5'
-        #kdf_pow: 4
+        webcrypto: true
         sign_files: 'risonia-theme.json'
 
 

@@ -62,7 +62,7 @@ class W3cssClassesPlugin(BasePlugin):
             for link_tag in soup.find_all('a'):
                 href = link_tag['href']
                 if href.startswith('http://') or href.startswith('https://'):
-                    if not 'target' in link_tag:
+                    if not link_tag.get('target'):
                         link_tag['target'] = '_blank'
         
         return str(soup)

@@ -7,13 +7,13 @@ theme:
     custom_dir: theme_override/
     logo: img/logo.svg
     favicon: img/logo.ico
-    extlink: true
-    extblank: true
+    extlink: True
+    extblank: True
     manifest: manifest.json
     serviceworker: service-worker.js
-    zoom_img: true
-    lazy_img: false
-    no_imprint: true
+    zoom_img: True
+    lazy_img: False
+    no_imprint: True
 
 extra_javascript:
   - 'assets/javascripts/highlight.min.js'

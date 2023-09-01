@@ -12,7 +12,7 @@ def read(fname):
 setup(
     name="mkdocs-risonia-theme",
     version=VERSION,
-    url='https://github.com/unverbuggt/mkdocs-risonia-theme',
+    url='https://unverbuggt.github.io/mkdocs-risonia-theme/',
     description='A simple theme for MkDocs using using the w3.css framework and configurable color schemes',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="René Rüthlein">
+  <link rel="canonical" href="https://unverbuggt.github.io/mkdocs-risonia-theme/colors/primary/">
+  <link rel="shortcut icon" href="../../img/logo.ico">
+  <link rel="alternate" hreflang="de" href="https://unverbuggt.github.io/mkdocs-risonia-theme/de/colors/primary/">
+  <link rel="manifest" href="../../manifest.json">
+  <title>Primary colors - MkDocs Risonia theme</title>
+  <link rel="stylesheet" href="../../css/w3.css">
+  <link rel="stylesheet" href="../../css/w3-theme.css" id="theme-auto">
+  <link rel="stylesheet" href="../../css/w3-theme-light.css" media="none" id="theme-light">
+  <link rel="stylesheet" href="../../css/w3-theme-dark.css" media="none" id="theme-dark">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link href="../../css/fonts.css" rel="stylesheet">
+  <script>
+  var base_url = "../..";
+  var themeItem = 'risonia_theme_'+encodeURIComponent('https://unverbuggt.github.io/mkdocs-risonia-theme/');
+
+  function checkTheme() {
+    let theme = localStorage.getItem(themeItem);
+    if (theme) {
+      if (theme == 'light') {
+        document.getElementById('theme-dark').media = 'none';
+        document.getElementById('theme-light').media = '';
+      }
+      if (theme == 'dark') {
+        document.getElementById('theme-light').media = 'none';
+        document.getElementById('theme-dark').media = '';
+      }
+    }
+  }
+  checkTheme()
+  </script> 
+</head>
+
+<body class="w3-theme-l5">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="open-menu" viewBox="0 0 10 10" fill="currentColor">
+    <rect y="0" width="10" height="2"/>
+    <rect y="4" width="10" height="2"/>
+    <rect y="8" width="10" height="2"/>
+  </symbol>
+  <symbol id="drop-down" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 1h6l-3 8z"/>
+  </symbol>
+  <symbol id="to-top" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 9h6l-3-8z" />
+  </symbol>
+  <symbol id="theme-toggle" viewBox="0 0 10 10">
+    <ellipse cx="5" cy="5" rx="4.35" ry="4.35" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M 5,0.5 A 4.5,4.5 0 0 1 9.5,5 4.5,4.5 0 0 1 5,9.5 V 5 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="close-menu" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m0.71 0.71 8.58 8.58" stroke-width="2"/>
+    <path d="m9.29 0.71-8.58 8.58" stroke-width="2"/>
+  </symbol>
+  <symbol id="toc" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="m2.75 1.25h6.75"/>
+    <path d="m0.5 1.25h1.5"/>
+    <path d="m5 6.13h4.5"/>
+    <path d="m2.75 6.13h1.5"/>
+    <path d="m2.75 3.87h6.75"/>
+    <path d="m0.5 3.87h1.5"/>
+    <path d="m2.75 8.75h6.75"/>
+    <path d="m0.5 8.75h1.5"/>
+  </symbol>
+  <symbol id="extlink" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m5 5 4-4" stroke-width=".75"/>
+    <path d="m9 4v-3h-3" stroke-width=".75"/>
+    <path d="m5 3h-3.5v5.5h5.5v-3.5" stroke-width="1.25"/>
+  </symbol>
+  <symbol id="i18n" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <ellipse cx="5" cy="5" rx="4.63" ry="4.63" fill="none" stroke-width=".732"/>
+    <g transform="matrix(1 0 0 .989 0 .0527)" fill="none" stroke-width=".75">
+      <path d="m0.5 5 9 5.1e-6"/>
+      <path d="m1.6 1.6c3.39 3.4 6.8 0 6.8 0"/>
+      <path d="m1.6 8.4c3.39-3.4 6.8 0 6.8 0"/>
+      <path d="m5 0.23s5.5 4.77 0 9.54"/>
+      <path d="m5 0.23s-5.5 4.77 0 9.54"/>
+      <path d="m5 0.452v9.1"/>
+    </g>
+  </symbol>
+  <symbol id="search" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <ellipse cx="3.25" cy="3.25" rx="2.75" ry="2.75" fill="none"/>
+    <path d="m5 5 4.65 4.65" fill="none"/>
+  </symbol>
+  <symbol id="encrypted" viewBox="0 0 10 10">
+    <path transform="scale(.265)" d="m5.67 15.1v22.7h26.5v-22.7zm13.2 4.28c2.87 6.63e-4 5.19 1.88 5.19 4.21-6.29e-4 1.85-1.5 3.49-3.69 4.02l2.05 6.54h-7.1l2.05-6.54c-2.19-0.537-3.69-2.17-3.69-4.02 1.62e-4 -2.32 2.32-4.21 5.19-4.21z"  fill="currentColor" stroke="none"/>
+    <path d="m5 0.874c-1.4-1.61e-4 -2.53 1.13-2.53 2.53 3.17e-4 0.179 0.0197 0.887 0.0579 1.06h4.94c0.0382-0.175 0.0576-0.883 0.0579-1.06 1.61e-4 -1.4-1.13-2.53-2.53-2.53z" fill="none" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+</svg>
+
+<div id="myTop" class="w3-container w3-cell-row w3-top w3-theme w3-medium no-print" style="z-index:2;">
+  <div class="w3-cell w3-cell-middle" style="width:0;">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="../../img/logo.svg" class="svg-2em"></button>
+  </div>
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <span class="w3-left" id="title-top">Primary colors</span>
+  </div>
+  <div class="w3-cell w3-cell-middle" style="width:0;">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-left w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button>
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button>
+    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">&lt;/&gt;</a>
+    </div>
+</div>
+
+<header class="w3-container w3-theme w3-medium">
+  <div class="w3-cell w3-cell-middle">
+    <button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important;"><img src="../../img/logo.svg" class="svg-2em"></button>
+  </div>
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <span class="w3-left" id="title-head">Primary colors</span>
+  </div>
+</header>
+<nav class="w3-sidebar w3-bar-block w3-collapse-custom w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
+  <div id="myNav" style="font-weight: bold;">
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../mkdocs/">
+      MkDocs
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../..">
+      Risonia theme
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../markdown/">
+      Markdown
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../">
+      Colors<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
+    <div id="acc1" class="w3-animate-left">
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l2" href="./" style="padding-left: 24px;">
+        Primary colors
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../secondary/" style="padding-left: 24px;">
+        Secondary colors<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+      </a>
+    </div>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc2')" href="javascript:void(0)">
+      Extensions<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
+    <div id="acc2" class="w3-animate-left w3-hide">
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../extensions/static-i18n/" style="padding-left: 24px;">
+        static i18n plugin
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../extensions/encryptcontent/" style="padding-left: 24px;">
+        Encrypt content <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../extensions/webfonts/" style="padding-left: 24px;">
+        Webfonts
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc3')" href="javascript:void(0)" style="padding-left: 24px;">
+        Javascript<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+      </a>
+      <div id="acc3" class="w3-animate-left w3-hide">
+        <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../extensions/hljs/" style="padding-left: 32px;">
+          highlight.js
+        </a>
+        <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../../extensions/tablesort/" style="padding-left: 32px;">
+          tablesort
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
+</nav>
+
+<div class="w3-overlay w3-hide-huge w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;" id="myOverlay"></div>
+
+<div id="main-view" class="w3-main-custom" style="margin-left:300px;">
+
+<div class="w3-container" style="padding: 32px;">
+  <div class="w3-right w3-margin-bottom no-print">
+    <div class="w3-dropdown-hover" style="z-index:1;">
+      <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n" /></svg></button>
+      <div class="w3-dropdown-content w3-bar-block" style="right:0;">
+          <a href="/mkdocs-risonia-theme/colors/primary/" class="w3-bar-item w3-button w3-hover-theme w3-theme-l2">English</a>
+          <a href="/mkdocs-risonia-theme/de/colors/primary/" class="w3-bar-item w3-button w3-hover-theme w3-theme-l4">Deutsch</a>
+      </div>
+    </div>
+  </div>
+<div><p><div class="video-container"><video alt="type:video" autoplay="" controls="" loop="" style="width:50%"><source src="../../videos/desaturate.mp4" type="video/mp4"/></video></div></p>
+<p>These example colors are almost of the same medium <a href="https://alienryderflex.com/hsp.html" target="_blank">perceived brightness<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a>. This is why they share good contrast to black and white text color.</p>
+<p>In addition they are of medium visibility, so the secondary colors in light and dark mode will show similar shades.</p>
+<div class="w3-row-padding" style="color:#fff">
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc4342;cursor: copy;">#bc4342</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c93936;cursor: copy;">#c93936</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d62b28;cursor: copy;">#d62b28</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ef1c10;cursor: copy;">#ef1c10</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc4a42;cursor: copy;">#bc4a42</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c74438;cursor: copy;">#c74438</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c84b37;cursor: copy;">#c84b37</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c95036;cursor: copy;">#c95036</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d53829;cursor: copy;">#d53829</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d63f28;cursor: copy;">#d63f28</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e13f1e;cursor: copy;">#e13f1e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee2010;cursor: copy;">#ee2010</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ef3810;cursor: copy;">#ef3810</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc5d42;cursor: copy;">#bc5d42</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c75938;cursor: copy;">#c75938</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c85837;cursor: copy;">#c85837</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c95d36;cursor: copy;">#c95d36</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d4582a;cursor: copy;">#d4582a</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d55729;cursor: copy;">#d55729</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d65c28;cursor: copy;">#d65c28</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e1561e;cursor: copy;">#e1561e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e2551d;cursor: copy;">#e2551d</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee4c10;cursor: copy;">#ee4c10</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ef5210;cursor: copy;">#ef5210</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bb7444;cursor: copy;">#bb7444</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc7342;cursor: copy;">#bc7342</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c77038;cursor: copy;">#c77038</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c87037;cursor: copy;">#c87037</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c96f36;cursor: copy;">#c96f36</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d46b2a;cursor: copy;">#d46b2a</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d56429;cursor: copy;">#d56429</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d66328;cursor: copy;">#d66328</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e15d1e;cursor: copy;">#e15d1e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e25c1d;cursor: copy;">#e25c1d</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e26f1d;cursor: copy;">#e26f1d</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee6210;cursor: copy;">#ee6210</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bb7944;cursor: copy;">#bb7944</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc7842;cursor: copy;">#bc7842</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c77638;cursor: copy;">#c77638</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c78538;cursor: copy;">#c78538</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c87f37;cursor: copy;">#c87f37</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c97936;cursor: copy;">#c97936</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d4762a;cursor: copy;">#d4762a</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d57a29;cursor: copy;">#d57a29</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e1701e;cursor: copy;">#e1701e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc8742;cursor: copy;">#bc8742</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#44bb4f;cursor: copy;">#44bb4f</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#44a7bb;cursor: copy;">#44a7bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#42abbc;cursor: copy;">#42abbc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#449fbb;cursor: copy;">#449fbb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#429cbc;cursor: copy;">#429cbc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#389fc7;cursor: copy;">#389fc7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#38abc7;cursor: copy;">#38abc7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#37a7c8;cursor: copy;">#37a7c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#36a3c9;cursor: copy;">#36a3c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2aa2d4;cursor: copy;">#2aa2d4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#29a2d5;cursor: copy;">#29a2d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#28a5d6;cursor: copy;">#28a5d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1da7e2;cursor: copy;">#1da7e2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#4494bb;cursor: copy;">#4494bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#4294bc;cursor: copy;">#4294bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3893c7;cursor: copy;">#3893c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#378fc8;cursor: copy;">#378fc8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#379bc8;cursor: copy;">#379bc8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3697c9;cursor: copy;">#3697c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2a92d4;cursor: copy;">#2a92d4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2a9ed4;cursor: copy;">#2a9ed4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2996d5;cursor: copy;">#2996d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#288ed6;cursor: copy;">#288ed6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#289ad6;cursor: copy;">#289ad6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e90e1;cursor: copy;">#1e90e1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e9ce1;cursor: copy;">#1e9ce1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d90e2;cursor: copy;">#1d90e2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d9ce2;cursor: copy;">#1d9ce2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1091ee;cursor: copy;">#1091ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#109dee;cursor: copy;">#109dee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1095ef;cursor: copy;">#1095ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#10a1ef;cursor: copy;">#10a1ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#447fbb;cursor: copy;">#447fbb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#427bbc;cursor: copy;">#427bbc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#4288bc;cursor: copy;">#4288bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3883c7;cursor: copy;">#3883c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#377fc8;cursor: copy;">#377fc8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#378bc8;cursor: copy;">#378bc8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3683c9;cursor: copy;">#3683c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2a79d4;cursor: copy;">#2a79d4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2a86d4;cursor: copy;">#2a86d4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#297dd5;cursor: copy;">#297dd5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#298ad5;cursor: copy;">#298ad5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2881d6;cursor: copy;">#2881d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e7be1;cursor: copy;">#1e7be1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e88e1;cursor: copy;">#1e88e1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d7fe2;cursor: copy;">#1d7fe2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d8ce2;cursor: copy;">#1d8ce2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1080ee;cursor: copy;">#1080ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#108dee;cursor: copy;">#108dee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1080ef;cursor: copy;">#1080ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#108def;cursor: copy;">#108def</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#4473bb;cursor: copy;">#4473bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#4273bc;cursor: copy;">#4273bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#386ec7;cursor: copy;">#386ec7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3769c8;cursor: copy;">#3769c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3776c8;cursor: copy;">#3776c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3672c9;cursor: copy;">#3672c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2a6cd4;cursor: copy;">#2a6cd4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2967d5;cursor: copy;">#2967d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2975d5;cursor: copy;">#2975d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2870d6;cursor: copy;">#2870d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e69e1;cursor: copy;">#1e69e1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1e77e1;cursor: copy;">#1e77e1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d6de2;cursor: copy;">#1d6de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1060ee;cursor: copy;">#1060ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#106eee;cursor: copy;">#106eee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1065ef;cursor: copy;">#1065ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1073ef;cursor: copy;">#1073ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#446abb;cursor: copy;">#446abb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#426abc;cursor: copy;">#426abc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3760c8;cursor: copy;">#3760c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#3665c9;cursor: copy;">#3665c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#295ed5;cursor: copy;">#295ed5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#2862d6;cursor: copy;">#2862d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#1d5ae2;cursor: copy;">#1d5ae2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#105bee;cursor: copy;">#105bee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#7644bb;cursor: copy;">#7644bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#7e42bc;cursor: copy;">#7e42bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#7c36c9;cursor: copy;">#7c36c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#7d28d6;cursor: copy;">#7d28d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#7710ee;cursor: copy;">#7710ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#8544bb;cursor: copy;">#8544bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#8c42bc;cursor: copy;">#8c42bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9038c7;cursor: copy;">#9038c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9037c8;cursor: copy;">#9037c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9036c9;cursor: copy;">#9036c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#922ad4;cursor: copy;">#922ad4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9229d5;cursor: copy;">#9229d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9228d6;cursor: copy;">#9228d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#911ee1;cursor: copy;">#911ee1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#901de2;cursor: copy;">#901de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#8610ee;cursor: copy;">#8610ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#8510ef;cursor: copy;">#8510ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9a10ef;cursor: copy;">#9a10ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9342bc;cursor: copy;">#9342bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9d38c7;cursor: copy;">#9d38c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9736c9;cursor: copy;">#9736c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9e2ad4;cursor: copy;">#9e2ad4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9e29d5;cursor: copy;">#9e29d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9e28d6;cursor: copy;">#9e28d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9d1ee1;cursor: copy;">#9d1ee1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9d1de2;cursor: copy;">#9d1de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#9a10ee;cursor: copy;">#9a10ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ad10ee;cursor: copy;">#ad10ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#a610ef;cursor: copy;">#a610ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#a044bb;cursor: copy;">#a044bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#a642bc;cursor: copy;">#a642bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#af38c7;cursor: copy;">#af38c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b037c8;cursor: copy;">#b037c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b036c9;cursor: copy;">#b036c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b72ad4;cursor: copy;">#b72ad4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b729d5;cursor: copy;">#b729d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b728d6;cursor: copy;">#b728d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b61ee1;cursor: copy;">#b61ee1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b01de2;cursor: copy;">#b01de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c21de2;cursor: copy;">#c21de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c510ee;cursor: copy;">#c510ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bf10ef;cursor: copy;">#bf10ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ac44bb;cursor: copy;">#ac44bb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ac42bc;cursor: copy;">#ac42bc</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b538c7;cursor: copy;">#b538c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b637c8;cursor: copy;">#b637c8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#b636c9;cursor: copy;">#b636c9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bd2ad4;cursor: copy;">#bd2ad4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ce2ad4;cursor: copy;">#ce2ad4</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c829d5;cursor: copy;">#c829d5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c828d6;cursor: copy;">#c828d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#cd1ee1;cursor: copy;">#cd1ee1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c71de2;cursor: copy;">#c71de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d81de2;cursor: copy;">#d81de2</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d610ee;cursor: copy;">#d610ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e710ee;cursor: copy;">#e710ee</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#db10ef;cursor: copy;">#db10ef</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bb44b5;cursor: copy;">#bb44b5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c837c7;cursor: copy;">#c837c7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d42ac5;cursor: copy;">#d42ac5</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d428d6;cursor: copy;">#d428d6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e11eda;cursor: copy;">#e11eda</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ef10d9;cursor: copy;">#ef10d9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c738a8;cursor: copy;">#c738a8</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c936b6;cursor: copy;">#c936b6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d529c3;cursor: copy;">#d529c3</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e11ebb;cursor: copy;">#e11ebb</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e21dc9;cursor: copy;">#e21dc9</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c837a6;cursor: copy;">#c837a6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d529a1;cursor: copy;">#d529a1</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e21da7;cursor: copy;">#e21da7</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ef10a6;cursor: copy;">#ef10a6</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc4291;cursor: copy;">#bc4291</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c93693;cursor: copy;">#c93693</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d6288b;cursor: copy;">#d6288b</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee1095;cursor: copy;">#ee1095</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc427c;cursor: copy;">#bc427c</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c9367e;cursor: copy;">#c9367e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d62875;cursor: copy;">#d62875</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee107f;cursor: copy;">#ee107f</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c83768;cursor: copy;">#c83768</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d5295e;cursor: copy;">#d5295e</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#ee1064;cursor: copy;">#ee1064</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bc4264;cursor: copy;">#bc4264</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#e21d41;cursor: copy;">#e21d41</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#c8374a;cursor: copy;">#c8374a</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#d52939;cursor: copy;">#d52939</div>
+<div class="w3-center w3-padding w3-col l1 m2 s3" onclick="copyColor(this.textContent);" style="background-color:#bb4447;cursor: copy;">#bb4447</div>
+</div>
+<script>
+function copyColor(color) {
+  navigator.clipboard.writeText(color);
+}
+</script></div>
+<div id="mkdocs_search_modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-theme-l4">
+      <span onclick="closeSearch();" class="w3-theme-l2 w3-button w3-hover-theme w3-display-topright"><svg class="svg-1em"><use xlink:href="#close-menu" /></svg></span>
+      <span class="w3-display-topleft" style="padding: 8px 16px;"><svg class="svg-2em"><use xlink:href="#search" /></svg></span>
+      <form id="content_search">
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">
+          <input type="search" class="w3-input w3-border w3-round w3-theme-l5 w3-hover-theme" placeholder="" id="mkdocs-search-query">
+        </div>
+      </form>
+      <div class="w3-container search-results" id="mkdocs-search-results" data-no-results-text="-">&nbsp;</div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="zoom_img_modal" class="w3-modal" onclick="this.style.display='none'">
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img_modal" style="width:100%;">
+  </div>
+</div>
+<footer class="w3-container w3-theme no-print">
+  <p class="w3-left w3-tiny">
+    <a href="https://www.mkdocs.org" target="_blank">MkDocs<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a>
+    <span class="w3-hide-small"> / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    <span class="w3-hide-small"> / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    <span class="w3-hide-small"> / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a>
+  </p>
+</footer>
+</div>
+<script src="../../js/theme.js"></script>  
+    <script src="../../assets/javascripts/highlight.min.js"></script>  
+    <script src="../../assets/javascripts/tablesort.js"></script>  
+    <script src="../../assets/javascripts/tablesort.number.js"></script>  
+    <script src="../../search/main.js"></script>
+<script>
+  if ('serviceWorker' in navigator) { 
+    // register service worker
+    navigator.serviceWorker.register("../../../../service-worker.js");
+  }
+</script>
+<script>
+  var DOMContentLoaded_fired = false;
+</script>
+<script id="theme">
+function runWhenDOMContentLoaded() {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+  document.querySelectorAll('table').forEach(function(table) {
+    if (!table.hasAttribute('Tablesort')) {
+      new Tablesort(table);
+      table.setAttribute('Tablesort', '');
+    }
+  });
+}
+if (DOMContentLoaded_fired) {
+  runWhenDOMContentLoaded();
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  DOMContentLoaded_fired=true;
+  runWhenDOMContentLoaded();
+});
+</script>
+
+</body>
+</html>

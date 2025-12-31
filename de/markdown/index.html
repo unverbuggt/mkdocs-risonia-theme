@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="René Rüthlein">
+  <link rel="canonical" href="https://unverbuggt.github.io/mkdocs-risonia-theme/de/markdown/">
+  <link rel="shortcut icon" href="../../img/logo.ico">
+  <link rel="alternate" hreflang="x-default" href="https://unverbuggt.github.io/mkdocs-risonia-theme/markdown/">
+  <link rel="manifest" href="../../de/manifest.json">
+  <title>Markdown - MkDocs Risonia Thema</title>
+  <link rel="stylesheet" href="../../css/w3.css">
+  <link rel="stylesheet" href="../../css/w3-theme.css" id="theme-auto">
+  <link rel="stylesheet" href="../../css/w3-theme-light.css" media="none" id="theme-light">
+  <link rel="stylesheet" href="../../css/w3-theme-dark.css" media="none" id="theme-dark">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link href="../../css/fonts.css" rel="stylesheet">
+  <script>
+  var base_url = "../..";
+  var themeItem = 'risonia_theme_'+encodeURIComponent('https://unverbuggt.github.io/mkdocs-risonia-theme/');
+
+  function checkTheme() {
+    let theme = localStorage.getItem(themeItem);
+    if (theme) {
+      if (theme == 'light') {
+        document.getElementById('theme-dark').media = 'none';
+        document.getElementById('theme-light').media = '';
+      }
+      if (theme == 'dark') {
+        document.getElementById('theme-light').media = 'none';
+        document.getElementById('theme-dark').media = '';
+      }
+    }
+  }
+  checkTheme()
+  </script> 
+</head>
+
+<body class="w3-theme-l5">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="open-menu" viewBox="0 0 10 10" fill="currentColor">
+    <rect y="0" width="10" height="2"/>
+    <rect y="4" width="10" height="2"/>
+    <rect y="8" width="10" height="2"/>
+  </symbol>
+  <symbol id="drop-down" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 1h6l-3 8z"/>
+  </symbol>
+  <symbol id="to-top" viewBox="0 0 10 10" fill="currentColor">
+    <path d="m2 9h6l-3-8z" />
+  </symbol>
+  <symbol id="theme-toggle" viewBox="0 0 10 10">
+    <ellipse cx="5" cy="5" rx="4.35" ry="4.35" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <path d="M 5,0.5 A 4.5,4.5 0 0 1 9.5,5 4.5,4.5 0 0 1 5,9.5 V 5 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="close-menu" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m0.71 0.71 8.58 8.58" stroke-width="2"/>
+    <path d="m9.29 0.71-8.58 8.58" stroke-width="2"/>
+  </symbol>
+  <symbol id="toc" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="m2.75 1.25h6.75"/>
+    <path d="m0.5 1.25h1.5"/>
+    <path d="m5 6.13h4.5"/>
+    <path d="m2.75 6.13h1.5"/>
+    <path d="m2.75 3.87h6.75"/>
+    <path d="m0.5 3.87h1.5"/>
+    <path d="m2.75 8.75h6.75"/>
+    <path d="m0.5 8.75h1.5"/>
+  </symbol>
+  <symbol id="extlink" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <path d="m5 5 4-4" stroke-width=".75"/>
+    <path d="m9 4v-3h-3" stroke-width=".75"/>
+    <path d="m5 3h-3.5v5.5h5.5v-3.5" stroke-width="1.25"/>
+  </symbol>
+  <symbol id="i18n" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <ellipse cx="5" cy="5" rx="4.63" ry="4.63" fill="none" stroke-width=".732"/>
+    <g transform="matrix(1 0 0 .989 0 .0527)" fill="none" stroke-width=".75">
+      <path d="m0.5 5 9 5.1e-6"/>
+      <path d="m1.6 1.6c3.39 3.4 6.8 0 6.8 0"/>
+      <path d="m1.6 8.4c3.39-3.4 6.8 0 6.8 0"/>
+      <path d="m5 0.23s5.5 4.77 0 9.54"/>
+      <path d="m5 0.23s-5.5 4.77 0 9.54"/>
+      <path d="m5 0.452v9.1"/>
+    </g>
+  </symbol>
+  <symbol id="search" viewBox="0 0 10 10" fill="none" stroke="currentColor">
+    <ellipse cx="3.25" cy="3.25" rx="2.75" ry="2.75" fill="none"/>
+    <path d="m5 5 4.65 4.65" fill="none"/>
+  </symbol>
+  <symbol id="encrypted" viewBox="0 0 10 10">
+    <path transform="scale(.265)" d="m5.67 15.1v22.7h26.5v-22.7zm13.2 4.28c2.87 6.63e-4 5.19 1.88 5.19 4.21-6.29e-4 1.85-1.5 3.49-3.69 4.02l2.05 6.54h-7.1l2.05-6.54c-2.19-0.537-3.69-2.17-3.69-4.02 1.62e-4 -2.32 2.32-4.21 5.19-4.21z"  fill="currentColor" stroke="none"/>
+    <path d="m5 0.874c-1.4-1.61e-4 -2.53 1.13-2.53 2.53 3.17e-4 0.179 0.0197 0.887 0.0579 1.06h4.94c0.0382-0.175 0.0576-0.883 0.0579-1.06 1.61e-4 -1.4-1.13-2.53-2.53-2.53z" fill="none" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+</svg>
+
+<div id="myTop" class="w3-container w3-cell-row w3-top w3-theme w3-medium no-print" style="z-index:2;">
+  <div class="w3-cell w3-cell-middle" style="width:0;">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img src="../../img/logo.svg" class="svg-2em"></button>
+  </div>
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <span class="w3-left" id="title-top">Markdown Test, TEst, tEst, test...</span>
+  </div>
+  <div class="w3-cell w3-cell-middle" style="width:0;">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-left w3-hide no-print" onclick="topFunction()" id="myToTop"><svg class="svg-1em"><use xlink:href="#to-top" /></svg></button>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="toggleTheme(themeItem)" id="myThemeToggle"><svg class="svg-1em"><use xlink:href="#theme-toggle" /></svg></button>
+    <button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search" /></svg></button>
+    <a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">&lt;/&gt;</a>
+    </div>
+</div>
+
+<header class="w3-container w3-theme w3-medium">
+  <div class="w3-cell w3-cell-middle">
+    <button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important;"><img src="../../img/logo.svg" class="svg-2em"></button>
+  </div>
+  <div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+    <span style="height:2em;display:inline-block;padding:16px 0px;">&nbsp;</span>
+  </div>
+  <div class="w3-cell w3-cell-middle">
+    <span class="w3-left" id="title-head">Markdown Test, TEst, tEst, test...</span>
+  </div>
+</header>
+<nav class="w3-sidebar w3-bar-block w3-collapse-custom w3-animate-left w3-theme-l4" style="z-index:3;width:300px;" id="mySidebar">
+  <div id="myNav" style="font-weight: bold;">
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../mkdocs/">
+      MkDocs
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../">
+      Risonia Thema
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l2" href="./">
+      Markdown
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../colors/">
+      Farben<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
+    <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc1')" href="javascript:void(0)">
+      Erweiterungen<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+    </a>
+    <div id="acc1" class="w3-animate-left w3-hide">
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../extensions/static-i18n/" style="padding-left: 24px;">
+        Static i18n plugin
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../extensions/encryptcontent/" style="padding-left: 24px;">
+        Encrypt Content <svg class="svg-1em"><use xlink:href="#encrypted" /></svg>
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../extensions/webfonts/" style="padding-left: 24px;">
+        Webfonts
+      </a>
+      <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" onclick="myAccordion('acc2')" href="javascript:void(0)" style="padding-left: 24px;">
+        Javascript<svg class="svg-1em"><use xlink:href="#drop-down" /></svg>
+      </a>
+      <div id="acc2" class="w3-animate-left w3-hide">
+        <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../extensions/hljs/" style="padding-left: 32px;">
+          highlight.js
+        </a>
+        <a class="w3-bar-item w3-padding-16 w3-button w3-hover-theme w3-theme-l4" href="../extensions/tablesort/" style="padding-left: 32px;">
+          tablesort
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
+</nav>
+
+<div class="w3-overlay w3-hide-huge w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;" id="myOverlay"></div>
+    
+    
+    
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-right w3-theme-l4" style="z-index:3;width:300px;right:0;" id="myTocbar">
+  <div id="myToc">
+  <a href="#dies-ist-der-seitentitel" class="w3-bar-item w3-button w3-hover-theme w3-theme-l4">Dies ist der Seitentitel</a>
+    <a href="#dies-eine-uberschrift" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l4">Dies eine Überschrift</a>
+      <a href="#und-eine-unteruberschrift" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l4" style="padding-left: 24px;">Und eine Unterüberschrift</a>
+    <a href="#so-sieht-der-markdowntext-dieser-seite-aus" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l4">So sieht der Markdowntext dieser Seite aus:</a>
+    <a href="#und-dieses-html-wird-daraus-erzeugt" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l4">Und dieses HTML wird daraus erzeugt:</a>
+  </div>
+  <div class="w3-container w3-large" style="height: 8em;" >&nbsp;</div>
+</nav>
+
+<div id="main-view" class="w3-main-custom" style="margin-left:300px; margin-right:300px;">
+
+<div class="w3-container" style="padding: 32px;">
+  <div class="w3-right w3-margin-bottom no-print">
+    <div class="w3-dropdown-hover w3-hide-large" id="myTocButton" style="z-index:1;">
+      <button class="w3-button w3-hover-theme w3-theme-l3 w3-hover-theme"><svg class="svg-1em"><use xlink:href="#toc" /></svg></button>
+      <div class="w3-dropdown-content w3-bar-block" style="right:0;">
+        <a href="#dies-ist-der-seitentitel" class="w3-bar-item w3-button w3-hover-theme w3-theme-l3">Dies ist der Seitentitel</a>
+        <a href="#dies-eine-uberschrift" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l3">Dies eine Überschrift</a>
+          <a href="#und-eine-unteruberschrift" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l3" style="padding-left: 24px;">Und eine Unterüberschrift</a>
+        <a href="#so-sieht-der-markdowntext-dieser-seite-aus" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l3">So sieht der Markdowntext dieser Seite aus:</a>
+        <a href="#und-dieses-html-wird-daraus-erzeugt" class="w3-bar-item w3-small w3-button w3-hover-theme w3-theme-l3">Und dieses HTML wird daraus erzeugt:</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover" style="z-index:1;">
+      <button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n" /></svg></button>
+      <div class="w3-dropdown-content w3-bar-block" style="right:0;">
+          <a href="/mkdocs-risonia-theme/markdown/" class="w3-bar-item w3-button w3-hover-theme w3-theme-l4">English</a>
+          <a href="/mkdocs-risonia-theme/de/markdown/" class="w3-bar-item w3-button w3-hover-theme w3-theme-l2">Deutsch</a>
+      </div>
+    </div>
+  </div>
+<div><h1 id="dies-ist-der-seitentitel">Dies ist der Seitentitel</h1>
+<h2 id="dies-eine-uberschrift">Dies eine Überschrift</h2>
+<h3 id="und-eine-unteruberschrift">Und eine Unterüberschrift</h3>
+<h4 id="und-eine-unterunteruberschrift-wird-nicht-mehr-im-inhaltsverzeichnis-angezeigt">Und eine Unterunterüberschrift (wird nicht mehr im Inhaltsverzeichnis angezeigt)</h4>
+<p>Dies ist ein Absatz.</p>
+<p>Normale
+Zeilenumbrüche
+werden
+ignoriert.</p>
+<p>Man kann Zeilenumbrüche<br/>
+mit zwei Leerzeichen am Zeilenende erzwingen (dies bleibt aber leider in einigen Editoren unsichtbar).</p>
+<p>Aber man kann Zeilenumbrüche<br/>
+auch durch Backslash am Zeilenende erzwingen. (dies setzt allerdings <code class="w3-codespan">pymdownx.escapeall: hardbreak: true</code> in den <code class="w3-codespan">markdown_extensions</code> voraus).</p>
+<p>Man kann Worte <strong>fett</strong> oder <em>kursiv</em> hervorheben, <a href="">unterstrichen</a> werden allerdings nur Links.</p>
+<p>Man kann im Text auf <code class="w3-codespan">Code</code> verweisen.</p>
+<pre class="w3-code w3-responsive"><code class="language-plaintext">Der
+   dann
+       in
+         einem
+              Codefenster
+inklusive der Formatierung erhalten bleibt.
+</code></pre>
+<p class="font-lobster w3-panel w3-leftbar w3-rightbar w3-border-red">Ein Absatz kann auch CSS Klassen erhalten (Voraussetzung ist <code class="w3-codespan">attr_list</code> in den <code class="w3-codespan">markdown_extensions</code>).</p>
+<div class="w3-panel w3-theme-l3 w3-leftbar w3-border-theme">
+<p>Dies ist ein Zitat.</p>
+</div>
+<p>Dies ist eine Liste:</p>
+<ul>
+<li>Äpfel</li>
+<li>Birnen</li>
+<li>Pflaumen</li>
+</ul>
+<p>Und dies eine nummerierte Liste:</p>
+<ol>
+<li>Walnüsse</li>
+<li>Mandeln</li>
+<li>Haselnüsse (Nummerierung wird automatisch fortgesetzt)</li>
+</ol>
+<p>Die ist eine Tabelle:</p>
+<div class="w3-responsive"><table class="w3-table w3-bordered w3-striped">
+<thead>
+<tr>
+<th>Früchte</th>
+<th>Nüsse</th>
+<th>Hülsenfrüchte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Äpfel</td>
+<td>Mandeln</td>
+<td>Bohnen</td>
+</tr>
+<tr>
+<td>Pflaumen</td>
+<td>Walnüsse</td>
+<td>Erdnüsse</td>
+</tr>
+<tr>
+<td>Birnen</td>
+<td>Haselnüsse</td>
+<td>Erbsen</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hier ein Bild:
+<img alt="" class="w3-image" onclick="zoomImg(this);" src="../../img/logo192.png"/></p>
+<p>Außerdem ist inline HTML möglich: <svg class="svg-1em"><use xlink:href="#encrypted"></use></svg>.</p>
+<h2 id="so-sieht-der-markdowntext-dieser-seite-aus">So sieht der Markdowntext dieser Seite aus:</h2>
+<pre class="w3-code w3-responsive"><code class="language-markdown">title: Markdown Test, TEst, tEst, test...
+&lt;!-- "title" wird in der Titelleiste angezeigt --&gt;
+
+# Dies ist der Seitentitel
+
+## Dies eine Überschrift
+
+### Und eine Unterüberschrift
+
+#### Und eine Unterunterüberschrift (wird nicht mehr im Inhaltsverzeichnis angezeigt)
+
+Dies ist ein Absatz.
+
+Normale
+Zeilenumbrüche
+werden
+ignoriert.
+
+Man kann Zeilenumbrüche  
+mit zwei Leerzeichen am Zeilenende erzwingen (dies bleibt aber leider in einigen Editoren unsichtbar).
+
+Aber man kann Zeilenumbrüche\
+auch durch Backslash am Zeilenende erzwingen. (dies setzt allerdings `pymdownx.escapeall: hardbreak: true` in den `markdown_extensions` voraus).
+
+Man kann Worte **fett** oder *kursiv* hervorheben, [unterstrichen]() werden allerdings nur Links.
+
+Man kann im Text auf `Code` verweisen.
+\```plaintext
+Der
+   dann
+       in
+         einem
+              Codefenster
+inklusive der Formatierung erhalten bleibt.
+\```
+
+Ein Absatz kann auch CSS Klassen erhalten (Voraussetzung ist `attr_list` in den `markdown_extensions`).
+{ .font-lobster .w3-panel .w3-leftbar .w3-rightbar .w3-border-red }
+
+
+&gt; Dies ist ein Zitat.
+
+Dies ist eine Liste:
+
+* Äpfel
+* Birnen
+* Pflaumen
+
+Und dies eine nummerierte Liste:
+
+1. Walnüsse
+2. Mandeln
+2. Haselnüsse (Nummerierung wird automatisch fortgesetzt)
+
+Die ist eine Tabelle:
+
+| Früchte | Nüsse | Hülsenfrüchte |
+| ---- | ---- | ---- |
+| Äpfel | Mandeln | Bohnen |
+| Pflaumen | Walnüsse | Erdnüsse |
+| Birnen | Haselnüsse | Erbsen |
+
+Hier ein Bild:
+![](../img/logo192.png)
+
+Außerdem ist inline HTML möglich: &lt;svg class="svg-1em"&gt;&lt;use xlink:href="#encrypted" /&gt;&lt;/svg&gt;.
+</code></pre>
+<h2 id="und-dieses-html-wird-daraus-erzeugt">Und dieses HTML wird daraus erzeugt:</h2>
+<pre class="w3-code w3-responsive"><code class="language-html">&lt;!-- "title" wird in der Titelleiste angezeigt --&gt;
+&lt;h1 id="dies-ist-der-seitentitel"&gt;Dies ist der Seitentitel&lt;/h1&gt;
+&lt;h2 id="dies-eine-uberschrift"&gt;Dies eine Überschrift&lt;/h2&gt;
+&lt;h3 id="und-eine-unteruberschrift"&gt;Und eine Unterüberschrift&lt;/h3&gt;
+&lt;h4 id="und-eine-unterunteruberschrift-wird-nicht-mehr-im-inhaltsverzeichnis-angezeigt"&gt;Und eine Unterunterüberschrift (wird nicht mehr im Inhaltsverzeichnis angezeigt)&lt;/h4&gt;
+&lt;p&gt;Dies ist ein Absatz.&lt;/p&gt;
+&lt;p&gt;Normale
+Zeilenumbrüche
+werden
+ignoriert.&lt;/p&gt;
+&lt;p&gt;Man kann Zeilenumbrüche&lt;br/&gt;
+mit zwei Leerzeichen am Zeilenende erzwingen (dies bleibt aber leider in einigen Editoren unsichtbar).&lt;/p&gt;
+&lt;p&gt;Aber man kann Zeilenumbrüche&lt;br/&gt;
+auch durch Backslash am Zeilenende erzwingen. (dies setzt allerdings &lt;code class="w3-codespan"&gt;pymdownx.escapeall: hardbreak: true&lt;/code&gt; in den &lt;code class="w3-codespan"&gt;markdown_extensions&lt;/code&gt; voraus).&lt;/p&gt;
+&lt;p&gt;Man kann Worte &lt;strong&gt;fett&lt;/strong&gt; oder &lt;em&gt;kursiv&lt;/em&gt; hervorheben, &lt;a href=""&gt;unterstrichen&lt;/a&gt; werden allerdings nur Links.&lt;/p&gt;
+&lt;p&gt;Man kann im Text auf &lt;code class="w3-codespan"&gt;Code&lt;/code&gt; verweisen.&lt;/p&gt;
+&lt;pre class="w3-code w3-responsive"&gt;&lt;code class="language-plaintext"&gt;Der
+   dann
+       in
+         einem
+              Codefenster
+inklusive der Formatierung erhalten bleibt.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p class="font-lobster w3-panel w3-leftbar w3-rightbar w3-border-red"&gt;Ein Absatz kann auch CSS Klassen erhalten (Voraussetzung ist &lt;code class="w3-codespan"&gt;attr_list&lt;/code&gt; in den &lt;code class="w3-codespan"&gt;markdown_extensions&lt;/code&gt;).&lt;/p&gt;
+&lt;div class="w3-panel w3-theme-l3 w3-leftbar w3-border-theme"&gt;
+&lt;p&gt;Dies ist ein Zitat.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Dies ist eine Liste:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Äpfel&lt;/li&gt;
+&lt;li&gt;Birnen&lt;/li&gt;
+&lt;li&gt;Pflaumen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Und dies eine nummerierte Liste:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Walnüsse&lt;/li&gt;
+&lt;li&gt;Mandeln&lt;/li&gt;
+&lt;li&gt;Haselnüsse (Nummerierung wird automatisch fortgesetzt)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Die ist eine Tabelle:&lt;/p&gt;
+&lt;div class="w3-responsive"&gt;&lt;table class="w3-table w3-bordered w3-striped"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Früchte&lt;/th&gt;
+&lt;th&gt;Nüsse&lt;/th&gt;
+&lt;th&gt;Hülsenfrüchte&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Äpfel&lt;/td&gt;
+&lt;td&gt;Mandeln&lt;/td&gt;
+&lt;td&gt;Bohnen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pflaumen&lt;/td&gt;
+&lt;td&gt;Walnüsse&lt;/td&gt;
+&lt;td&gt;Erdnüsse&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Birnen&lt;/td&gt;
+&lt;td&gt;Haselnüsse&lt;/td&gt;
+&lt;td&gt;Erbsen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;Hier ein Bild:
+&lt;img alt="" class="w3-image" src="../img/logo192.png"/&gt;&lt;/p&gt;
+&lt;p&gt;Außerdem ist inline HTML möglich: &lt;svg class="svg-1em"&gt;&lt;use xlink:href="#encrypted"&gt;&lt;/use&gt;&lt;/svg&gt;.&lt;/p&gt;
+</code></pre></div>
+<div id="mkdocs_search_modal" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-theme-l4">
+      <span onclick="closeSearch();" class="w3-theme-l2 w3-button w3-hover-theme w3-display-topright"><svg class="svg-1em"><use xlink:href="#close-menu" /></svg></span>
+      <span class="w3-display-topleft" style="padding: 8px 16px;"><svg class="svg-2em"><use xlink:href="#search" /></svg></span>
+      <form id="content_search">
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">&nbsp;</div>
+        <div class="w3-container">
+          <input type="search" class="w3-input w3-border w3-round w3-theme-l5 w3-hover-theme" placeholder="" id="mkdocs-search-query">
+        </div>
+      </form>
+      <div class="w3-container search-results" id="mkdocs-search-results" data-no-results-text="-">&nbsp;</div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="zoom_img_modal" class="w3-modal" onclick="this.style.display='none'">
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img_modal" style="width:100%;">
+  </div>
+</div>
+<footer class="w3-container w3-theme no-print">
+  <p class="w3-left w3-tiny">
+    <a href="https://www.mkdocs.org" target="_blank">MkDocs<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a>
+    <span class="w3-hide-small"> / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    <span class="w3-hide-small"> / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    <span class="w3-hide-small"> / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a></span>
+    / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme<svg class="svg-1em"><use xlink:href="#extlink" /></svg></a>
+  </p>
+</footer>
+</div>
+<script src="../../js/theme.js"></script>  
+    <script src="../../assets/javascripts/highlight.min.js"></script>  
+    <script src="../../assets/javascripts/tablesort.js"></script>  
+    <script src="../../assets/javascripts/tablesort.number.js"></script>  
+    <script src="../../search/main.js"></script>
+<script>
+  if ('serviceWorker' in navigator) { 
+    // register service worker
+    navigator.serviceWorker.register("../../../../service-worker.js");
+  }
+</script>
+<script>
+  var DOMContentLoaded_fired = false;
+</script>
+<script id="theme">
+function runWhenDOMContentLoaded() {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+  document.querySelectorAll('table').forEach(function(table) {
+    if (!table.hasAttribute('Tablesort')) {
+      new Tablesort(table);
+      table.setAttribute('Tablesort', '');
+    }
+  });
+}
+if (DOMContentLoaded_fired) {
+  runWhenDOMContentLoaded();
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  DOMContentLoaded_fired=true;
+  runWhenDOMContentLoaded();
+});
+</script>
+
+</body>
+</html>

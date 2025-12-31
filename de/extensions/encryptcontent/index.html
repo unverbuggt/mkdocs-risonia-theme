@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="René Rüthlein" name="author"/>
+<link href="https://unverbuggt.github.io/mkdocs-risonia-theme/de/extensions/encryptcontent/" rel="canonical"/>
+<link href="../../../img/logo.ico" rel="shortcut icon"/>
+<link href="https://unverbuggt.github.io/mkdocs-risonia-theme/extensions/encryptcontent/" hreflang="x-default" rel="alternate"/>
+<link href="../../../de/manifest.json" rel="manifest"/>
+<title>Encrypt Content - MkDocs Risonia Thema</title>
+<link href="../../../css/w3.css" rel="stylesheet"/>
+<link href="../../../css/w3-theme.css" id="theme-auto" rel="stylesheet"/>
+<link href="../../../css/w3-theme-light.css" id="theme-light" media="none" rel="stylesheet"/>
+<link href="../../../css/w3-theme-dark.css" id="theme-dark" media="none" rel="stylesheet"/>
+<link href="../../../css/theme.css" rel="stylesheet"/>
+<link href="../../../css/fonts.css" rel="stylesheet"/>
+<script>
+  var base_url = "../../..";
+  var themeItem = 'risonia_theme_'+encodeURIComponent('https://unverbuggt.github.io/mkdocs-risonia-theme/');
+
+  function checkTheme() {
+    let theme = localStorage.getItem(themeItem);
+    if (theme) {
+      if (theme == 'light') {
+        document.getElementById('theme-dark').media = 'none';
+        document.getElementById('theme-light').media = '';
+      }
+      if (theme == 'dark') {
+        document.getElementById('theme-light').media = 'none';
+        document.getElementById('theme-dark').media = '';
+      }
+    }
+  }
+  checkTheme()
+  </script>
+</head>
+<body class="w3-theme-l5">
+<svg style="display: none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<symbol fill="currentColor" id="open-menu" viewbox="0 0 10 10">
+<rect height="2" width="10" y="0"></rect>
+<rect height="2" width="10" y="4"></rect>
+<rect height="2" width="10" y="8"></rect>
+</symbol>
+<symbol fill="currentColor" id="drop-down" viewbox="0 0 10 10">
+<path d="m2 1h6l-3 8z"></path>
+</symbol>
+<symbol fill="currentColor" id="to-top" viewbox="0 0 10 10">
+<path d="m2 9h6l-3-8z"></path>
+</symbol>
+<symbol id="theme-toggle" viewbox="0 0 10 10">
+<ellipse cx="5" cy="5" fill="none" rx="4.35" ry="4.35" stroke="currentColor" stroke-width="1.2"></ellipse>
+<path d="M 5,0.5 A 4.5,4.5 0 0 1 9.5,5 4.5,4.5 0 0 1 5,9.5 V 5 Z" fill="currentColor"></path>
+</symbol>
+<symbol fill="none" id="close-menu" stroke="currentColor" viewbox="0 0 10 10">
+<path d="m0.71 0.71 8.58 8.58" stroke-width="2"></path>
+<path d="m9.29 0.71-8.58 8.58" stroke-width="2"></path>
+</symbol>
+<symbol fill="none" id="toc" stroke="currentColor" stroke-width="1.5" viewbox="0 0 10 10">
+<path d="m2.75 1.25h6.75"></path>
+<path d="m0.5 1.25h1.5"></path>
+<path d="m5 6.13h4.5"></path>
+<path d="m2.75 6.13h1.5"></path>
+<path d="m2.75 3.87h6.75"></path>
+<path d="m0.5 3.87h1.5"></path>
+<path d="m2.75 8.75h6.75"></path>
+<path d="m0.5 8.75h1.5"></path>
+</symbol>
+<symbol fill="none" id="extlink" stroke="currentColor" viewbox="0 0 10 10">
+<path d="m5 5 4-4" stroke-width=".75"></path>
+<path d="m9 4v-3h-3" stroke-width=".75"></path>
+<path d="m5 3h-3.5v5.5h5.5v-3.5" stroke-width="1.25"></path>
+</symbol>
+<symbol fill="none" id="i18n" stroke="currentColor" viewbox="0 0 10 10">
+<ellipse cx="5" cy="5" fill="none" rx="4.63" ry="4.63" stroke-width=".732"></ellipse>
+<g fill="none" stroke-width=".75" transform="matrix(1 0 0 .989 0 .0527)">
+<path d="m0.5 5 9 5.1e-6"></path>
+<path d="m1.6 1.6c3.39 3.4 6.8 0 6.8 0"></path>
+<path d="m1.6 8.4c3.39-3.4 6.8 0 6.8 0"></path>
+<path d="m5 0.23s5.5 4.77 0 9.54"></path>
+<path d="m5 0.23s-5.5 4.77 0 9.54"></path>
+<path d="m5 0.452v9.1"></path>
+</g>
+</symbol>
+<symbol fill="none" id="search" stroke="currentColor" viewbox="0 0 10 10">
+<ellipse cx="3.25" cy="3.25" fill="none" rx="2.75" ry="2.75"></ellipse>
+<path d="m5 5 4.65 4.65" fill="none"></path>
+</symbol>
+<symbol id="encrypted" viewbox="0 0 10 10">
+<path d="m5.67 15.1v22.7h26.5v-22.7zm13.2 4.28c2.87 6.63e-4 5.19 1.88 5.19 4.21-6.29e-4 1.85-1.5 3.49-3.69 4.02l2.05 6.54h-7.1l2.05-6.54c-2.19-0.537-3.69-2.17-3.69-4.02 1.62e-4 -2.32 2.32-4.21 5.19-4.21z" fill="currentColor" stroke="none" transform="scale(.265)"></path>
+<path d="m5 0.874c-1.4-1.61e-4 -2.53 1.13-2.53 2.53 3.17e-4 0.179 0.0197 0.887 0.0579 1.06h4.94c0.0382-0.175 0.0576-0.883 0.0579-1.06 1.61e-4 -1.4-1.13-2.53-2.53-2.53z" fill="none" stroke="currentColor" stroke-width="1"></path>
+</symbol>
+</svg>
+<div class="w3-container w3-cell-row w3-top w3-theme w3-medium no-print" id="myTop" style="z-index:2;">
+<div class="w3-cell w3-cell-middle" style="width:0;">
+<button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small" onclick="w3_open()"><img class="svg-2em" src="../../../img/logo.svg"/></button>
+</div>
+<div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+<span style="height:2em;display:inline-block;padding:16px 0px;"> </span>
+</div>
+<div class="w3-cell w3-cell-middle">
+<span class="w3-left" id="title-top">Encrypt Content</span>
+</div>
+<div class="w3-cell w3-cell-middle" style="width:0;">
+<button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-left w3-hide no-print" id="myToTop" onclick="topFunction()"><svg class="svg-1em"><use xlink:href="#to-top"></use></svg></button>
+</div>
+<div class="w3-cell w3-cell-middle">
+<button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" id="myThemeToggle" onclick="toggleTheme(themeItem)"><svg class="svg-1em"><use xlink:href="#theme-toggle"></use></svg></button>
+<button class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" onclick="openSearch()"><svg class="svg-1em"><use xlink:href="#search"></use></svg></button>
+<a class="w3-button w3-theme-d1 w3-hover-theme w3-padding-small w3-right no-print" href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">&lt;/&gt;</a>
+</div>
+</div>
+<header class="w3-container w3-theme w3-medium">
+<div class="w3-cell w3-cell-middle">
+<button class="w3-button w3-theme w3-hover-theme w3-padding-small" style="background-color: transparent!important;"><img class="svg-2em" src="../../../img/logo.svg"/></button>
+</div>
+<div class="w3-cell w3-cell-middle w3-padding-24" style="width:0;">
+<span style="height:2em;display:inline-block;padding:16px 0px;"> </span>
+</div>
+<div class="w3-cell w3-cell-middle">
+<span class="w3-left" id="title-head">Encrypt Content</span>
+</div>
+</header>
+<nav class="w3-sidebar w3-bar-block w3-collapse-custom w3-animate-left w3-theme-l4" id="mySidebar" style="z-index:3;width:300px;">
+<div id="myNav" style="font-weight: bold;display:none !important">aN6PCnVs6dJWwP5WNaNRnQ==;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</div>
+<div class="w3-container w3-large" style="height: 8em;"> </div>
+</nav>
+<div class="w3-overlay w3-hide-huge w3-animate-opacity" id="myOverlay" onclick="w3_close()" style="cursor:pointer;"></div>
+<div class="w3-main-custom" id="main-view" style="margin-left:300px;">
+<div class="w3-container" style="padding: 32px;">
+<div class="w3-right w3-margin-bottom no-print">
+<div class="w3-dropdown-hover" style="z-index:1;">
+<button class="w3-button w3-hover-theme w3-theme-l3"><svg class="svg-1em"><use xlink:href="#i18n"></use></svg></button>
+<div class="w3-dropdown-content w3-bar-block" style="right:0;">
+<a class="w3-bar-item w3-button w3-hover-theme w3-theme-l4" href="/mkdocs-risonia-theme/extensions/encryptcontent/">English</a>
+<a class="w3-bar-item w3-button w3-hover-theme w3-theme-l2" href="/mkdocs-risonia-theme/de/extensions/encryptcontent/">Deutsch</a>
+</div>
+</div>
+</div>
+<div id="mkdocs-encrypted-content" style="display:none">Bzx8yvbxqaZJtH9YFIas8Q==;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</div>
+<div id="mkdocs-decrypted-content" style="display:none">
+<form id="mkdocs-decrypt-form">
+<h1>Verschlüsselte Testseite.</h1>
+<p>Bitte "12345" eingeben.</p>
+<input class="w3-input" id="mkdocs-content-password" placeholder="12345" type="password"/>
+<button class="w3-button w3-theme-l1 w3-hover-theme" id="mkdocs-decrypt-button">ENTER</button>
+<p id="mkdocs-decrypt-msg"></p>
+</form>
+</div>
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "mkdocs-risonia-theme/de/extensions/encryptcontent/";
+var decryption_failure_message = "Falsches Passwort, bitte \"12345\" eingeben.";
+var encryptcontent_keystore = ["R8voBGlnrrcNKH8pIq95GA==;tbiQ6BrCAYDT4jraFm27hWqU1Wco8jUzEIFmh8VLPeI+r3L4SZqH/eGtg13CTp0YYSU9Ya9Z07XNke385ql4P7dScalMVHNBsGysezvQ5VFsS/uIhib4XAUI6rcZR+EDIYVWY0tsMKn25v/XqlYnxZkPqwCG3Zszvpx2SCvx+2wG6VCdE4gazOM9p8CCgvPcYZd472POJK2pEYfT3QoX9wcs53zIHviCW8AFrDbiFpiqc8yNhUiBhE2fr8gYXOnr;W/kzQtitan42/eblD4jOYw=="];
+var encryptcontent_obfuscate = 0;
+
+const encryptcontent_event = new Event("encryptcontent_event");
+var encryptcontent_done = false;
+</script>
+<script defer="" src="../../../assets/javascripts/decrypt-contents.js" type="text/javascript"></script>
+<div class="w3-modal" id="mkdocs_search_modal">
+<div class="w3-modal-content">
+<div class="w3-theme-l4">
+<span class="w3-theme-l2 w3-button w3-hover-theme w3-display-topright" onclick="closeSearch();"><svg class="svg-1em"><use xlink:href="#close-menu"></use></svg></span>
+<span class="w3-display-topleft" style="padding: 8px 16px;"><svg class="svg-2em"><use xlink:href="#search"></use></svg></span>
+<form id="content_search">
+<div class="w3-container"> </div>
+<div class="w3-container"> </div>
+<div class="w3-container">
+<input class="w3-input w3-border w3-round w3-theme-l5 w3-hover-theme" id="mkdocs-search-query" placeholder="" type="search"/>
+</div>
+</form>
+<div class="w3-container search-results" data-no-results-text="-" id="mkdocs-search-results"> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="w3-modal" id="zoom_img_modal" onclick="this.style.display='none'">
+<div class="w3-modal-content w3-animate-zoom">
+<img id="img_modal" style="width:100%;"/>
+</div>
+</div>
+<footer class="w3-container w3-theme no-print">
+<p class="w3-left w3-tiny">
+<a href="https://www.mkdocs.org" target="_blank">MkDocs<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a>
+<span class="w3-hide-small"> / <a href="https://ultrabug.github.io/mkdocs-static-i18n/" target="_blank">static i18n<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a></span>
+<span class="w3-hide-small"> / <a href="https://github.com/unverbuggt/mkdocs-encryptcontent-plugin" target="_blank">encryptcontent<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a></span>
+<span class="w3-hide-small"> / <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a></span>
+    / <a href="https://github.com/unverbuggt/mkdocs-risonia-theme" target="_blank">Risonia theme<svg class="svg-1em"><use xlink:href="#extlink"></use></svg></a>
+</p>
+</footer>
+</div>
+<script src="../../../js/theme.js"></script>
+<script src="../../../assets/javascripts/highlight.min.js"></script>
+<script src="../../../assets/javascripts/tablesort.js"></script>
+<script src="../../../assets/javascripts/tablesort.number.js"></script>
+<script src="../../../search/main.js"></script>
+<script>
+  if ('serviceWorker' in navigator) { 
+    // register service worker
+    navigator.serviceWorker.register("../../../../../../service-worker.js");
+  }
+</script>
+<script>
+  var DOMContentLoaded_fired = false;
+</script>
+<script id="theme">
+function runWhenDOMContentLoaded() {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+  document.querySelectorAll('table').forEach(function(table) {
+    if (!table.hasAttribute('Tablesort')) {
+      new Tablesort(table);
+      table.setAttribute('Tablesort', '');
+    }
+  });
+}
+if (DOMContentLoaded_fired) {
+  runWhenDOMContentLoaded();
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  DOMContentLoaded_fired=true;
+  runWhenDOMContentLoaded();
+});
+</script>
+</body>
+</html>
